@@ -1,0 +1,542 @@
+{
+  "source_url": "https://poe2db.tw/us/Ritual_Precursor_Tablet",
+  "item_slug": "Ritual_Precursor_Tablet",
+  "total_groups": 21,
+  "total_mods": 21,
+  "modifiers": [
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Experience gain in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Experience gain in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Elevated",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Gold found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Gold found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Bountiful",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              25,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Pack Size in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Pack Size in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Breeding",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              6,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Rarity of Items found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Rarity of Items found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Collector's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              18,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "% increased Quantity of Waystones found in MapMap contains # additional Azmeri Spirit",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% increased Quantity of Waystones found in MapMap contains # additional Azmeri Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Azmeri's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "% increased Quantity of Waystones found in MapMap is inhabited by # additional Rogue Exile",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% increased Quantity of Waystones found in MapMap is inhabited by # additional Rogue Exile",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Exiled",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains # additional Rare Chests",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains # additional Rare Chests",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Treasurer's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains an additional Essence% increased Quantity of Waystones found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains an additional Essence% increased Quantity of Waystones found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Crystallised",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains an additional Summoning Circle",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains an additional Summoning Circle",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Summoner's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map has #% increased Magic Monsters",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased Magic Monsters",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Teeming",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              50,
+              70
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map has #% increased number of Rare Monsters",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased number of Rare Monsters",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Brimming",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              25,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Monsters have #% increased Effectiveness",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Monsters have #% increased Effectiveness",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Challenger's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              7,
+              11
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Deferring Favours at Ritual Altars in Map costs #% reduced Tribute",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Deferring Favours at Ritual Altars in Map costs #% reduced Tribute",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Devotion",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Favours Deferred at Ritual Altars in Map reappear #% sooner",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Favours Deferred at Ritual Altars in Map reappear #% sooner",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Appeal",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              25,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Favours Rerolled at Ritual Altars in Map have #% chance to cost no Tribute",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Favours Rerolled at Ritual Altars in Map have #% chance to cost no Tribute",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Occult",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              3,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Monsters Sacrificed at Ritual Altars in Map grant #% increased Tribute",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Monsters Sacrificed at Ritual Altars in Map grant #% increased Tribute",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Sacrifice",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              18,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Rerolling Favours at Ritual Altars in Map costs #% reduced Tribute",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Rerolling Favours at Ritual Altars in Map costs #% reduced Tribute",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Dogma",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Revived Monsters from Ritual Altars in Map have #% increased chance to be Magic",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Revived Monsters from Ritual Altars in Map have #% increased chance to be Magic",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Foundling",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              35,
+              70
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Revived Monsters from Ritual Altars in Map have #% increased chance to be Rare",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Revived Monsters from Ritual Altars in Map have #% increased chance to be Rare",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Cult",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              25,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Ritual Altars in Map allow rerolling Favours an additional time",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Ritual Altars in Map allow rerolling Favours an additional time",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Prayers",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Ritual Favours in Map have #% increased chance to be Omens",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_ritual",
+        "default"
+      ],
+      "stat_template": "Ritual Favours in Map have #% increased chance to be Omens",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Omens",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              35,
+              70
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

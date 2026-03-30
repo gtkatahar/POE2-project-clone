@@ -1,0 +1,519 @@
+{
+  "source_url": "https://poe2db.tw/us/Breach_Precursor_Tablet",
+  "item_slug": "Breach_Precursor_Tablet",
+  "total_groups": 20,
+  "total_mods": 20,
+  "modifiers": [
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Experience gain in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Experience gain in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Elevated",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Gold found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Gold found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Bountiful",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              25,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Pack Size in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Pack Size in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Breeding",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              6,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Rarity of Items found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Rarity of Items found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Collector's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              18,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "% increased Quantity of Waystones found in MapMap contains # additional Azmeri Spirit",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% increased Quantity of Waystones found in MapMap contains # additional Azmeri Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Azmeri's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "% increased Quantity of Waystones found in MapMap is inhabited by # additional Rogue Exile",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% increased Quantity of Waystones found in MapMap is inhabited by # additional Rogue Exile",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Exiled",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains # additional Rare Chests",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains # additional Rare Chests",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Treasurer's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains an additional Essence% increased Quantity of Waystones found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains an additional Essence% increased Quantity of Waystones found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Crystallised",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains an additional Summoning Circle",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains an additional Summoning Circle",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Summoner's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map has #% increased Magic Monsters",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased Magic Monsters",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Teeming",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              50,
+              70
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map has #% increased number of Rare Monsters",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased number of Rare Monsters",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Brimming",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              25,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Monsters have #% increased Effectiveness",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Monsters have #% increased Effectiveness",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Challenger's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              7,
+              11
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Quantity of Breach Splinters dropped by Breach Monsters in Map",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "#% increased Quantity of Breach Splinters dropped by Breach Monsters in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Domain",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Breaches in Map contain # additional Clasped Hand",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "Breaches in Map contain # additional Clasped Hand",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Hand",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              1,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Breaches in Map have #% increased Monster density",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "Breaches in Map have #% increased Monster density",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Invasion",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Breaches in Map have #% increased Monster densityBreaches in Map open and close #% faster",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "Breaches in Map have #% increased Monster densityBreaches in Map open and close #% faster",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Flash",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              3,
+              8
+            ],
+            [
+              10,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Breaches in Map spawn #% increased Magic Monsters",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "Breaches in Map spawn #% increased Magic Monsters",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Horde",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              40,
+              70
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Breaches in Map spawn an additional Rare Monster",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "Breaches in Map spawn an additional Rare Monster",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Commander",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% chance to contain an additional Breach",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "Map has #% chance to contain an additional Breach",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Fissuring",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% chance to contain three additional Breaches",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_breach",
+        "default"
+      ],
+      "stat_template": "Map has #% chance to contain three additional Breaches",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Rupturing",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              6,
+              10
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

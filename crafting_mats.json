@@ -1,0 +1,74 @@
+{
+  "Orb of Transmutation": {
+    "max_stack": 40,
+    "description": "Shift click to unstack."
+  },
+  "Greater Orb of Transmutation": {
+    "max_stack": 40,
+    "description": "Shift click to unstack."
+  },
+  "Perfect Orb of Transmutation": {
+    "max_stack": 40,
+    "description": "Shift click to unstack."
+  },
+  "Perfect Orb of Augmentation": {
+    "max_stack": 30,
+    "description": "Shift click to unstack."
+  },
+  "Orb of Augmentation": {
+    "max_stack": 30,
+    "description": "Shift click to unstack."
+  },
+  "Greater Orb of Augmentation": {
+    "max_stack": 30,
+    "description": "Shift click to unstack."
+  },
+  "Greater Exalted Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Orb of Alchemy": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Regal Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Perfect Exalted Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Vaal Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Greater Regal Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Orb of Annulment": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Perfect Regal Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Exalted Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Perfect Chaos Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Greater Chaos Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  },
+  "Chaos Orb": {
+    "max_stack": 20,
+    "description": "Shift click to unstack."
+  }
+}

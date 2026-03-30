@@ -1,0 +1,10 @@
+{
+  "base_w": 2560,
+  "base_h": 1440,
+  "origin_x": 1725,
+  "origin_y": 816,
+  "cell_w": 71,
+  "cell_h": 70,
+  "grid_cols": 12,
+  "grid_rows": 5
+}

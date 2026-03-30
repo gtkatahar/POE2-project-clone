@@ -1,0 +1,123 @@
+{
+  "slug": "quarterstaves",
+  "mode": "search",
+  "mods": [
+    {
+      "type": "Prefix",
+      "family": "Adds # to # Physical Damage",
+      "stat_template": "Adds # to # Physical Damage",
+      "min_tier": 1,
+      "tags": [
+        "physical_damage",
+        "damage",
+        "physical",
+        "attack"
+      ]
+    },
+    {
+      "type": "Prefix",
+      "family": "#% increased Physical Damage",
+      "stat_template": "#% increased Physical Damage",
+      "min_tier": 1,
+      "tags": [
+        "physical_damage",
+        "damage",
+        "physical",
+        "attack"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "+(#—#)% to Critical Hit Chance",
+      "stat_template": "+(#—#)% to Critical Hit Chance",
+      "min_tier": 1,
+      "tags": [
+        "attack",
+        "critical"
+      ]
+    }
+  ],
+  "fifty_fifty": [
+    {
+      "type": "Prefix",
+      "family": "Adds # to # Lightning Damage",
+      "stat_template": "Adds # to # Lightning Damage",
+      "min_tier": 1,
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "lightning",
+        "attack"
+      ]
+    },
+    {
+      "type": "Prefix",
+      "family": "Adds # to # Cold Damage",
+      "stat_template": "Adds # to # Cold Damage",
+      "min_tier": 1,
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "cold",
+        "attack"
+      ]
+    },
+    {
+      "type": "Prefix",
+      "family": "Adds # to # Fire Damage",
+      "stat_template": "Adds # to # Fire Damage",
+      "min_tier": 1,
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "fire",
+        "attack"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Melee Skills",
+      "stat_template": "# to Level of all Melee Skills",
+      "min_tier": 1,
+      "tags": [
+        "attack"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "#% increased Attack Speed",
+      "stat_template": "#% increased Attack Speed",
+      "min_tier": 1,
+      "tags": [
+        "attack",
+        "speed"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "#% to Critical Damage Bonus",
+      "stat_template": "#% to Critical Damage Bonus",
+      "min_tier": 1,
+      "tags": [
+        "damage",
+        "attack",
+        "critical"
+      ]
+    },
+    {
+      "type": "Prefix",
+      "family": "#% increased Elemental Damage with Attacks",
+      "stat_template": "#% increased Elemental Damage with Attacks",
+      "min_tier": 1,
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "attack"
+      ]
+    }
+  ]
+}

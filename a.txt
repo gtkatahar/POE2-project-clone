@@ -1,0 +1,12 @@
+
+
+
+Item Class: Stackable Currency
+Rarity: Currency
+Orb of Augmentation
+--------
+Stack Size: 1/30
+--------
+Augments a Magic item with a new random modifier
+--------
+Right click this item then left click a magic item to apply it. Magic items can have up to two random modifiers.

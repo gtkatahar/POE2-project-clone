@@ -1,0 +1,23 @@
+{
+  "slug": "amulets",
+  "mode": "search",
+  "mods": [
+    {
+      "type": "Prefix",
+      "family": "# to Spirit",
+      "stat_template": "# to Spirit",
+      "min_tier": 2,
+      "tags": []
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Spell Skills",
+      "stat_template": "# to Level of all Spell Skills",
+      "min_tier": 1,
+      "tags": [
+        "caster",
+        "gem"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "target": {
+    "name": "Solar Amulet",
+    "item_class": "Amulets",
+    "rarity": "Magic",
+    "item_level": 82,
+    "col": 0,
+    "row": 0
+  },
+  "mats": [
+    {
+      "name": "Orb of Annulment",
+      "col": 3,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 4,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 5,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 6,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 7,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 8,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 9,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 10,
+      "row": 0,
+      "count": 1,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 11,
+      "row": 0,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 0,
+      "row": 1,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 1,
+      "row": 1,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 2,
+      "row": 1,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 3,
+      "row": 1,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 4,
+      "row": 1,
+      "count": 17,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 5,
+      "row": 1,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 6,
+      "row": 1,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 7,
+      "row": 1,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 8,
+      "row": 1,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 9,
+      "row": 1,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 10,
+      "row": 1,
+      "count": 12,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 11,
+      "row": 1,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 0,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 1,
+      "row": 2,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 2,
+      "row": 2,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 3,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 4,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 5,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 6,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 7,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 8,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 9,
+      "row": 2,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 10,
+      "row": 2,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 11,
+      "row": 2,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 0,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 1,
+      "row": 3,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 2,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 3,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 4,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 5,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 6,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 7,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 8,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 9,
+      "row": 3,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 10,
+      "row": 3,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 11,
+      "row": 3,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 0,
+      "row": 4,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 1,
+      "row": 4,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 2,
+      "row": 4,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 3,
+      "row": 4,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 4,
+      "row": 4,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 5,
+      "row": 4,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Perfect Orb of Augmentation",
+      "col": 6,
+      "row": 4,
+      "count": 30,
+      "max_stack": 30,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 7,
+      "row": 4,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 8,
+      "row": 4,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 9,
+      "row": 4,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 10,
+      "row": 4,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    },
+    {
+      "name": "Orb of Annulment",
+      "col": 11,
+      "row": 4,
+      "count": 20,
+      "max_stack": 20,
+      "description": "Shift click to unstack."
+    }
+  ]
+}

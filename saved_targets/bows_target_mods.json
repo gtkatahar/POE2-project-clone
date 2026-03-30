@@ -1,0 +1,82 @@
+{
+  "slug": "bows",
+  "mode": "search",
+  "mods": [
+    {
+      "type": "Prefix",
+      "family": "#% increased Physical Damage",
+      "stat_template": "#% increased Physical Damage",
+      "min_tier": 1,
+      "tags": [
+        "physical_damage",
+        "damage",
+        "physical",
+        "attack"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "+(#—#)% to Critical Hit Chance",
+      "stat_template": "+(#—#)% to Critical Hit Chance",
+      "min_tier": 1,
+      "tags": [
+        "attack",
+        "critical"
+      ]
+    }
+  ],
+  "fifty_fifty": [
+    {
+      "type": "Prefix",
+      "family": "Adds # to # Physical Damage",
+      "stat_template": "Adds # to # Physical Damage",
+      "min_tier": 1,
+      "tags": [
+        "physical_damage",
+        "damage",
+        "physical",
+        "attack"
+      ]
+    },
+    {
+      "type": "Prefix",
+      "family": "Adds # to # Lightning Damage",
+      "stat_template": "Adds # to # Lightning Damage",
+      "min_tier": 1,
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "lightning",
+        "attack"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Projectile Skills",
+      "stat_template": "# to Level of all Projectile Skills",
+      "min_tier": 1,
+      "tags": []
+    },
+    {
+      "type": "Suffix",
+      "family": "#% Surpassing chance to fire an additional Arrow",
+      "stat_template": "#% Surpassing chance to fire an additional Arrow",
+      "min_tier": 1,
+      "tags": [
+        "attack"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "#% to Critical Damage Bonus",
+      "stat_template": "#% to Critical Damage Bonus",
+      "min_tier": 1,
+      "tags": [
+        "damage",
+        "attack",
+        "critical"
+      ]
+    }
+  ]
+}

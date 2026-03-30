@@ -1,0 +1,755 @@
+{
+  "source_url": "https://poe2db.tw/us/Charms",
+  "item_slug": "Charms",
+  "total_groups": 9,
+  "total_mods": 51,
+  "modifiers": [
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Duration",
+      "tags": [],
+      "spawn_tags": [
+        "utility_flask",
+        "default"
+      ],
+      "stat_template": "#% increased Duration",
+      "num_tiers": 5,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Experimenter's",
+          "min_ilvl": 78,
+          "weight": 0,
+          "values": [
+            [
+              36,
+              40
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Clinician's",
+          "min_ilvl": 61,
+          "weight": 0,
+          "values": [
+            [
+              31,
+              35
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Examiner's",
+          "min_ilvl": 42,
+          "weight": 0,
+          "values": [
+            [
+              26,
+              30
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Analyst's",
+          "min_ilvl": 20,
+          "weight": 0,
+          "values": [
+            [
+              21,
+              25
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Investigator's",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              16,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Also grants # Guard",
+      "tags": [],
+      "spawn_tags": [
+        "utility_flask",
+        "default"
+      ],
+      "stat_template": "Also grants # Guard",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Sunburst",
+          "min_ilvl": 75,
+          "weight": 0,
+          "values": [
+            [
+              355,
+              500
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Lustrous",
+          "min_ilvl": 60,
+          "weight": 0,
+          "values": [
+            [
+              265,
+              350
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Vibrant",
+          "min_ilvl": 48,
+          "weight": 0,
+          "values": [
+            [
+              205,
+              260
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Bright",
+          "min_ilvl": 36,
+          "weight": 0,
+          "values": [
+            [
+              148,
+              200
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Dawnlit",
+          "min_ilvl": 21,
+          "weight": 0,
+          "values": [
+            [
+              85,
+              128
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "Sunny",
+          "min_ilvl": 10,
+          "weight": 0,
+          "values": [
+            [
+              44,
+              66
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Recover # Life when Used",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "utility_flask",
+        "default"
+      ],
+      "stat_template": "Recover # Life when Used",
+      "num_tiers": 8,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Evergreen",
+          "min_ilvl": 76,
+          "weight": 0,
+          "values": [
+            [
+              285,
+              350
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Natural",
+          "min_ilvl": 67,
+          "weight": 0,
+          "values": [
+            [
+              235,
+              280
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Botanic",
+          "min_ilvl": 58,
+          "weight": 0,
+          "values": [
+            [
+              185,
+              230
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Petaled",
+          "min_ilvl": 47,
+          "weight": 0,
+          "values": [
+            [
+              134,
+              180
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Sprouting",
+          "min_ilvl": 36,
+          "weight": 0,
+          "values": [
+            [
+              96,
+              130
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "Blooming",
+          "min_ilvl": 26,
+          "weight": 0,
+          "values": [
+            [
+              63,
+              92
+            ]
+          ]
+        },
+        {
+          "tier": 7,
+          "name": "Floral",
+          "min_ilvl": 14,
+          "weight": 0,
+          "values": [
+            [
+              35,
+              52
+            ]
+          ]
+        },
+        {
+          "tier": 8,
+          "name": "Herbal",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              8,
+              12
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Recover # Mana when Used",
+      "tags": [
+        "resource",
+        "mana"
+      ],
+      "spawn_tags": [
+        "utility_flask",
+        "default"
+      ],
+      "stat_template": "Recover # Mana when Used",
+      "num_tiers": 8,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Raindancer's",
+          "min_ilvl": 76,
+          "weight": 0,
+          "values": [
+            [
+              230,
+              300
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Oceanic",
+          "min_ilvl": 67,
+          "weight": 0,
+          "values": [
+            [
+              185,
+              225
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Flooded",
+          "min_ilvl": 58,
+          "weight": 0,
+          "values": [
+            [
+              150,
+              180
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Aqueous",
+          "min_ilvl": 47,
+          "weight": 0,
+          "values": [
+            [
+              115,
+              145
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Tidebound",
+          "min_ilvl": 36,
+          "weight": 0,
+          "values": [
+            [
+              80,
+              110
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "Mistbound",
+          "min_ilvl": 26,
+          "weight": 0,
+          "values": [
+            [
+              55,
+              75
+            ]
+          ]
+        },
+        {
+          "tier": 7,
+          "name": "Soaked",
+          "min_ilvl": 14,
+          "weight": 0,
+          "values": [
+            [
+              33,
+              50
+            ]
+          ]
+        },
+        {
+          "tier": 8,
+          "name": "Drizzling",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              16,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% Chance to gain a Charge when you kill an enemy",
+      "tags": [
+        "flask"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% Chance to gain a Charge when you kill an enemy",
+      "num_tiers": 3,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Surgeon",
+          "min_ilvl": 45,
+          "weight": 0,
+          "values": [
+            [
+              31,
+              35
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of the Doctor",
+          "min_ilvl": 26,
+          "weight": 0,
+          "values": [
+            [
+              26,
+              30
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of the Medic",
+          "min_ilvl": 8,
+          "weight": 0,
+          "values": [
+            [
+              21,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Charges",
+      "tags": [
+        "flask"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Charges",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Ample",
+          "min_ilvl": 81,
+          "weight": 0,
+          "values": [
+            [
+              63,
+              70
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of the Abundant",
+          "min_ilvl": 62,
+          "weight": 0,
+          "values": [
+            [
+              55,
+              62
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of the Bountiful",
+          "min_ilvl": 47,
+          "weight": 0,
+          "values": [
+            [
+              47,
+              54
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of the Plentiful",
+          "min_ilvl": 32,
+          "weight": 0,
+          "values": [
+            [
+              39,
+              46
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of the Copious",
+          "min_ilvl": 12,
+          "weight": 0,
+          "values": [
+            [
+              31,
+              38
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "of the Wide",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              23,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Charges gained",
+      "tags": [
+        "flask"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Charges gained",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Eternal",
+          "min_ilvl": 82,
+          "weight": 0,
+          "values": [
+            [
+              63,
+              70
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of the Perpetual",
+          "min_ilvl": 63,
+          "weight": 0,
+          "values": [
+            [
+              55,
+              62
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of the Bottomless",
+          "min_ilvl": 48,
+          "weight": 0,
+          "values": [
+            [
+              47,
+              54
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of the Endless",
+          "min_ilvl": 33,
+          "weight": 0,
+          "values": [
+            [
+              39,
+              46
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of the Continuous",
+          "min_ilvl": 13,
+          "weight": 0,
+          "values": [
+            [
+              31,
+              38
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "of the Constant",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              23,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% reduced Charges per use",
+      "tags": [
+        "flask"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% reduced Charges per use",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Chemist",
+          "min_ilvl": 83,
+          "weight": 0,
+          "values": [
+            [
+              30,
+              32
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of the Brewer",
+          "min_ilvl": 64,
+          "weight": 0,
+          "values": [
+            [
+              27,
+              29
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of the Distiller",
+          "min_ilvl": 49,
+          "weight": 0,
+          "values": [
+            [
+              24,
+              26
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of the Mixologist",
+          "min_ilvl": 34,
+          "weight": 0,
+          "values": [
+            [
+              21,
+              23
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of the Practitioner",
+          "min_ilvl": 14,
+          "weight": 0,
+          "values": [
+            [
+              18,
+              20
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "of the Apprentice",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            [
+              15,
+              17
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Gains # Charges per Second",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Gains # Charges per Second",
+      "num_tiers": 3,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Sylvan",
+          "min_ilvl": 45,
+          "weight": 0,
+          "values": [
+            0.25
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of the Verdant",
+          "min_ilvl": 26,
+          "weight": 0,
+          "values": [
+            0.2
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of the Foliage",
+          "min_ilvl": 8,
+          "weight": 0,
+          "values": [
+            0.15
+          ]
+        }
+      ]
+    }
+  ]
+}

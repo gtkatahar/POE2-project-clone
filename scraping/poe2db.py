@@ -254,10 +254,10 @@ def fetch_modifiers(item_slug: str) -> dict:
     Returns
     -------
     dict with keys:
-        source_url  – the page URL
-        item_slug   – the slug used
-        total       – total number of modifiers
-        modifiers   – list of flat modifier dicts
+        source_url   the page URL
+        item_slug    the slug used
+        total        total number of modifiers
+        modifiers    list of flat modifier dicts
     """
     print(f"Fetching modifiers for '{item_slug}' …")
     url, html = _fetch_html(item_slug)
@@ -284,11 +284,11 @@ def fetch_tiered_modifiers(item_slug: str) -> dict:
     Returns
     -------
     dict with keys:
-        source_url    – the page URL
-        item_slug     – the slug used
-        total_groups  – number of distinct modifier families
-        total_mods    – total number of modifier tiers
-        modifiers     – list of tiered group dicts
+        source_url     the page URL
+        item_slug      the slug used
+        total_groups   number of distinct modifier families
+        total_mods     total number of modifier tiers
+        modifiers      list of tiered group dicts
     """
     print(f"Fetching tiered modifiers for '{item_slug}' …")
     url, html = _fetch_html(item_slug)

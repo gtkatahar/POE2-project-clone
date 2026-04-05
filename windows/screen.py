@@ -34,6 +34,6 @@ def screenshot(region: tuple[int, int, int, int] | None = None):
     """
     Take a screenshot and return a PIL Image.
 
-    region – (left, top, width, height) in pixels; None = full screen.
+    region  (left, top, width, height) in pixels; None = full screen.
     """
     return pyautogui.screenshot(region=region)

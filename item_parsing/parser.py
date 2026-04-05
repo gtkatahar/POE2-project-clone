@@ -28,12 +28,12 @@ def parse_item_text(text: str) -> dict:
     Parse a raw POE2 clipboard item block.
 
     Returns a dict with:
-        item_class  – e.g. "Talismans"
-        rarity      – e.g. "Rare"
-        name        – item name line
-        base        – base type line
-        item_level  – int or None
-        stat_lines  – list of modifier/stat lines
+        item_class   e.g. "Talismans"
+        rarity       e.g. "Rare"
+        name         item name line
+        base         base type line
+        item_level   int or None
+        stat_lines   list of modifier/stat lines
     """
     sections = [s.strip() for s in text.strip().split("--------")]
     item: dict = {

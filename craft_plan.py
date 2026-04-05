@@ -64,7 +64,6 @@ class OrbDispenser:
 
     def __init__(self, stacks: list[dict], target_x: int, target_y: int) -> None:
         self._stacks = stacks
-        self._rem    = [s["count"] for s in stacks]
         self._tx     = target_x
         self._ty     = target_y
         self.used    = 0
@@ -75,11 +74,11 @@ class OrbDispenser:
 
     def apply(self) -> bool:
         """Apply one orb to the target cell. Returns False when out of stock."""
-        for i, s in enumerate(self._stacks):
-            if self._rem[i] > 0:
+        for s in self._stacks:
+            if s["count"] > 0:
                 cx, cy = cell_center(s["col"], s["row"])
                 _apply_orb(cx, cy, self._tx, self._ty)
-                self._rem[i] -= 1
+                s["count"] -= 1
                 self.used += 1
                 return True
         return False
@@ -186,7 +185,7 @@ def _run_fishing(
     read_item:     "Callable[[], dict]",
     is_acceptable: "Callable[[dict], bool]",
     check_win:     "Callable[[dict], tuple]",
-) -> None:
+) -> bool:
     """
     Phase 1 — find a first acceptable mod:
         aug → acceptable? → phase 2
@@ -210,7 +209,7 @@ def _run_fishing(
         # Phase 1 ─────────────────────────────────────────────────────────────
         if not apply_aug():
             click.echo("\nOut of Augmentation Orbs.")
-            break
+            return False
         augs_used += 1
 
         item = read_item()
@@ -220,7 +219,7 @@ def _run_fishing(
             click.echo("  ✗ Bad mod — annulling and restarting\n")
             if not apply_annul():
                 click.echo("\nOut of Annulment Orbs.")
-                break
+                return False
             annuls_used  += 1
             lucky_streak  = 0
             continue
@@ -231,7 +230,7 @@ def _run_fishing(
         while True:
             if not apply_aug():
                 click.echo("\nOut of Augmentation Orbs.")
-                return
+                return False
             augs_used += 1
 
             item = read_item()
@@ -247,12 +246,12 @@ def _run_fishing(
                     f"── {augs_used} augs · {annuls_used} annuls"
                     f" · best streak: {best_streak} ──"
                 )
-                return
+                return True
 
             click.echo("  ✗ Bad 2nd mod — annulling 1...\n")
             if not apply_annul():
                 click.echo("\nOut of Annulment Orbs.")
-                return
+                return False
             annuls_used += 1
 
             item = read_item()
@@ -271,7 +270,7 @@ def _run_fishing(
                 click.echo("  ✗ Good mod annulled — clearing and restarting...\n")
                 if not apply_annul():
                     click.echo("\nOut of Annulment Orbs during cleanup.")
-                    return
+                    return False
                 annuls_used += 1
                 break  # back to phase 1
 
@@ -279,6 +278,7 @@ def _run_fishing(
         f"── Done — {augs_used} augs · {annuls_used} annuls"
         f" · best streak: {best_streak} ──"
     )
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -291,11 +291,11 @@ def _strategy_chaos(
     copy_delay:     float,
     target_entries: list[dict],
     mod_lookup:     dict,
-) -> None:
-    stacks = [m for m in found_mats if m["name"] in CHAOS_NAMES]
+) -> bool:
+    stacks = [m for m in found_mats if m["name"] in CHAOS_NAMES and m["count"] > 0]
     if not stacks:
         click.echo("\nNo Chaos Orbs found in inventory.")
-        return
+        return False
 
     total  = sum(m["count"] for m in stacks)
     tx, ty = cell_center(0, 0)
@@ -314,8 +314,10 @@ def _strategy_chaos(
         _pag.keyDown("shift")
         time.sleep(0.05)
         try:
-            for _ in range(stack["count"]):
+            original_count = stack["count"]
+            for _ in range(original_count):
                 roll += 1
+                stack["count"] -= 1
                 _pag.click(button="left")
                 time.sleep(0.05)
                 item        = _read_target(hover_delay, copy_delay)
@@ -327,12 +329,13 @@ def _strategy_chaos(
                         f" {entry['stat_template']}"
                     )
                     click.echo(f"── Stopped after {roll} rolls ──")
-                    return
+                    return True
                 click.echo()
         finally:
             _pag.keyUp("shift")
 
     click.echo(f"── Done — {roll} rolls, target NOT found ──")
+    return False
 
 
 def _strategy_aug_annul(
@@ -341,17 +344,17 @@ def _strategy_aug_annul(
     copy_delay:     float,
     target_entries: list[dict],
     mod_lookup:     dict,
-) -> None:
+) -> bool:
     tx, ty = cell_center(0, 0)
     augs   = OrbDispenser([m for m in found_mats if m["name"] in AUG_NAMES],   tx, ty)
     annuls = OrbDispenser([m for m in found_mats if m["name"] in ANNUL_NAMES], tx, ty)
 
     if not augs.total:
         click.echo("\nNo Augmentation Orbs found.")
-        return
+        return False
     if not annuls.total:
         click.echo("\nNo Annulment Orbs found.")
-        return
+        return False
 
     click.echo(f"\n── Augment + Annul  {augs.total} augs · {annuls.total} annuls ──────────────")
     cycle = 0
@@ -360,7 +363,7 @@ def _strategy_aug_annul(
         cycle += 1
         if not augs.apply():
             click.echo("\nOut of Augmentation Orbs.")
-            break
+            return False
 
         item        = _read_target(hover_delay, copy_delay)
         _log_item(f"Cycle #{cycle:>3}  AUG", item)
@@ -372,15 +375,16 @@ def _strategy_aug_annul(
                 f" {entry['stat_template']}"
             )
             click.echo(f"── Stopped after {cycle} cycles ──")
-            return
+            return True
 
         click.echo()
         if not annuls.apply():
             click.echo("\nOut of Annulment Orbs.")
-            break
+            return False
         click.echo(f"  Cycle #{cycle:>3}  ANNUL — restarting...\n")
 
     click.echo(f"── Done — {cycle} cycles, target NOT found ──")
+    return False
 
 
 def _strategy_aug_annul_5050(
@@ -390,7 +394,7 @@ def _strategy_aug_annul_5050(
     target_entries:      list[dict],
     mod_lookup:          dict,
     fifty_fifty_entries: list[dict],
-) -> None:
+) -> bool:
     tx, ty     = cell_center(0, 0)
     augs       = OrbDispenser([m for m in found_mats if m["name"] in AUG_NAMES],   tx, ty)
     annuls     = OrbDispenser([m for m in found_mats if m["name"] in ANNUL_NAMES], tx, ty)
@@ -398,16 +402,16 @@ def _strategy_aug_annul_5050(
 
     if not augs.total:
         click.echo("\nNo Augmentation Orbs found.")
-        return
+        return False
     if not annuls.total:
         click.echo("\nNo Annulment Orbs found.")
-        return
+        return False
     
     if len(acceptable) < 2:
         click.echo("\nERROR: The 50-50 strategy requires at least 2 mods to 'fish' for.")
         click.echo("  (Either 2+ target mods, or 1 target mod + 50-50 mods).")
         click.echo("  If you only want ONE mod, use the 'Augment + Annul' strategy instead.")
-        return
+        return False
 
     click.echo(
         f"\n── Aug + Annul 50-50  {augs.total} augs · {annuls.total} annuls ──────────────"
@@ -416,7 +420,7 @@ def _strategy_aug_annul_5050(
         f"  Acceptable: {len(target_entries)} target + {len(fifty_fifty_entries)} 50-50 mod(s)\n"
     )
 
-    _run_fishing(
+    return _run_fishing(
         apply_aug     = augs.apply,
         apply_annul   = annuls.apply,
         read_item     = lambda: _read_target(hover_delay, copy_delay),
@@ -436,8 +440,8 @@ def _scan_for_mats(
     copy_delay:  float,
     verbose:     bool,
     target_name: str,
-) -> tuple[list[dict], list[dict]]:
-    """Scan all inventory cells (skipping [0,0]) and return recognised crafting mat entries AND matching bases."""
+) -> tuple[list[dict], list[dict], list[tuple[int, int]]]:
+    """Scan all inventory cells (skipping [0,0]) and return recognised crafting mat entries AND matching bases AND empty slots."""
     found_mats:  list[dict] = []
     found_bases: list[dict] = []
 
@@ -481,8 +485,19 @@ def _scan_for_mats(
         if verbose:
             click.echo(f"  [{col:02d},{row:02d}] {name}  x{stack}")
 
-    scan_inventory(on_item=on_item, hover_delay=hover_delay, copy_delay=copy_delay, verbose=False)
-    return found_mats, found_bases
+    res = scan_inventory(on_item=on_item, hover_delay=hover_delay, copy_delay=copy_delay, verbose=False)
+
+    empty_slots: list[tuple[int, int]] = []
+    if isinstance(res, dict) and "grid" in res:
+        grid = res["grid"]
+        for row in range(len(grid)):
+            for col in range(len(grid[row])):
+                if col == 0 and row == 0:
+                    continue
+                if grid[row][col] is None:
+                    empty_slots.append((col, row))
+
+    return found_mats, found_bases, empty_slots
 
 
 # ---------------------------------------------------------------------------
@@ -631,8 +646,8 @@ def main(countdown: int, verbose: bool) -> None:
         f"  ({target_item['item_class']}, {target_item['rarity']})\n"
     )
 
-    # Step 2 — scan inventory for crafting mats and matching bases
-    found_mats, found_bases = _scan_for_mats(hover_delay, copy_delay, verbose, target_name)
+    # Step 2 — scan inventory for crafting mats, matching bases, and empty slots
+    found_mats, found_bases, empty_slots = _scan_for_mats(hover_delay, copy_delay, verbose, target_name)
 
     if found_bases:
         click.echo(f"\nFound {len(found_bases)} matching base(s) in inventory:")
@@ -655,19 +670,58 @@ def main(countdown: int, verbose: bool) -> None:
         },
         "mats": found_mats,
     }
-    out = Path("craft_plan.json")
+    out = Path("_craft_plan.json")
     out.write_text(json.dumps(plan, indent=2, ensure_ascii=False), encoding="utf-8")
     click.echo(f"\nSaved → {out}")
 
-    # Step 4 — execute strategy
-    if strategy == "chaos":
-        _strategy_chaos(found_mats, hover_delay, copy_delay, target_entries, mod_lookup)
-    elif strategy == "augment_annul":
-        _strategy_aug_annul(found_mats, hover_delay, copy_delay, target_entries, mod_lookup)
-    elif strategy == "aug_annul_5050":
-        _strategy_aug_annul_5050(
-            found_mats, hover_delay, copy_delay, target_entries, mod_lookup, fifty_fifty_entries
-        )
+    # Step 4 — execute strategy loop
+    bases_to_craft = [{"col": 0, "row": 0}] + found_bases
+
+    for i, base in enumerate(bases_to_craft):
+        if i > 0:
+            click.echo(f"\n── Swapping to next base at [{base['col']:02d},{base['row']:02d}] ──")
+            if not empty_slots:
+                click.echo("ERROR: No empty slots in inventory to park the finished item!")
+                break
+            ec, er = empty_slots.pop(0)
+
+            tx, ty = cell_center(0, 0)
+            ex, ey = cell_center(ec, er)
+            nx, ny = cell_center(base["col"], base["row"])
+            
+            def safe_click(x, y):
+                move_to(x, y, duration=0.2)
+                time.sleep(0.15)
+                _pag.mouseDown(button="left")
+                time.sleep(0.05)
+                _pag.mouseUp(button="left")
+                time.sleep(0.2)
+
+            # Move finished item [0,0] -> empty slot
+            safe_click(tx, ty)  # Pick up finished item
+            safe_click(ex, ey)  # Place into empty slot
+            
+            # Move next base -> [0,0]
+            safe_click(nx, ny)  # Pick up next base
+            safe_click(tx, ty)  # Place into [0,0]
+            
+            # Wait for UI to settle before next craft
+            time.sleep(0.5) 
+
+        success = False
+        if strategy == "chaos":
+            success = _strategy_chaos(found_mats, hover_delay, copy_delay, target_entries, mod_lookup)
+        elif strategy == "augment_annul":
+            success = _strategy_aug_annul(found_mats, hover_delay, copy_delay, target_entries, mod_lookup)
+        elif strategy == "aug_annul_5050":
+            success = _strategy_aug_annul_5050(
+                found_mats, hover_delay, copy_delay, target_entries, mod_lookup, fifty_fifty_entries
+            )
+        elif strategy is None:
+            break
+
+        if not success:
+            break
 
 
 if __name__ == "__main__":

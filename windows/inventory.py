@@ -129,11 +129,11 @@ def scan_inventory(
     Returns
     -------
     dict with keys:
-        items   – list of unique raw clipboard strings
-        empty   – number of empty cells
-        dupes   – number of duplicate cells (multi-cell items)
-        found   – number of unique items
-        total   – total cells scanned
+        items    list of unique raw clipboard strings
+        empty    number of empty cells
+        dupes    number of duplicate cells (multi-cell items)
+        found    number of unique items
+        total    total cells scanned
     """
     items: list[dict] = []
     empty = 0

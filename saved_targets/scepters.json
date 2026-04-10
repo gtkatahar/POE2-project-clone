@@ -1,0 +1,73 @@
+{
+  "save_name": "scepters",
+  "created_at": "2026-04-04 23:39",
+  "slug": "sceptres",
+  "mode": "search",
+  "mods": [
+    {
+      "type": "Prefix",
+      "family": "#% increased Spirit",
+      "stat_template": "#% increased Spirit",
+      "min_tier": 1,
+      "tags": []
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Minion Skills",
+      "stat_template": "# to Level of all Minion Skills",
+      "min_tier": 1,
+      "tags": [
+        "minion",
+        "gem"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "#% increased Presence Area of Effect",
+      "stat_template": "#% increased Presence Area of Effect",
+      "min_tier": 1,
+      "tags": []
+    }
+  ],
+  "fifty_fifty": [
+    {
+      "type": "Suffix",
+      "family": "Allies in your Presence have #% increased Critical Damage Bonus",
+      "stat_template": "Allies in your Presence have #% increased Critical Damage Bonus",
+      "min_tier": 1,
+      "tags": [
+        "damage",
+        "critical"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "Allies in your Presence have #% increased Critical Hit Chance",
+      "stat_template": "Allies in your Presence have #% increased Critical Hit Chance",
+      "min_tier": 1,
+      "tags": [
+        "critical"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "Allies in your Presence have #% to all Elemental Resistances",
+      "stat_template": "Allies in your Presence have #% to all Elemental Resistances",
+      "min_tier": 1,
+      "tags": [
+        "elemental",
+        "resistance"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "Allies in your Presence have #% increased Cast Speed",
+      "stat_template": "Allies in your Presence have #% increased Cast Speed",
+      "min_tier": 1,
+      "tags": [
+        "caster",
+        "speed"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "save_name": "ami_wide",
+  "created_at": "2026-03-30 22:50",
+  "slug": "amulets",
+  "mode": "search",
+  "mods": [
+    {
+      "type": "Prefix",
+      "family": "# to Spirit",
+      "stat_template": "# to Spirit",
+      "min_tier": 1,
+      "tags": []
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Melee Skills",
+      "stat_template": "# to Level of all Melee Skills",
+      "min_tier": 1,
+      "tags": [
+        "attack"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Spell Skills",
+      "stat_template": "# to Level of all Spell Skills",
+      "min_tier": 1,
+      "tags": [
+        "caster",
+        "gem"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Minion Skills",
+      "stat_template": "# to Level of all Minion Skills",
+      "min_tier": 1,
+      "tags": [
+        "minion",
+        "gem"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Projectile Skills",
+      "stat_template": "# to Level of all Projectile Skills",
+      "min_tier": 1,
+      "tags": []
+    }
+  ],
+  "fifty_fifty": [
+    {
+      "type": "Suffix",
+      "family": "#% increased Critical Hit Chance",
+      "stat_template": "#% increased Critical Hit Chance",
+      "min_tier": 1,
+      "tags": [
+        "critical"
+      ]
+    },
+    {
+      "type": "Suffix",
+      "family": "#% increased Critical Damage Bonus",
+      "stat_template": "#% increased Critical Damage Bonus",
+      "min_tier": 1,
+      "tags": [
+        "damage",
+        "critical"
+      ]
+    },
+    {
+      "type": "Prefix",
+      "family": "#% increased maximum Energy Shield",
+      "stat_template": "#% increased maximum Energy Shield",
+      "min_tier": 1,
+      "tags": [
+        "energy_shield",
+        "defences"
+      ]
+    }
+  ]
+}

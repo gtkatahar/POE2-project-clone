@@ -81,29 +81,16 @@ def cell_center(col: int, row: int) -> tuple[int, int]:
 # Main scanner
 # ---------------------------------------------------------------------------
 
-def scan_inventory(
-    on_item=None,
-    hover_delay: float = HOVER_DELAY,
-    copy_delay: float   = COPY_DELAY,
-) -> list[dict]:
-    """
-    Hover over every inventory cell, copy item text with Ctrl+C, and return
-    a list of raw clipboard strings (one per unique item found).
+def _is_duplicate_cell(grid: list[list[str | None]], row: int, col: int, text: str) -> bool:
+    """Treat adjacent identical non-stackable text as the same multi-cell item."""
+    if "stack size:" in text.lower():
+        return False
+    return (
+        (col > 0 and grid[row][col - 1] == text)
+        or (row > 0 and grid[row - 1][col] == text)
+    )
 
-    Parameters
-    ----------
-    on_item : callable(col, row, text) | None
-        Optional callback invoked for each unique item text found.
-    hover_delay : float
-        Seconds to wait after moving the mouse before pressing Ctrl+C.
-    copy_delay : float
-        Seconds to wait after Ctrl+C before reading the clipboard.
 
-    Returns
-    -------
-    list[str]
-        Unique raw item clipboard strings that were found in the inventory.
-    """
 def scan_inventory(
     on_item=None,
     hover_delay: float = HOVER_DELAY,
@@ -137,6 +124,7 @@ def scan_inventory(
     """
     items: list[dict] = []
     empty = 0
+    dupes = 0
     cfg = _load_config()
     rows, cols = cfg["grid_rows"], cfg["grid_cols"]
     grid: list[list[str | None]] = [[None] * cols for _ in range(rows)]
@@ -164,6 +152,12 @@ def scan_inventory(
                 continue
 
             grid[row][col] = text
+            if _is_duplicate_cell(grid, row, col, text):
+                dupes += 1
+                if verbose:
+                    print(f"  [{col:02d},{row:02d}] px=({x},{y}) duplicate")
+                continue
+
             items.append({"col": col, "row": row, "text": text})
 
             if verbose:
@@ -179,7 +173,7 @@ def scan_inventory(
                 on_item(col, row, text)
 
     total = cols * rows
-    return {"items": items, "empty": empty, "found": len(items), "total": total, "grid": grid}
+    return {"items": items, "empty": empty, "dupes": dupes, "found": len(items), "total": total, "grid": grid}
 
 
 

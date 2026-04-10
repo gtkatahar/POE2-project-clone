@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+.pytest_cache/
+
+*.py[cod]
+*.pyd
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / OS files
+.DS_Store
+Thumbs.db
+
+# Local generated outputs
+crafting_mats.json
+inventory_scan.json
+item_mod_result.json
+_craft_plan.json
+
+# Local screenshots / scratch files
+*.log

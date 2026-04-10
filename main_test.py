@@ -16,6 +16,7 @@ from pathlib import Path
 
 import click
 
+from crafting.materials import extract_description, extract_stack_size
 from item_parsing.parser import parse_item_text
 from item_parsing.identifier import build_lookup, identify
 from item_parsing.display import print_results, print_simple, build_simple_result
@@ -69,43 +70,6 @@ def _print_grid(grid: list[list[str | None]]) -> None:
                f"{_DIM}.{_RESET} = Empty   "
                f"{_WHITE}?{_RESET} = Other")
 
-
-import re
-
-
-def _extract_stack_size(stat_lines: list[str]) -> tuple[int, int]:
-    """Return (current, max) stack size from 'Stack Size: X/Y', or (1, 1)."""
-    for line in stat_lines:
-        m = re.match(r"Stack Size:\s*(\d+)/(\d+)", line, re.IGNORECASE)
-        if m:
-            return int(m.group(1)), int(m.group(2))
-    return 1, 1
-
-
-def _extract_description(raw_text: str) -> str:
-    """Extract the flavour/description line from raw clipboard text.
-    In POE2 currency, it's the section after Stack Size and before
-    the 'Right click' usage instruction.
-    """
-    sections = [s.strip() for s in raw_text.strip().split("--------")]
-    desc_lines = []
-    for section in sections:
-        lines = [l.strip() for l in section.splitlines() if l.strip()]
-        for line in lines:
-            low = line.lower()
-            if low.startswith("right click") or low.startswith("left click"):
-                continue
-            if re.match(r"stack size:", low):
-                continue
-            if any(low.startswith(p) for p in ("item class:", "rarity:")):
-                continue
-            # Skip the item name (first non-meta line)
-            if not desc_lines and not re.search(r"[.!]", line):
-                continue
-            if re.search(r"[a-z]", low):
-                desc_lines.append(line)
-    return " ".join(desc_lines).strip()
-
 @click.command()
 @click.option("--simple",    is_flag=True, help="Compact one-line-per-mod output.")
 @click.option("--slug",      default="Talismans", show_default=True,
@@ -125,8 +89,8 @@ def main(simple: bool, slug: str, countdown: int, verbose: bool, debug: bool, ma
         def on_mat(col: int, row: int, text: str):
             item  = parse_item_text(text)
             name  = item.get("name") or item.get("base") or "Unknown"
-            count, max_stack = _extract_stack_size(item["stat_lines"])
-            desc  = _extract_description(text)
+            count, max_stack = extract_stack_size(item["stat_lines"])
+            desc  = extract_description(text)
             if name in mat_counts:
                 mat_counts[name]["count"] += count
             else:
@@ -144,7 +108,7 @@ def main(simple: bool, slug: str, countdown: int, verbose: bool, debug: bool, ma
             time.sleep(1)
         click.echo("Scanning…\n")
 
-        stats = scan_inventory(on_item=on_mat, verbose=False, debug=debug)
+        stats = scan_inventory(on_item=on_mat, verbose=verbose, debug=debug)
         _print_grid(stats["grid"])
 
         # Sort by count descending

@@ -68,6 +68,9 @@ def parse_item_text(text: str) -> dict:
                 except ValueError:
                     pass
                 continue
+            if low.startswith("stack size:"):
+                item["stat_lines"].append(line)
+                continue
             if _STAT_HINT.search(line):
                 item["stat_lines"].append(line)
 

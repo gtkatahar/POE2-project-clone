@@ -13,7 +13,7 @@ Run:
 from collections import deque
 import pytest
 
-from craft_plan import _run_fishing
+from crafting.strategies import _run_fishing
 
 
 # ---------------------------------------------------------------------------
@@ -274,6 +274,70 @@ class TestFishingEngine:
         assert "best: 3" in out
         assert apply_aug.calls   == 5   # AUG1 + 4×AUG2
         assert apply_annul.calls == 3
+
+
+    def test_transmute_seed_then_augment_win(self, capsys):
+        """
+        TRANS -> acceptable
+        AUG   -> win
+        Expected: 1 transmute, 1 aug, 0 annuls
+        """
+        apply_trans = Counter(bool_queue(True))
+        apply_aug = Counter(bool_queue(True))
+        apply_annul = Counter(bool_queue())
+        read_item = queue(_item("GOOD"), _item("WIN"))
+
+        _run_fishing(
+            apply_seed=apply_trans,
+            apply_aug=apply_aug,
+            apply_annul=apply_annul,
+            read_item=read_item,
+            is_acceptable=lambda item: item["name"] in ("GOOD", "WIN"),
+            check_win=lambda item: WIN if item["name"] == "WIN" else NO_WIN,
+            seed_label="TRANS",
+            seed_out_message="Out of Orbs of Transmutation.",
+            aug_label="AUG",
+            aug_out_message="Out of Augmentation Orbs.",
+        )
+
+        out = capsys.readouterr().out
+        assert apply_trans.calls == 1
+        assert apply_aug.calls == 1
+        assert apply_annul.calls == 0
+        assert "TRANS" in out
+
+    def test_restart_from_surviving_magic_item_without_cleanup(self, capsys):
+        """
+        SEED -> good
+        AUG  -> bad
+        POST -> bad survivor
+        restart directly from magic survivor, no cleanup annul
+        """
+        apply_aug = Counter(bool_queue(True))
+        apply_annul = Counter(bool_queue(True, False))
+        read_item = queue(
+            _item("GOOD"),
+            _item("BAD"),
+            _item("BAD_SURVIVOR"),
+            _item("BAD_SURVIVOR"),
+        )
+
+        _run_fishing(
+            apply_seed=lambda: None,
+            apply_aug=apply_aug,
+            apply_annul=apply_annul,
+            read_item=read_item,
+            is_acceptable=lambda item: item["name"] == "GOOD",
+            check_win=lambda item: NO_WIN,
+            seed_label="SEED",
+            aug_label="AUG",
+            cleanup_on_miss=False,
+        )
+
+        out = capsys.readouterr().out
+        assert apply_aug.calls == 1
+        assert apply_annul.calls == 2
+        assert "surviving magic item" in out
 
 
 if __name__ == "__main__":

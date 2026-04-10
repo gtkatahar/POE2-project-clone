@@ -48,7 +48,7 @@ def _load_or_fetch_db(slug: str) -> dict:
 def _fmt_values(values: list) -> str:
     parts = []
     for v in values:
-        parts.append(f"{v[0]}{v[1]}" if isinstance(v, list) else str(v))
+        parts.append(f"{v[0]}-{v[1]}" if isinstance(v, list) else str(v))
     return ", ".join(parts)
 
 

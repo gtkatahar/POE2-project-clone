@@ -144,7 +144,7 @@ def _run_fishing(
 
         item = read_item()
         _log_item(f"Cycle #{cycle:>3}  {seed_label}", item)
-
+        print(needs_seed_roll(item))
         if needs_seed_roll(item):
             click.echo("  ~ No seed mod present -> rolling first mod...\n")
             if not apply_aug():
@@ -382,13 +382,13 @@ def strategy_aug_annul(
             click.echo(f"-- Stopped after {cycle} cycles (target survived annul) --")
             return True
 
-        if (item.get("rarity") or "").lower() == "magic":
-            if not annuls.apply():
-                click.echo("\nOut of Annulment Orbs during cleanup.")
-                return False
-            click.echo(f"  Cycle #{cycle:>3}  ANNUL2                  -> cleanup to normal, restarting\n")
-        else:
-            click.echo(f"  Cycle #{cycle:>3}  CLEAN                   -> already normal, restarting\n")
+        # if (item.get("rarity") or "").lower() == "magic":
+        #     if not annuls.apply():
+        #         click.echo("\nOut of Annulment Orbs during cleanup.")
+        #         return False
+        #     click.echo(f"  Cycle #{cycle:>3}  ANNUL2                  -> cleanup to normal, restarting\n")
+        # else:
+        #     click.echo(f"  Cycle #{cycle:>3}  CLEAN                   -> already normal, restarting\n")
 
 
 def strategy_aug_annul_5050(

@@ -23,23 +23,34 @@ _STAT_HINT = re.compile(
     re.IGNORECASE,
 )
 
+# Matches the "Implicit Modifiers: N" / "Explicit Modifiers: N" header lines.
+_MOD_COUNT_RE = re.compile(r"^\s*(implicit|explicit)\s+modifiers:\s*(\d+)\s*$", re.IGNORECASE)
+
+# Matches the "(implicit)" suffix used in live game clipboard text.
+_IMPLICIT_SUFFIX_RE = re.compile(r"\s*\(implicit\)\s*$", re.IGNORECASE)
+
+# Line prefixes that are always base implicits, never craftable affixes.
+_IMPLICIT_PREFIXES = ("grants skill:",)
+
 
 def parse_item_text(text: str) -> dict:
     """
     Parse a raw POE2 clipboard item block.
 
     Returns a dict with:
-        item_class   e.g. "Talismans"
-        rarity       e.g. "Rare"
-        name         item name line
-        base         base type line
-        item_level   int or None
-        stat_lines   list of modifier/stat lines
+        item_class           e.g. "Talismans"
+        rarity               e.g. "Rare"
+        name                 item name line
+        base                 base type line
+        item_level           int or None
+        stat_lines           explicit modifier/stat lines
+        implicit_stat_lines  implicit-only modifier/stat lines
     """
     sections = [s.strip() for s in text.strip().split("--------")]
     item: dict = {
         "item_class": "", "rarity": "", "name": "",
-        "base": "", "item_level": None, "stat_lines": [],
+        "base": "", "item_level": None,
+        "stat_lines": [], "implicit_stat_lines": [],
     }
 
     if sections:
@@ -58,9 +69,25 @@ def parse_item_text(text: str) -> dict:
         if len(non_meta) > 1:
             item["base"] = non_meta[1]
 
+    implicit_remaining: int | None = None
+    explicit_remaining: int | None = None
+
     for section in sections[1:]:
         for line in (l.strip() for l in section.splitlines() if l.strip()):
             low = line.lower()
+
+            # Handle "Implicit Modifiers: N" / "Explicit Modifiers: N" headers.
+            mod_count_match = _MOD_COUNT_RE.match(line)
+            if mod_count_match:
+                kind, count = mod_count_match.group(1).lower(), int(mod_count_match.group(2))
+                if kind == "implicit":
+                    implicit_remaining = count
+                    explicit_remaining = None
+                else:
+                    explicit_remaining = count
+                    implicit_remaining = None
+                continue
+
             if any(low.startswith(p) for p in _SKIP_PREFIXES):
                 continue
             if low.startswith("item level:"):
@@ -72,7 +99,32 @@ def parse_item_text(text: str) -> dict:
             if low.startswith("stack size:"):
                 item["stat_lines"].append(line)
                 continue
-            if _STAT_HINT.search(line):
-                item["stat_lines"].append(line)
+
+            if not _STAT_HINT.search(line):
+                continue
+
+            # Lines that are always base implicits regardless of formatting.
+            if any(line.lower().startswith(p) for p in _IMPLICIT_PREFIXES):
+                item["implicit_stat_lines"].append(line)
+                continue
+
+            # Handle the live game "(implicit)" suffix notation.
+            if _IMPLICIT_SUFFIX_RE.search(line):
+                clean = _IMPLICIT_SUFFIX_RE.sub("", line).strip()
+                item["implicit_stat_lines"].append(clean)
+                continue
+
+            # Handle counted implicit/explicit blocks from header notation.
+            if implicit_remaining is not None and implicit_remaining > 0:
+                item["implicit_stat_lines"].append(line)
+                implicit_remaining -= 1
+                continue
+
+            if explicit_remaining is not None:
+                if explicit_remaining <= 0:
+                    continue
+                explicit_remaining -= 1
+
+            item["stat_lines"].append(line)
 
     return item

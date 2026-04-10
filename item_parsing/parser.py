@@ -13,6 +13,7 @@ _SKIP_PREFIXES = (
     "critical hit chance:", "attacks per second:", "requires:",
     "fractured item", "corrupted", "mirrored", "quality:", "sockets:",
     "note:", "unidentified",
+    "energy shield:", "armour:", "evasion:", "ward:",
 )
 
 _STAT_HINT = re.compile(

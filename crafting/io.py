@@ -28,6 +28,20 @@ def apply_orb_to_target(cx: int, cy: int, tx: int, ty: int) -> None:
     time.sleep(0.15)
 
 
+def pick_up_orb_stack(cx: int, cy: int, tx: int, ty: int) -> None:
+    """Right-click orb stack to load it on the cursor, then move to target.
+
+    Does NOT click the target — caller is responsible for clicking with Shift
+    held so the game keeps drawing from the cursor stack on every click.
+    """
+    move_to(cx, cy, duration=0.1)
+    time.sleep(0.05)
+    right_click()
+    time.sleep(0.05)
+    move_to(tx, ty, duration=0.1)
+    time.sleep(0.05)
+
+
 def read_cell(col: int, row: int, hover_delay: float, copy_delay: float) -> str:
     """Hover over a cell and return the raw Ctrl+C clipboard text."""
     x, y = cell_center(col, row)

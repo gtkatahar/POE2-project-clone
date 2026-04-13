@@ -57,10 +57,16 @@ def right_click(x: int = None, y: int = None) -> None:
 def shift_click(x: int = None, y: int = None) -> None:
     """Single Shift+left-click (press and release shift around one click)."""
     pyautogui.keyDown("shift")
-    time.sleep(0.05)
-    pyautogui.click(x=x, y=y, button="left")
-    time.sleep(0.05)
-    pyautogui.keyUp("shift")
+    try:
+        time.sleep(0.05)
+        pyautogui.click(x=x, y=y, button="left")
+        time.sleep(0.05)
+    finally:
+        for key in ("shift", "shiftleft", "shiftright"):
+            try:
+                pyautogui.keyUp(key)
+            except Exception:
+                pass
 
 
 def scroll(clicks: int, x: int = None, y: int = None) -> None:

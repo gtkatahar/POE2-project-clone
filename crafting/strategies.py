@@ -1,10 +1,11 @@
 """Crafting strategies and matching logic."""
 
 import time
+from typing import Callable
 
 import click
 
-from crafting.io import apply_orb_to_target, read_target
+from crafting.io import apply_orb_to_target, pick_up_orb_stack, read_target
 from windows.inventory import cell_center
 
 
@@ -16,6 +17,27 @@ TRANSMUTE_NAMES = {
 }
 AUG_NAMES = {"Orb of Augmentation", "Greater Orb of Augmentation", "Perfect Orb of Augmentation"}
 ANNUL_NAMES = {"Orb of Annulment"}
+
+
+def _release_modifiers() -> None:
+    """Best-effort release of common modifiers to avoid sticky keys."""
+    import pyautogui as _pag
+
+    for key in (
+        "shift",
+        "shiftleft",
+        "shiftright",
+        "ctrl",
+        "ctrlleft",
+        "ctrlright",
+        "alt",
+        "altleft",
+        "altright",
+    ):
+        try:
+            _pag.keyUp(key)
+        except Exception:
+            pass
 
 
 class OrbDispenser:
@@ -276,33 +298,40 @@ def strategy_chaos(
 
     click.echo(f"\n-- Chaos Spam  {total} orb(s) ----------------------------------")
 
-    for stack in stacks:
-        cx, cy = cell_center(stack["col"], stack["row"])
-        apply_orb_to_target(cx, cy, tx, ty)
+    import pyautogui as _pag
 
-        import pyautogui as _pag
-        _pag.keyDown("shift")
-        time.sleep(0.05)
-        try:
-            original_count = stack["count"]
-            for _ in range(original_count):
-                roll += 1
-                stack["count"] -= 1
-                _pag.click(button="left")
-                time.sleep(0.05)
-                item = read_target(hover_delay, copy_delay)
-                _log_item(f"Roll #{roll:>3}", item)
-                entry, tier = _first_match(item["stat_lines"], identify_matches, target_entries)
-                if entry:
-                    click.echo(
-                        f"\n  OK TARGET  [{entry['type'][:3].upper()} T{tier['tier']}]"
-                        f" {entry['stat_template']}"
-                    )
-                    click.echo(f"-- Stopped after {roll} rolls --")
-                    return True
-                click.echo()
-        finally:
-            _pag.keyUp("shift")
+    try:
+        for stack in stacks:
+            cx, cy = cell_center(stack["col"], stack["row"])
+            # Load the whole stack onto the cursor (right-click), then move
+            # mouse over the target.  Shift is held BEFORE the first click so
+            # every click draws one orb from the cursor stack.
+            pick_up_orb_stack(cx, cy, tx, ty)
+
+            _pag.keyDown("shift")
+            time.sleep(0.05)
+            try:
+                original_count = stack["count"]
+                stack["count"] = 0
+                for _ in range(original_count):
+                    roll += 1
+                    _pag.click(button="left")
+                    time.sleep(0.05)
+                    item = read_target(hover_delay, copy_delay)
+                    _log_item(f"Roll #{roll:>3}", item)
+                    entry, tier = _first_match(item["stat_lines"], identify_matches, target_entries)
+                    if entry:
+                        click.echo(
+                            f"\n  OK TARGET  [{entry['type'][:3].upper()} T{tier['tier']}]"
+                            f" {entry['stat_template']}"
+                        )
+                        click.echo(f"-- Stopped after {roll} rolls --")
+                        return True
+                    click.echo()
+            finally:
+                _release_modifiers()
+    finally:
+        _release_modifiers()
 
     click.echo(f"-- Done | {roll} rolls | target NOT found --")
     return False

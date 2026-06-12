@@ -69,6 +69,8 @@ def _log_item(label: str, item: dict) -> None:
     name = item.get("name") or item.get("base") or "Unknown"
     rarity = item.get("rarity") or "Unknown"
     click.echo(f"  {label:<22s}  ->  [{rarity}] {name}")
+    for line in item.get("implicit_stat_lines", []):
+        click.echo(f"                              (implicit) {line}")
     for line in item["stat_lines"]:
         click.echo(f"                              {line}")
 

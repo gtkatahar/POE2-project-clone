@@ -28,3 +28,7 @@ _craft_plan.json
 
 # Local screenshots / scratch files
 *.log
+
+# My targets 
+saved_targets
+crafting_mats.json

@@ -142,3 +142,78 @@ def scan_for_mats(
                 empty_slots.append((col, row))
 
     return found_mats, found_bases, empty_slots
+
+
+def combined_scan_for_mats(
+    target_base: str,
+    hover_delay: float,
+    copy_delay: float,
+    verbose: bool,
+) -> tuple[list[dict], list[dict], list[tuple[int, int]], dict]:
+    """Single-pass scan: builds the full material catalog AND finds positioned orbs.
+
+    Uses max_stack > 1 to identify stackable currencies vs equipment.
+    Returns (found_mats, found_bases, empty_slots, catalog_dict).
+    """
+    catalog: dict[str, dict] = {}
+    found_mats: list[dict] = []
+    found_bases: list[dict] = []
+
+    def on_item(col: int, row: int, text: str) -> None:
+        if col == 0 and row == 0:
+            return
+
+        item = parse_item_text(text)
+        name = item.get("name") or item.get("base") or "Unknown"
+        base = item.get("base") or name
+        count, max_stack = extract_stack_size(item["stat_lines"])
+        desc = extract_description(text)
+
+        if _looks_like_same_base(name, base, target_base):
+            found_bases.append({
+                "col": col,
+                "row": row,
+                "name": name,
+                "base": base,
+                "rarity": item["rarity"],
+                "item_level": item["item_level"],
+            })
+            if verbose:
+                click.echo(f"  [{col:02d},{row:02d}] {name}  ({base}, base)")
+            return
+
+        if max_stack <= 1:
+            return
+
+        if name in catalog:
+            catalog[name]["count"] += count
+        else:
+            catalog[name] = {"count": count, "max_stack": max_stack, "description": desc}
+
+        found_mats.append({
+            "name": name,
+            "col": col,
+            "row": row,
+            "count": count,
+            "max_stack": max_stack,
+            "description": desc,
+        })
+        if verbose:
+            click.echo(f"  [{col:02d},{row:02d}] {name}  x{count}")
+
+    result = scan_inventory(
+        on_item=on_item,
+        hover_delay=hover_delay,
+        copy_delay=copy_delay,
+        verbose=verbose,
+    )
+
+    empty_slots: list[tuple[int, int]] = []
+    for row_idx in range(len(result["grid"])):
+        for col_idx in range(len(result["grid"][row_idx])):
+            if col_idx == 0 and row_idx == 0:
+                continue
+            if result["grid"][row_idx][col_idx] is None:
+                empty_slots.append((col_idx, row_idx))
+
+    return found_mats, found_bases, empty_slots, catalog

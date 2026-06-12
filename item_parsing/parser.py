@@ -29,6 +29,9 @@ _MOD_COUNT_RE = re.compile(r"^\s*(implicit|explicit)\s+modifiers:\s*(\d+)\s*$", 
 # Matches the "(implicit)" suffix used in live game clipboard text.
 _IMPLICIT_SUFFIX_RE = re.compile(r"\s*\(implicit\)\s*$", re.IGNORECASE)
 
+# Matches inline modifier section headers: { Implicit Modifier — Life }, { Prefix Modifier "X" ... }, etc.
+_MOD_INLINE_HEADER_RE = re.compile(r"^\s*\{[^}]*\bmodifier\b[^}]*\}\s*$", re.IGNORECASE)
+
 # Line prefixes that are always base implicits, never craftable affixes.
 _IMPLICIT_PREFIXES = ("grants skill:",)
 
@@ -71,6 +74,7 @@ def parse_item_text(text: str) -> dict:
 
     implicit_remaining: int | None = None
     explicit_remaining: int | None = None
+    next_stat_is_implicit: bool | None = None
 
     for section in sections[1:]:
         for line in (l.strip() for l in section.splitlines() if l.strip()):
@@ -86,6 +90,10 @@ def parse_item_text(text: str) -> dict:
                 else:
                     explicit_remaining = count
                     implicit_remaining = None
+                continue
+
+            if _MOD_INLINE_HEADER_RE.match(line):
+                next_stat_is_implicit = "implicit" in low
                 continue
 
             if any(low.startswith(p) for p in _SKIP_PREFIXES):
@@ -112,6 +120,16 @@ def parse_item_text(text: str) -> dict:
             if _IMPLICIT_SUFFIX_RE.search(line):
                 clean = _IMPLICIT_SUFFIX_RE.sub("", line).strip()
                 item["implicit_stat_lines"].append(clean)
+                continue
+
+            # Route based on inline { ... Modifier ... } header flag.
+            if next_stat_is_implicit is True:
+                item["implicit_stat_lines"].append(line)
+                next_stat_is_implicit = None
+                continue
+            if next_stat_is_implicit is False:
+                item["stat_lines"].append(line)
+                next_stat_is_implicit = None
                 continue
 
             # Handle counted implicit/explicit blocks from header notation.

@@ -13,6 +13,13 @@ import re
 # Normalisation
 # ---------------------------------------------------------------------------
 
+# Matches em dash, en dash, or hyphen — used in numeric range patterns.
+_DASH = "[—–-]"
+
+# Matches POE2's "value(min-max)" display format, e.g. "23(21-24)" or "+0.7(0.5-0.7)".
+_VALUE_RANGE = r"[+-]?\d+\.?\d*\(\d+\.?\d*" + _DASH + r"\d+\.?\d*\)"
+
+
 def normalize(text: str) -> str:
     """
     Reduce a stat string to a template that matches stat_template in the DB.
@@ -22,11 +29,14 @@ def normalize(text: str) -> str:
         r"\s*\((fractured|implicit|crafted|corrupted|enchant|veiled)\)",
         "", text, flags=re.IGNORECASE,
     )
+    # Collapse POE2 "value(min-max)" display format to a single #
+    # e.g. "23(21-24)%" -> "#%", "+0.7(0.5-0.7)" -> "#"
+    text = re.sub(_VALUE_RANGE, "#", text)
     # Collapse numeric (min—max) ranges to a single #
-    text = re.sub(r"[+\-]?\(\d+[\u2014\u2013\-]\d+\.?\d*\)", "#", text)
+    text = re.sub(r"[+-]?\(\d+" + _DASH + r"\d+\.?\d*\)", "#", text)
     # Collapse template-style (#—#) ranges (DB stat_template already uses #)
-    text = re.sub(r"[+\-]?\(#[\u2014\u2013\-]#\)", "#", text)
-    text = re.sub(r"[+\-]?\d+\.?\d*", "#", text)
+    text = re.sub(r"[+-]?\(#" + _DASH + r"#\)", "#", text)
+    text = re.sub(r"[+-]?\d+\.?\d*", "#", text)
     text = re.sub(r"#\s+%", "#%", text)
     return re.sub(r"\s+", " ", text).strip().lower()
 
@@ -37,8 +47,11 @@ def extract_values(text: str) -> list:
         r"\s*\((fractured|implicit|crafted|corrupted|enchant|veiled)\)",
         "", text, flags=re.IGNORECASE,
     )
+    # Strip POE2 "value(min-max)" display ranges, keeping only the rolled value
+    # e.g. "23(21-24)%" -> "23%", "+0.7(0.5-0.7)" -> "+0.7"
+    text = re.sub(r"([+-]?\d+\.?\d*)\(\d+\.?\d*" + _DASH + r"\d+\.?\d*\)", r"\1", text)
     values: list = []
-    for m in re.finditer(r"[+\-]?\d+\.?\d*", text):
+    for m in re.finditer(r"[+-]?\d+\.?\d*", text):
         raw = m.group()
         values.append(float(raw) if "." in raw else int(raw))
     return values

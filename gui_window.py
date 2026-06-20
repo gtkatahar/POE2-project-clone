@@ -403,6 +403,9 @@ class TargetsTab(QWidget):
         dlg = ModBuilderDialog(parent=self)
         if dlg.exec() == ModBuilderDialog.DialogCode.Accepted:
             self._refresh_list()
+            result = dlg.get_result()
+            if result:
+                self._apply_active(result)
 
     def _on_edit(self) -> None:
         data = self._selected_data()
@@ -412,6 +415,9 @@ class TargetsTab(QWidget):
         dlg = ModBuilderDialog(existing_data=data, parent=self)
         if dlg.exec() == ModBuilderDialog.DialogCode.Accepted:
             self._refresh_list()
+            result = dlg.get_result()
+            if result:
+                self._apply_active(result)
 
     def _on_duplicate(self) -> None:
         data = self._selected_data()
@@ -424,12 +430,12 @@ class TargetsTab(QWidget):
         dlg = ModBuilderDialog(existing_data=dup, parent=self)
         if dlg.exec() == ModBuilderDialog.DialogCode.Accepted:
             self._refresh_list()
+            result = dlg.get_result()
+            if result:
+                self._apply_active(result)
 
-    def _on_set_active(self) -> None:
-        data = self._selected_data()
-        if data is None:
-            QMessageBox.information(self, "No Selection", "Select a target first.")
-            return
+    def _apply_active(self, data: dict) -> None:
+        """Write data as the active target and update all UI state."""
         active = _target_to_active(data)
         TARGET_FILE.write_text(json.dumps(active, indent=2, ensure_ascii=False), encoding="utf-8")
         self._main.active_target_data = active
@@ -437,6 +443,14 @@ class TargetsTab(QWidget):
         mods = _mods_from_data(active)
         self._lbl_active.setText(f"Active: {slug}  ({len(mods)} mod(s))")
         self.active_target_changed.emit(active)
+
+    def _on_set_active(self) -> None:
+        data = self._selected_data()
+        if data is None:
+            QMessageBox.information(self, "No Selection", "Select a target first.")
+            return
+        self._apply_active(data)
+        slug = data.get("slug", "?")
         QMessageBox.information(
             self, "Active Target Set",
             f"'{data.get('save_name', slug)}' is now the active target."

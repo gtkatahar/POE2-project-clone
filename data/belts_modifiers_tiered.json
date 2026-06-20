@@ -1,8 +1,8 @@
 {
   "source_url": "https://poe2db.tw/us/Belts",
   "item_slug": "Belts",
-  "total_groups": 63,
-  "total_mods": 200,
+  "total_groups": 98,
+  "total_mods": 298,
   "modifiers": [
     {
       "section": "Base Modifiers",
@@ -34,7 +34,7 @@
               151
             ],
             [
-              146,
+              152,
               220
             ]
           ]
@@ -50,7 +50,7 @@
               97
             ],
             [
-              97,
+              98,
               145
             ]
           ]
@@ -82,7 +82,7 @@
               35
             ],
             [
-              35,
+              36,
               53
             ]
           ]
@@ -98,7 +98,7 @@
               16
             ],
             [
-              15,
+              17,
               23
             ]
           ]
@@ -143,8 +143,8 @@
       "type": "Prefix",
       "family": "# to Armour",
       "tags": [
-        "armour",
-        "defences"
+        "defences",
+        "armour"
       ],
       "spawn_tags": [
         "belt",
@@ -160,8 +160,8 @@
           "weight": 1000,
           "values": [
             [
-              225,
-              255
+              312,
+              351
             ]
           ]
         },
@@ -172,8 +172,8 @@
           "weight": 1000,
           "values": [
             [
-              196,
-              224
+              268,
+              311
             ]
           ]
         },
@@ -184,8 +184,8 @@
           "weight": 1000,
           "values": [
             [
-              169,
-              195
+              226,
+              267
             ]
           ]
         },
@@ -196,8 +196,8 @@
           "weight": 1000,
           "values": [
             [
-              139,
-              168
+              187,
+              225
             ]
           ]
         },
@@ -208,8 +208,8 @@
           "weight": 1000,
           "values": [
             [
-              107,
-              138
+              141,
+              186
             ]
           ]
         },
@@ -220,8 +220,8 @@
           "weight": 1000,
           "values": [
             [
-              82,
-              106
+              108,
+              140
             ]
           ]
         },
@@ -232,8 +232,8 @@
           "weight": 1000,
           "values": [
             [
-              55,
-              81
+              69,
+              107
             ]
           ]
         },
@@ -244,8 +244,8 @@
           "weight": 1000,
           "values": [
             [
-              43,
-              54
+              52,
+              68
             ]
           ]
         },
@@ -257,7 +257,7 @@
           "values": [
             [
               23,
-              42
+              51
             ]
           ]
         },
@@ -556,7 +556,9 @@
       "section_key": "normal",
       "type": "Prefix",
       "family": "#% increased Charm Effect Duration",
-      "tags": [],
+      "tags": [
+        "charm"
+      ],
       "spawn_tags": [
         "belt",
         "default"
@@ -1112,7 +1114,9 @@
       "section_key": "normal",
       "type": "Suffix",
       "family": "#% increased Charm Charges gained",
-      "tags": [],
+      "tags": [
+        "charm"
+      ],
       "spawn_tags": [
         "belt",
         "default"
@@ -1288,7 +1292,9 @@
       "section_key": "normal",
       "type": "Suffix",
       "family": "#% reduced Charm Charges used",
-      "tags": [],
+      "tags": [
+        "charm"
+      ],
       "spawn_tags": [
         "belt",
         "default"
@@ -1465,6 +1471,7 @@
       "type": "Suffix",
       "family": "#% to Chaos Resistance",
       "tags": [
+        "chaos_resistance",
         "chaos",
         "resistance"
       ],
@@ -1558,6 +1565,8 @@
       "type": "Suffix",
       "family": "#% to Cold Resistance",
       "tags": [
+        "cold_resistance",
+        "elemental_resistance",
         "elemental",
         "cold",
         "resistance"
@@ -1676,6 +1685,8 @@
       "type": "Suffix",
       "family": "#% to Fire Resistance",
       "tags": [
+        "elemental_resistance",
+        "fire_resistance",
         "elemental",
         "fire",
         "resistance"
@@ -1794,6 +1805,8 @@
       "type": "Suffix",
       "family": "#% to Lightning Resistance",
       "tags": [
+        "elemental_resistance",
+        "lightning_resistance",
         "elemental",
         "lightning",
         "resistance"
@@ -2163,8 +2176,8 @@
       "type": "Enchantment",
       "family": "#% increased Armour",
       "tags": [
-        "armour",
-        "defences"
+        "defences",
+        "armour"
       ],
       "spawn_tags": [
         "belt",
@@ -2193,8 +2206,8 @@
       "type": "Enchantment",
       "family": "#% increased Evasion Rating",
       "tags": [
-        "evasion",
-        "defences"
+        "defences",
+        "evasion"
       ],
       "spawn_tags": [
         "belt",
@@ -2223,8 +2236,8 @@
       "type": "Enchantment",
       "family": "#% increased maximum Energy Shield",
       "tags": [
-        "energy_shield",
-        "defences"
+        "defences",
+        "energy_shield"
       ],
       "spawn_tags": [
         "belt",
@@ -2253,6 +2266,8 @@
       "type": "Enchantment",
       "family": "#% to Cold Resistance",
       "tags": [
+        "cold_resistance",
+        "elemental_resistance",
         "elemental",
         "cold",
         "resistance"
@@ -2285,6 +2300,8 @@
       "type": "Enchantment",
       "family": "#% to Fire Resistance",
       "tags": [
+        "elemental_resistance",
+        "fire_resistance",
         "elemental",
         "fire",
         "resistance"
@@ -2317,6 +2334,8 @@
       "type": "Enchantment",
       "family": "#% to Lightning Resistance",
       "tags": [
+        "elemental_resistance",
+        "lightning_resistance",
         "elemental",
         "lightning",
         "resistance"
@@ -2349,6 +2368,8 @@
       "type": "Enchantment",
       "family": "#% to Maximum Fire Resistance",
       "tags": [
+        "elemental_resistance",
+        "fire_resistance",
         "elemental",
         "fire",
         "resistance"
@@ -2412,6 +2433,7 @@
       "type": "Prefix",
       "family": "#% chance for Charms you use to not consume Charges",
       "tags": [
+        "charm",
         "unveiled_mod",
         "amanamu_mod"
       ],
@@ -2519,6 +2541,7 @@
       "type": "Prefix",
       "family": "Charms gain (#—#) charges per Second",
       "tags": [
+        "charm",
         "unveiled_mod",
         "amanamu_mod"
       ],
@@ -2548,12 +2571,12 @@
       "type": "Prefix",
       "family": "Gain #% of Maximum Mana as Armour",
       "tags": [
-        "armour",
+        "defences",
         "resource",
         "unveiled_mod",
         "kurgal_mod",
         "mana",
-        "defences"
+        "armour"
       ],
       "spawn_tags": [
         "belt",
@@ -2916,6 +2939,9 @@
       "type": "Suffix",
       "family": "#% to Cold and Chaos Resistances",
       "tags": [
+        "chaos_resistance",
+        "cold_resistance",
+        "elemental_resistance",
         "unveiled_mod",
         "kurgal_mod",
         "elemental",
@@ -2954,6 +2980,9 @@
       "type": "Suffix",
       "family": "#% to Fire and Chaos Resistances",
       "tags": [
+        "chaos_resistance",
+        "elemental_resistance",
+        "fire_resistance",
         "unveiled_mod",
         "amanamu_mod",
         "elemental",
@@ -2992,6 +3021,9 @@
       "type": "Suffix",
       "family": "#% to Lightning and Chaos Resistances",
       "tags": [
+        "chaos_resistance",
+        "elemental_resistance",
+        "lightning_resistance",
         "unveiled_mod",
         "ulaman_mod",
         "elemental",
@@ -3031,7 +3063,9 @@
       "family": "#% to Thorns Critical Hit Chance",
       "tags": [
         "unveiled_mod",
-        "amanamu_mod"
+        "amanamu_mod",
+        "damage",
+        "critical"
       ],
       "spawn_tags": [
         "belt",
@@ -3182,27 +3216,6 @@
     {
       "section": "Essence",
       "section_key": "essence",
-      "type": "Prefix",
-      "family": "Mark of the Abyssal Lord",
-      "tags": [],
-      "spawn_tags": [
-        "default"
-      ],
-      "stat_template": "Mark of the Abyssal Lord",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of the Abyss",
-          "min_ilvl": 1,
-          "weight": 0,
-          "values": []
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
       "type": "Suffix",
       "family": "# to Strength, Dexterity or Intelligence",
       "tags": [
@@ -3343,38 +3356,9 @@
       "section": "Essence",
       "section_key": "essence",
       "type": "Suffix",
-      "family": "# to Stun Threshold",
-      "tags": [],
-      "spawn_tags": [
-        "body_armour",
-        "boots",
-        "shield",
-        "belt",
-        "default"
-      ],
-      "stat_template": "# to Stun Threshold",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of Hysteria",
-          "min_ilvl": 72,
-          "weight": 0,
-          "values": [
-            [
-              254,
-              304
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Suffix",
       "family": "#% to Chaos Resistance",
       "tags": [
+        "chaos_resistance",
         "chaos",
         "resistance"
       ],
@@ -3432,6 +3416,8 @@
       "type": "Suffix",
       "family": "#% to Cold Resistance",
       "tags": [
+        "cold_resistance",
+        "elemental_resistance",
         "elemental",
         "cold",
         "resistance"
@@ -3490,6 +3476,8 @@
       "type": "Suffix",
       "family": "#% to Fire Resistance",
       "tags": [
+        "elemental_resistance",
+        "fire_resistance",
         "elemental",
         "fire",
         "resistance"
@@ -3548,6 +3536,8 @@
       "type": "Suffix",
       "family": "#% to Lightning Resistance",
       "tags": [
+        "elemental_resistance",
+        "lightning_resistance",
         "elemental",
         "lightning",
         "resistance"
@@ -3601,9 +3591,63 @@
       ]
     },
     {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Suffix",
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "#% increased Explicit Resistance Modifier magnitudes",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Resistance Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Sovereign Alloy",
+          "min_ilvl": 65,
+          "weight": 0,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "#% increased Runic Ward Regeneration Rate",
+      "tags": [
+        "runic_ward"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Runic Ward Regeneration Rate",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Runic Alloy",
+          "min_ilvl": 13,
+          "weight": 0,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
       "family": "Mark of the Abyssal Lord",
       "tags": [],
       "spawn_tags": [
@@ -3622,23 +3666,58 @@
       ]
     },
     {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Suffix",
-      "family": "On Corruption, Item gains two Enchantments",
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "Recover # Runic Ward when a Charm is used",
       "tags": [],
       "spawn_tags": [
         "default"
       ],
-      "stat_template": "On Corruption, Item gains two Enchantments",
+      "stat_template": "Recover # Runic Ward when a Charm is used",
       "num_tiers": 1,
       "tiers": [
         {
           "tier": 1,
-          "name": "Essence of Insanity",
-          "min_ilvl": 1,
+          "name": "Protective Alloy",
+          "min_ilvl": 25,
           "weight": 0,
-          "values": []
+          "values": [
+            [
+              32,
+              45
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "# to Stun Threshold",
+      "tags": [],
+      "spawn_tags": [
+        "body_armour",
+        "boots",
+        "shield",
+        "belt",
+        "default"
+      ],
+      "stat_template": "# to Stun Threshold",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of Hysteria",
+          "min_ilvl": 72,
+          "weight": 0,
+          "values": [
+            [
+              254,
+              304
+            ]
+          ]
         }
       ]
     },
@@ -3669,6 +3748,1780 @@
               26,
               30
             ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "Flasks gain (#—#) charges per Second",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Flasks gain (#—#) charges per Second",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Swift Alloy",
+          "min_ilvl": 45,
+          "weight": 0,
+          "values": [
+            0.75,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "Mark of the Abyssal Lord",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Mark of the Abyssal Lord",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of the Abyss",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "On Corruption, Item gains two Enchantments",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "On Corruption, Item gains two Enchantments",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of Insanity",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Prefix",
+      "family": "# to maximum Energy Shield",
+      "tags": [
+        "defences",
+        "energy_shield"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "# to maximum Energy Shield",
+      "num_tiers": 10,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Incandescent",
+          "min_ilvl": 80,
+          "weight": 1,
+          "values": [
+            [
+              80,
+              89
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Scintillating",
+          "min_ilvl": 70,
+          "weight": 1,
+          "values": [
+            [
+              71,
+              79
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Dazzling",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              62,
+              70
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Blazing",
+          "min_ilvl": 54,
+          "weight": 1,
+          "values": [
+            [
+              52,
+              61
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Pulsing",
+          "min_ilvl": 46,
+          "weight": 1,
+          "values": [
+            [
+              42,
+              51
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "Radiating",
+          "min_ilvl": 33,
+          "weight": 1,
+          "values": [
+            [
+              34,
+              41
+            ]
+          ]
+        },
+        {
+          "tier": 7,
+          "name": "Glowing",
+          "min_ilvl": 25,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              33
+            ]
+          ]
+        },
+        {
+          "tier": 8,
+          "name": "Glittering",
+          "min_ilvl": 16,
+          "weight": 1,
+          "values": [
+            [
+              21,
+              24
+            ]
+          ]
+        },
+        {
+          "tier": 9,
+          "name": "Glimmering",
+          "min_ilvl": 11,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        },
+        {
+          "tier": 10,
+          "name": "Shining",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              8,
+              14
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Prefix",
+      "family": "#% increased Spell Damage during any Flask Effect",
+      "tags": [
+        "caster_damage",
+        "damage",
+        "caster"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "#% increased Spell Damage during any Flask Effect",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Exhilarating",
+          "min_ilvl": 80,
+          "weight": 1,
+          "values": [
+            [
+              50,
+              55
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Energising",
+          "min_ilvl": 67,
+          "weight": 1,
+          "values": [
+            [
+              44,
+              49
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Elevating",
+          "min_ilvl": 53,
+          "weight": 1,
+          "values": [
+            [
+              38,
+              43
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Awakening",
+          "min_ilvl": 39,
+          "weight": 1,
+          "values": [
+            [
+              32,
+              37
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Stimulating",
+          "min_ilvl": 26,
+          "weight": 1,
+          "values": [
+            [
+              26,
+              31
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "Activating",
+          "min_ilvl": 12,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Prefix",
+      "family": "#% of Damage is taken from Mana before Life",
+      "tags": [
+        "resource",
+        "life",
+        "mana"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "#% of Damage is taken from Mana before Life",
+      "num_tiers": 4,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Enervating",
+          "min_ilvl": 77,
+          "weight": 1,
+          "values": [
+            [
+              13,
+              15
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Exhausting",
+          "min_ilvl": 52,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Draining",
+          "min_ilvl": 39,
+          "weight": 1,
+          "values": [
+            [
+              7,
+              9
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Taxing",
+          "min_ilvl": 23,
+          "weight": 1,
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Prefix",
+      "family": "Spells have #% increased Cooldown Recovery Rate",
+      "tags": [
+        "caster"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "Spells have #% increased Cooldown Recovery Rate",
+      "num_tiers": 5,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Ingenious",
+          "min_ilvl": 74,
+          "weight": 1,
+          "values": [
+            [
+              21,
+              25
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Trailblazing",
+          "min_ilvl": 59,
+          "weight": 1,
+          "values": [
+            [
+              16,
+              20
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Pioneering",
+          "min_ilvl": 41,
+          "weight": 1,
+          "values": [
+            [
+              11,
+              15
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Inventive",
+          "min_ilvl": 28,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              10
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Imagninative",
+          "min_ilvl": 12,
+          "weight": 1,
+          "values": [
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Suffix",
+      "family": "#% chance for Remnants you pick up to count as picking up an additional Remnant",
+      "tags": [],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "#% chance for Remnants you pick up to count as picking up an additional Remnant",
+      "num_tiers": 5,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Multiplication",
+          "min_ilvl": 73,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              16
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Magnification",
+          "min_ilvl": 61,
+          "weight": 1,
+          "values": [
+            [
+              13,
+              14
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of Expansion",
+          "min_ilvl": 49,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Proliferation",
+          "min_ilvl": 37,
+          "weight": 1,
+          "values": [
+            [
+              7,
+              9
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of Accumulation",
+          "min_ilvl": 24,
+          "weight": 1,
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Suffix",
+      "family": "#% increased Cast Speed during any Flask Effect",
+      "tags": [
+        "caster_speed",
+        "caster",
+        "speed"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "#% increased Cast Speed during any Flask Effect",
+      "num_tiers": 4,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Accelerating",
+          "min_ilvl": 76,
+          "weight": 1,
+          "values": [
+            [
+              17,
+              19
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Hastening",
+          "min_ilvl": 59,
+          "weight": 1,
+          "values": [
+            [
+              14,
+              16
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of Quickening",
+          "min_ilvl": 41,
+          "weight": 1,
+          "values": [
+            [
+              11,
+              13
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Hurrying",
+          "min_ilvl": 22,
+          "weight": 1,
+          "values": [
+            [
+              8,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Suffix",
+      "family": "#% increased Mana Regeneration Rate",
+      "tags": [
+        "resource",
+        "mana"
+      ],
+      "spawn_tags": [
+        "ring",
+        "amulet",
+        "focus",
+        "sceptre",
+        "wand",
+        "trap",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "#% increased Mana Regeneration Rate",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Nirvana",
+          "min_ilvl": 79,
+          "weight": 1,
+          "values": [
+            [
+              60,
+              69
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Euphoria",
+          "min_ilvl": 55,
+          "weight": 1,
+          "values": [
+            [
+              50,
+              59
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of Bliss",
+          "min_ilvl": 42,
+          "weight": 1,
+          "values": [
+            [
+              40,
+              49
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Elation",
+          "min_ilvl": 29,
+          "weight": 1,
+          "values": [
+            [
+              30,
+              39
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of Joy",
+          "min_ilvl": 18,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              29
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "of Excitement",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              19
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Prefix",
+      "family": "Minions Revive #% faster",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "Minions Revive #% faster",
+      "num_tiers": 4,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Restless",
+          "min_ilvl": 76,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Waking",
+          "min_ilvl": 63,
+          "weight": 1,
+          "values": [
+            [
+              7,
+              9
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Rousing",
+          "min_ilvl": 45,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Stirring",
+          "min_ilvl": 24,
+          "weight": 1,
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Prefix",
+      "family": "Minions deal #% increased Damage with Command Skills",
+      "tags": [
+        "minion_damage",
+        "damage",
+        "minion"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "Minions deal #% increased Damage with Command Skills",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Custodian's",
+          "min_ilvl": 81,
+          "weight": 1,
+          "values": [
+            [
+              53,
+              61
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Shepherd's",
+          "min_ilvl": 63,
+          "weight": 1,
+          "values": [
+            [
+              45,
+              52
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Sentry's",
+          "min_ilvl": 52,
+          "weight": 1,
+          "values": [
+            [
+              37,
+              44
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Watcher's",
+          "min_ilvl": 44,
+          "weight": 1,
+          "values": [
+            [
+              29,
+              36
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Lookout's",
+          "min_ilvl": 35,
+          "weight": 1,
+          "values": [
+            [
+              21,
+              28
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "Guide's",
+          "min_ilvl": 18,
+          "weight": 1,
+          "values": [
+            [
+              13,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Prefix",
+      "family": "Minions have #% increased maximum Life",
+      "tags": [
+        "resource",
+        "life",
+        "minion"
+      ],
+      "spawn_tags": [
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "Minions have #% increased maximum Life",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Fortifying",
+          "min_ilvl": 75,
+          "weight": 1,
+          "values": [
+            [
+              27,
+              30
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Bolstering",
+          "min_ilvl": 67,
+          "weight": 1,
+          "values": [
+            [
+              23,
+              26
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Reinforcing",
+          "min_ilvl": 52,
+          "weight": 1,
+          "values": [
+            [
+              19,
+              22
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Toughening",
+          "min_ilvl": 41,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              18
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Bracing",
+          "min_ilvl": 29,
+          "weight": 1,
+          "values": [
+            [
+              11,
+              14
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "Bearing",
+          "min_ilvl": 18,
+          "weight": 1,
+          "values": [
+            [
+              7,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Suffix",
+      "family": "# to Level of all Minion Skills",
+      "tags": [
+        "minion",
+        "gem"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "# to Level of all Minion Skills",
+      "num_tiers": 2,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Despot",
+          "min_ilvl": 64,
+          "weight": 1,
+          "values": [
+            2
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of the Taskmaster",
+          "min_ilvl": 36,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Suffix",
+      "family": "Minions have #% increased Area of Effect",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "Minions have #% increased Area of Effect",
+      "num_tiers": 5,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Stampeding",
+          "min_ilvl": 73,
+          "weight": 1,
+          "values": [
+            [
+              21,
+              24
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Storming",
+          "min_ilvl": 61,
+          "weight": 1,
+          "values": [
+            [
+              17,
+              20
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of Trampling",
+          "min_ilvl": 49,
+          "weight": 1,
+          "values": [
+            [
+              13,
+              16
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Bustling",
+          "min_ilvl": 36,
+          "weight": 1,
+          "values": [
+            [
+              9,
+              12
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of Scurrying",
+          "min_ilvl": 23,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Suffix",
+      "family": "Minions have #% increased Immobilisation buildup",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "Minions have #% increased Immobilisation buildup",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Seizing",
+          "min_ilvl": 74,
+          "weight": 1,
+          "values": [
+            [
+              50,
+              55
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Grappling",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              44,
+              49
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of Snaring",
+          "min_ilvl": 56,
+          "weight": 1,
+          "values": [
+            [
+              38,
+              43
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Gripping",
+          "min_ilvl": 48,
+          "weight": 1,
+          "values": [
+            [
+              32,
+              37
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of Grasping",
+          "min_ilvl": 34,
+          "weight": 1,
+          "values": [
+            [
+              26,
+              31
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "of Clutching",
+          "min_ilvl": 16,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Suffix",
+      "family": "Minions have #% increased Movement Speed",
+      "tags": [
+        "minion_speed",
+        "speed",
+        "minion"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "Minions have #% increased Movement Speed",
+      "num_tiers": 4,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Compulsion",
+          "min_ilvl": 77,
+          "weight": 1,
+          "values": [
+            [
+              14,
+              16
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Coercion",
+          "min_ilvl": 68,
+          "weight": 1,
+          "values": [
+            [
+              11,
+              13
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of Pressure",
+          "min_ilvl": 48,
+          "weight": 1,
+          "values": [
+            [
+              8,
+              10
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Persuasion",
+          "min_ilvl": 27,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_minion",
+      "section_key": "breach_minion",
+      "type": "Suffix",
+      "family": "Offering Skills have #% increased Duration",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "ring",
+        "genesis_tree_minion",
+        "default"
+      ],
+      "stat_template": "Offering Skills have #% increased Duration",
+      "num_tiers": 5,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Liturgy",
+          "min_ilvl": 79,
+          "weight": 1,
+          "values": [
+            [
+              46,
+              55
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Ceremony",
+          "min_ilvl": 68,
+          "weight": 1,
+          "values": [
+            [
+              36,
+              45
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of the Rite",
+          "min_ilvl": 47,
+          "weight": 1,
+          "values": [
+            [
+              26,
+              35
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Observance",
+          "min_ilvl": 29,
+          "weight": 1,
+          "values": [
+            [
+              16,
+              25
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of Tradition",
+          "min_ilvl": 15,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Prefix",
+      "family": "#% increased Cold Damage if you've collected a Cold Infusion in the last # seconds",
+      "tags": [
+        "elemental",
+        "cold"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Cold Damage if you've collected a Cold Infusion in the last # seconds",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Glacial",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              41,
+              59
+            ],
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Prefix",
+      "family": "#% increased Fire Damage if you've collected a Fire Infusion in the last # seconds",
+      "tags": [
+        "elemental",
+        "fire"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Fire Damage if you've collected a Fire Infusion in the last # seconds",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Erupting",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              41,
+              59
+            ],
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Prefix",
+      "family": "#% increased Lightning Damage if you've collected a Lightning Infusion in the last # seconds",
+      "tags": [
+        "elemental",
+        "lightning"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Lightning Damage if you've collected a Lightning Infusion in the last # seconds",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Energising",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              41,
+              59
+            ],
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Prefix",
+      "family": "#% increased Minion Damage per different Command Skill used in the past # seconds",
+      "tags": [
+        "minion_damage",
+        "damage",
+        "minion"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Minion Damage per different Command Skill used in the past # seconds",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Instructor's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              7,
+              12
+            ],
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Prefix",
+      "family": "#% increased effect of Archon Buffs on you",
+      "tags": [],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased effect of Archon Buffs on you",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Unshackling",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              39
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Prefix",
+      "family": "#% of Damage from Hits is taken from your Spectres' Life before you",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% of Damage from Hits is taken from your Spectres' Life before you",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Underling's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Prefix",
+      "family": "Your Minions are Gigantic if they have Revived Recently",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "Your Minions are Gigantic if they have Revived Recently",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Monstrous",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "#% increased Archon Buff duration",
+      "tags": [],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Archon Buff duration",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Exertion",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              40,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "#% increased Magnitude of Elemental Ailments you inflict with Spells",
+      "tags": [
+        "elemental",
+        "fire",
+        "cold",
+        "lightning",
+        "caster"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Magnitude of Elemental Ailments you inflict with Spells",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Imbuing",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              30,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "#% increased Minion Duration",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Minion Duration",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Binding",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              35,
+              49
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "#% increased Reservation Efficiency of Minion Skills",
+      "tags": [],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% increased Reservation Efficiency of Minion Skills",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Coherence",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              7,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "#% to gain Archon of Undeath when you create an Offering",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "#% to gain Archon of Undeath when you create an Offering",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Unending",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              35,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "Minions have #% Surpassing chance to fire an additional Projectile",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "Minions have #% Surpassing chance to fire an additional Projectile",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Scattering",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              50,
+              100
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "Minions' Strikes have Melee Splash",
+      "tags": [],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "Minions' Strikes have Melee Splash",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Ravaging",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "Sealed Skills have #% increased Seal gain frequency",
+      "tags": [],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "Sealed Skills have #% increased Seal gain frequency",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Expectation",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              21,
+              35
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_otherworldly",
+      "section_key": "breach_otherworldly",
+      "type": "Suffix",
+      "family": "Skills have #% chance to not remove Elemental Infusions but still count as consuming them if you've lost an Archon Buff in the past # seconds",
+      "tags": [
+        "elemental",
+        "fire",
+        "cold",
+        "lightning"
+      ],
+      "spawn_tags": [
+        "amulet",
+        "ring",
+        "breach_desecration",
+        "default"
+      ],
+      "stat_template": "Skills have #% chance to not remove Elemental Infusions but still count as consuming them if you've lost an Archon Buff in the past # seconds",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Reverberation",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              40,
+              50
+            ],
+            6
           ]
         }
       ]

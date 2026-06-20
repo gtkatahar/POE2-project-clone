@@ -169,7 +169,21 @@ class CraftWorker(QThread):
             target_entries, fifty_fifty_entries, mod_lookup, slug, _ = \
                 load_target_mods(self._target_data)
 
-            identify_matches = lambda sl: identify(sl, mod_lookup)
+            def identify_matches(stat_lines: list) -> list:
+                results = identify(stat_lines, mod_lookup)
+                unknown = [
+                    r["item_stat"]
+                    for r in results
+                    if not r["matched"] and not r["unmatched"]
+                ]
+                if unknown:
+                    lines = "\n  • ".join(unknown)
+                    raise RuntimeError(
+                        f"Unrecognised mod(s) — cannot continue crafting:\n  • {lines}\n\n"
+                        "Check that the correct item type / modifier DB is loaded, "
+                        "or update the data file."
+                    )
+                return results
 
             verbose = self._strategy == "scan_only"
             found_mats, found_bases, empty_slots, catalog = combined_scan_for_mats(

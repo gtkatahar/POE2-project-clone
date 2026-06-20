@@ -1,41 +1,20 @@
 {
-  "save_name": "rings",
-  "created_at": "2026-04-11 12:34",
-  "slug": "rings",
+  "slug": "talismans",
   "mode": "search",
   "mods": [
-        {
-      "type": "Prefix",
-      "family": "Adds # to # Lightning damage to Attacks",
-      "stat_template": "Adds # to # Lightning damage to Attacks",
+    {
+      "type": "Suffix",
+      "family": "# to Level of all Melee Skills",
+      "stat_template": "# to Level of all Melee Skills",
       "min_tier": 1,
       "tags": [
-        "elemental_damage",
-        "damage",
-        "elemental",
-        "lightning",
         "attack"
       ]
     },
     {
-      "type": "Suffix",
-      "family": "#% to all Elemental Resistances",
-      "stat_template": "#% to all Elemental Resistances",
-      "min_tier": 1,
-      "tags": [
-        "elemental",
-        "fire",
-        "cold",
-        "lightning",
-        "resistance"
-      ]
-    }
-  ],
-  "fifty_fifty": [
-    {
       "type": "Prefix",
-      "family": "Adds # to # Physical Damage to Attacks",
-      "stat_template": "Adds # to # Physical Damage to Attacks",
+      "family": "Adds # to # Physical Damage",
+      "stat_template": "Adds # to # Physical Damage",
       "min_tier": 1,
       "tags": [
         "physical_damage",
@@ -43,55 +22,7 @@
         "physical",
         "attack"
       ]
-    },
-    {
-      "type": "Prefix",
-      "family": "#% increased Cold Damage",
-      "stat_template": "#% increased Cold Damage",
-      "min_tier": 1,
-      "tags": [
-        "elemental_damage",
-        "damage",
-        "elemental",
-        "cold"
-      ]
-    },
-    {
-      "type": "Prefix",
-      "family": "Adds # to # Fire damage to Attacks",
-      "stat_template": "Adds # to # Fire damage to Attacks",
-      "min_tier": 1,
-      "tags": [
-        "elemental_damage",
-        "damage",
-        "elemental",
-        "fire",
-        "attack"
-      ]
-    },
-    {
-      "type": "Prefix",
-      "family": "Adds # to # Cold damage to Attacks",
-      "stat_template": "Adds # to # Cold damage to Attacks",
-      "min_tier": 1,
-      "tags": [
-        "elemental_damage",
-        "damage",
-        "elemental",
-        "cold",
-        "attack"
-      ]
-    },
-    {
-      "type": "Suffix",
-      "family": "#% to Cold Resistance",
-      "stat_template": "#% to Cold Resistance",
-      "min_tier": 1,
-      "tags": [
-        "elemental",
-        "cold",
-        "resistance"
-      ]
     }
-  ]
+  ],
+  "fifty_fifty": []
 }

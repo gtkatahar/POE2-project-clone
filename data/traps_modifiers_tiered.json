@@ -1,8 +1,8 @@
 {
   "source_url": "https://poe2db.tw/us/Traps",
   "item_slug": "Traps",
-  "total_groups": 23,
-  "total_mods": 152,
+  "total_groups": 36,
+  "total_mods": 168,
   "modifiers": [
     {
       "section": "Base Modifiers",
@@ -1460,7 +1460,11 @@
       "section_key": "normal",
       "type": "Suffix",
       "family": "#% increased Flammability Magnitude",
-      "tags": [],
+      "tags": [
+        "elemental",
+        "fire",
+        "ailment"
+      ],
       "spawn_tags": [
         "no_fire_spell_mods",
         "wand",
@@ -1538,7 +1542,11 @@
       "section_key": "normal",
       "type": "Suffix",
       "family": "#% increased Freeze Buildup",
-      "tags": [],
+      "tags": [
+        "elemental",
+        "cold",
+        "ailment"
+      ],
       "spawn_tags": [
         "no_cold_spell_mods",
         "wand",
@@ -1627,6 +1635,7 @@
         "sceptre",
         "wand",
         "trap",
+        "genesis_tree_caster",
         "default"
       ],
       "stat_template": "#% increased Mana Regeneration Rate",
@@ -1711,7 +1720,11 @@
       "section_key": "normal",
       "type": "Suffix",
       "family": "#% increased chance to Shock",
-      "tags": [],
+      "tags": [
+        "elemental",
+        "lightning",
+        "ailment"
+      ],
       "spawn_tags": [
         "no_lightning_spell_mods",
         "wand",
@@ -2111,11 +2124,33 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "# Suffix Modifier allowedlocal maximum mods allowed + [#]",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# Suffix Modifier allowedlocal maximum mods allowed + [#]",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Serle's Triumph",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "# to Dexterity",
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Dexterity",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2132,7 +2167,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -2141,7 +2176,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -2154,7 +2198,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Intelligence",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2171,7 +2215,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -2180,7 +2224,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Resolve Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -2193,7 +2246,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Strength",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2210,7 +2263,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -2219,7 +2272,350 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Can have # additional Crafted Modifiers",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Can have # additional Crafted Modifiers",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Astrid's Creativity",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Upgrades a socketed Rune",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Upgrades a socketed Rune",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Masterwork Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Aldur's Legacy",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Prefix",
+      "family": "#% increased Explicit Critical Modifier magnitudes",
+      "tags": [
+        "critical"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Critical Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Thrud's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Prefix",
+      "family": "#% increased Explicit Speed Modifier magnitudes",
+      "tags": [
+        "speed"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Speed Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Thrud's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Chaos Modifier magnitudes",
+      "tags": [
+        "chaos"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Chaos Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Cold Modifier magnitudes",
+      "tags": [
+        "elemental",
+        "cold"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Cold Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Elemental Damage Modifier magnitudes",
+      "tags": [
+        "elemental"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Elemental Damage Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Fire Modifier magnitudes",
+      "tags": [
+        "elemental",
+        "fire"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Fire Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Lightning Modifier magnitudes",
+      "tags": [
+        "elemental",
+        "lightning"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Lightning Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Mana Modifier magnitudes",
+      "tags": [
+        "resource",
+        "mana"
+      ],
+      "spawn_tags": [
+        "sword",
+        "axe",
+        "mace",
+        "spear",
+        "claw",
+        "dagger",
+        "flail",
+        "crossbow",
+        "warstaff",
+        "talisman",
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Mana Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Physical Modifier magnitudes",
+      "tags": [
+        "physical"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Physical Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              15
+            ]
           ]
         }
       ]

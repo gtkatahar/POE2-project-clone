@@ -1,8 +1,8 @@
 {
   "source_url": "https://poe2db.tw/us/Body_Armours_str_dex",
   "item_slug": "Body_Armours_str_dex",
-  "total_groups": 105,
-  "total_mods": 340,
+  "total_groups": 189,
+  "total_mods": 466,
   "modifiers": [
     {
       "section": "Base Modifiers",
@@ -34,7 +34,7 @@
               151
             ],
             [
-              146,
+              152,
               220
             ]
           ]
@@ -50,7 +50,7 @@
               97
             ],
             [
-              97,
+              98,
               145
             ]
           ]
@@ -82,7 +82,7 @@
               35
             ],
             [
-              35,
+              36,
               53
             ]
           ]
@@ -98,7 +98,7 @@
               16
             ],
             [
-              15,
+              17,
               23
             ]
           ]
@@ -143,9 +143,9 @@
       "type": "Prefix",
       "family": "# to Armour# to Evasion Rating",
       "tags": [
+        "defences",
         "armour",
-        "evasion",
-        "defences"
+        "evasion"
       ],
       "spawn_tags": [
         "shield",
@@ -166,12 +166,12 @@
           "weight": 1000,
           "values": [
             [
-              118,
-              138
+              150,
+              170
             ],
             [
-              108,
-              126
+              142,
+              161
             ]
           ]
         },
@@ -182,12 +182,12 @@
           "weight": 1000,
           "values": [
             [
-              99,
-              117
+              128,
+              149
             ],
             [
-              89,
-              107
+              120,
+              141
             ]
           ]
         },
@@ -198,12 +198,12 @@
           "weight": 1000,
           "values": [
             [
-              79,
-              98
+              103,
+              127
             ],
             [
-              70,
-              88
+              95,
+              119
             ]
           ]
         },
@@ -214,12 +214,12 @@
           "weight": 1000,
           "values": [
             [
-              66,
-              78
+              86,
+              102
             ],
             [
-              58,
-              69
+              79,
+              94
             ]
           ]
         },
@@ -230,12 +230,12 @@
           "weight": 1000,
           "values": [
             [
-              54,
-              65
+              72,
+              85
             ],
             [
-              47,
-              57
+              65,
+              78
             ]
           ]
         },
@@ -246,12 +246,12 @@
           "weight": 1000,
           "values": [
             [
-              36,
-              53
+              47,
+              71
             ],
             [
-              31,
-              46
+              42,
+              64
             ]
           ]
         },
@@ -262,12 +262,12 @@
           "weight": 1000,
           "values": [
             [
-              15,
-              35
+              17,
+              46
             ],
             [
-              10,
-              30
+              11,
+              41
             ]
           ]
         },
@@ -278,12 +278,12 @@
           "weight": 1000,
           "values": [
             [
-              8,
-              14
+              9,
+              16
             ],
             [
               6,
-              9
+              10
             ]
           ]
         }
@@ -295,9 +295,9 @@
       "type": "Prefix",
       "family": "# to Armour# to Evasion Rating#% increased Armour and Evasion",
       "tags": [
+        "defences",
         "armour",
-        "evasion",
-        "defences"
+        "evasion"
       ],
       "spawn_tags": [
         "helmet",
@@ -317,12 +317,12 @@
           "weight": 1000,
           "values": [
             [
-              35,
-              43
+              42,
+              52
             ],
             [
-              32,
-              39
+              40,
+              50
             ],
             [
               39,
@@ -337,12 +337,12 @@
           "weight": 1000,
           "values": [
             [
-              28,
-              34
+              33,
+              41
             ],
             [
-              25,
-              31
+              30,
+              39
             ],
             [
               33,
@@ -357,12 +357,12 @@
           "weight": 1000,
           "values": [
             [
-              21,
-              27
+              24,
+              32
             ],
             [
-              18,
-              24
+              22,
+              29
             ],
             [
               27,
@@ -377,12 +377,12 @@
           "weight": 1000,
           "values": [
             [
-              16,
-              20
+              17,
+              23
             ],
             [
-              13,
-              17
+              15,
+              21
             ],
             [
               21,
@@ -397,12 +397,12 @@
           "weight": 1000,
           "values": [
             [
-              7,
-              15
+              6,
+              16
             ],
             [
-              6,
-              12
+              4,
+              14
             ],
             [
               14,
@@ -417,12 +417,12 @@
           "weight": 1000,
           "values": [
             [
-              4,
-              6
-            ],
-            [
               3,
               5
+            ],
+            [
+              2,
+              3
             ],
             [
               6,
@@ -723,9 +723,9 @@
       "type": "Prefix",
       "family": "#% increased Armour and Evasion",
       "tags": [
+        "defences",
         "armour",
-        "evasion",
-        "defences"
+        "evasion"
       ],
       "spawn_tags": [
         "int_armour",
@@ -845,11 +845,11 @@
       "type": "Prefix",
       "family": "#% increased Armour and Evasion# to maximum Life",
       "tags": [
-        "armour",
-        "evasion",
+        "defences",
         "resource",
         "life",
-        "defences"
+        "armour",
+        "evasion"
       ],
       "spawn_tags": [
         "boots",
@@ -1393,8 +1393,8 @@
       "type": "Suffix",
       "family": "#% of Armour also applies to Elemental Damage",
       "tags": [
-        "armour",
         "defences",
+        "armour",
         "elemental"
       ],
       "spawn_tags": [
@@ -1796,6 +1796,7 @@
       "type": "Suffix",
       "family": "#% to Chaos Resistance",
       "tags": [
+        "chaos_resistance",
         "chaos",
         "resistance"
       ],
@@ -1889,6 +1890,8 @@
       "type": "Suffix",
       "family": "#% to Cold Resistance",
       "tags": [
+        "cold_resistance",
+        "elemental_resistance",
         "elemental",
         "cold",
         "resistance"
@@ -2007,6 +2010,8 @@
       "type": "Suffix",
       "family": "#% to Fire Resistance",
       "tags": [
+        "elemental_resistance",
+        "fire_resistance",
         "elemental",
         "fire",
         "resistance"
@@ -2125,6 +2130,8 @@
       "type": "Suffix",
       "family": "#% to Lightning Resistance",
       "tags": [
+        "elemental_resistance",
+        "lightning_resistance",
         "elemental",
         "lightning",
         "resistance"
@@ -2362,8 +2369,8 @@
       "type": "Suffix",
       "family": "Gain Deflection Rating equal to #% of Evasion Rating",
       "tags": [
-        "evasion",
-        "defences"
+        "defences",
+        "evasion"
       ],
       "spawn_tags": [
         "helmet",
@@ -2456,19 +2463,61 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
-      "family": "# to all Attributes",
+      "family": "# to Maximum Rage",
       "tags": [],
       "spawn_tags": [],
-      "stat_template": "# to all Attributes",
+      "stat_template": "# to Maximum Rage",
       "num_tiers": 1,
       "tiers": [
         {
           "tier": 1,
-          "name": "Fox Idol",
+          "name": "Legacy of Bristleboar",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            4
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "# to Strength",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# to Strength",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Emergent Vigour",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "# to maximum Life",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# to maximum Life",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Kingsguard",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
           ]
         }
       ]
@@ -2481,7 +2530,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to maximum Life# to maximum Mana",
-      "num_tiers": 39,
+      "num_tiers": 53,
       "tiers": [
         {
           "tier": 1,
@@ -2489,8 +2538,8 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
@@ -2499,8 +2548,8 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
@@ -2509,368 +2558,508 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 4,
-          "name": "Lesser Glacial Rune",
+          "name": "Perfect Desert Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 5,
-          "name": "Glacial Rune",
+          "name": "Lesser Glacial Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 6,
-          "name": "Greater Glacial Rune",
+          "name": "Glacial Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 7,
-          "name": "Lesser Storm Rune",
+          "name": "Greater Glacial Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 8,
-          "name": "Storm Rune",
+          "name": "Perfect Glacial Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 9,
-          "name": "Greater Storm Rune",
+          "name": "Lesser Storm Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 10,
-          "name": "Lesser Iron Rune",
+          "name": "Storm Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 11,
-          "name": "Iron Rune",
+          "name": "Greater Storm Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 12,
-          "name": "Greater Iron Rune",
+          "name": "Perfect Storm Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 13,
-          "name": "Lesser Body Rune",
+          "name": "Lesser Iron Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 14,
-          "name": "Body Rune",
+          "name": "Iron Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 15,
-          "name": "Greater Body Rune",
+          "name": "Greater Iron Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 16,
-          "name": "Lesser Mind Rune",
+          "name": "Perfect Iron Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 17,
-          "name": "Mind Rune",
+          "name": "Lesser Body Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 18,
-          "name": "Greater Mind Rune",
+          "name": "Body Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 19,
-          "name": "Lesser Rebirth Rune",
+          "name": "Greater Body Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 20,
-          "name": "Rebirth Rune",
+          "name": "Perfect Body Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 21,
-          "name": "Greater Rebirth Rune",
+          "name": "Lesser Mind Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 22,
-          "name": "Lesser Inspiration Rune",
+          "name": "Mind Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 23,
-          "name": "Inspiration Rune",
+          "name": "Greater Mind Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 24,
-          "name": "Greater Inspiration Rune",
+          "name": "Perfect Mind Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 25,
-          "name": "Lesser Stone Rune",
+          "name": "Lesser Rebirth Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 26,
-          "name": "Stone Rune",
+          "name": "Rebirth Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 27,
-          "name": "Greater Stone Rune",
+          "name": "Greater Rebirth Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 28,
-          "name": "Lesser Vision Rune",
+          "name": "Perfect Rebirth Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 29,
-          "name": "Vision Rune",
+          "name": "Lesser Inspiration Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 30,
-          "name": "Greater Vision Rune",
+          "name": "Inspiration Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 31,
-          "name": "Lesser Robust Rune",
+          "name": "Greater Inspiration Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 32,
-          "name": "Robust Rune",
+          "name": "Perfect Inspiration Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 33,
-          "name": "Greater Robust Rune",
+          "name": "Lesser Stone Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 34,
-          "name": "Lesser Adept Rune",
+          "name": "Stone Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 35,
-          "name": "Adept Rune",
+          "name": "Greater Stone Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 36,
-          "name": "Greater Adept Rune",
+          "name": "Perfect Stone Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 37,
-          "name": "Lesser Resolve Rune",
+          "name": "Lesser Vision Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 38,
-          "name": "Resolve Rune",
+          "name": "Vision Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
           ]
         },
         {
           "tier": 39,
+          "name": "Greater Vision Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 40,
+          "name": "Perfect Vision Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 41,
+          "name": "Lesser Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 42,
+          "name": "Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 43,
+          "name": "Greater Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 44,
+          "name": "Perfect Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 45,
+          "name": "Lesser Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 46,
+          "name": "Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 47,
+          "name": "Greater Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 48,
+          "name": "Perfect Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 49,
+          "name": "Lesser Resolve Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 50,
+          "name": "Resolve Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 51,
           "name": "Greater Resolve Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10,
-            10
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 52,
+          "name": "Perfect Resolve Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
+          ]
+        },
+        {
+          "tier": 53,
+          "name": "Rune of Foundations",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            20
           ]
         }
       ]
@@ -2879,15 +3068,36 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
-      "family": "#% faster start of Energy Shield Recharge",
+      "family": "#% chance for Charms you use to not consume Charges",
       "tags": [],
       "spawn_tags": [],
-      "stat_template": "#% faster start of Energy Shield Recharge",
+      "stat_template": "#% chance for Charms you use to not consume Charges",
       "num_tiers": 1,
       "tiers": [
         {
           "tier": 1,
-          "name": "Craiceann's Rune of Recovery",
+          "name": "Idol of Eramir",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Armour while Shapeshifted",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Armour while Shapeshifted",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of The Unleashed",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
@@ -2921,6 +3131,27 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
+      "family": "#% increased Deflection Rating",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Deflection Rating",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Carved Cunning",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
       "family": "#% increased Elemental Ailment Threshold",
       "tags": [],
       "spawn_tags": [],
@@ -2930,6 +3161,138 @@
         {
           "tier": 1,
           "name": "Greater Rune of Alacrity",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Evasion Rating",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Evasion Rating",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Foxshade",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Flask Mana Recovery rate",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Flask Mana Recovery rate",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Briskwrap",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Global Armour, Evasion and Energy Shield",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Global Armour, Evasion and Energy Shield",
+      "num_tiers": 4,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lesser Ward Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Ward Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Greater Ward Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Ward Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Guard gained",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Guard gained",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Protection",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Life Recovery from Flasks",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Life Recovery from Flasks",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Nourishment",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
@@ -2954,7 +3317,70 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Spirit",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Carved Majesty",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
             5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Spirit Reservation Efficiency of Skills",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Spirit Reservation Efficiency of Skills",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of the Blossom",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Stun Threshold",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Stun Threshold",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Carved Mischief",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            25
           ]
         }
       ]
@@ -2967,7 +3393,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Thorns damage",
-      "num_tiers": 1,
+      "num_tiers": 3,
       "tiers": [
         {
           "tier": 1,
@@ -2976,6 +3402,69 @@
           "weight": 0,
           "values": [
             15
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Emergent Instinct",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Legacy of Edyrns Tusks",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased maximum Life#% increased maximum Mana",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased maximum Life#% increased maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's Tending",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% more Runic Ward Regeneration rate per #% of maximum Runic Ward lost from Hits Recently, up to #% more",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% more Runic Ward Regeneration rate per #% of maximum Runic Ward lost from Hits Recently, up to #% more",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Heart",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1,
+            2,
+            100
           ]
         }
       ]
@@ -3026,6 +3515,184 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
+      "family": "#% to Chaos Resistance",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% to Chaos Resistance",
+      "num_tiers": 2,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Panther Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            8
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Emergent Possibility",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% to Cold Resistance",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% to Cold Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Hawk Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% to Fire Resistance",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% to Fire Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Ashrend",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% to Lightning Resistance",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% to Lightning Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Stoat Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% to Quality of all Skills",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% to Quality of all Skills",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Fox Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% to all Elemental Resistances",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% to all Elemental Resistances",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Blackbraid",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "Gain #% of maximum Life as Extra maximum Runic Ward",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain #% of maximum Life as Extra maximum Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Reinforcement",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "Gain additional Ailment Threshold equal to #% of maximum Energy ShieldGain additional Stun Threshold equal to #% of maximum Energy Shield",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain additional Ailment Threshold equal to #% of maximum Energy ShieldGain additional Stun Threshold equal to #% of maximum Energy Shield",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Craiceann's Rune of Recovery",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            50,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
       "family": "Minions have #% to all Elemental Resistances",
       "tags": [],
       "spawn_tags": [],
@@ -3047,6 +3714,96 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
+      "family": "Prevent #% of Damage from Deflected Hits",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Prevent #% of Damage from Deflected Hits",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Glancing",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "Regenerate # Runic Ward per second",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Regenerate # Runic Ward per second",
+      "num_tiers": 4,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lesser Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Greater Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "Regenerate #% of maximum Life per second while Surrounded",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Regenerate #% of maximum Life per second while Surrounded",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Bramblejack",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
       "family": "Storm Skills have # to Limit",
       "tags": [],
       "spawn_tags": [],
@@ -3060,6 +3817,27 @@
           "weight": 0,
           "values": [
             1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "damage removed from mana before life % [#]",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "damage removed from mana before life % [#]",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of the Prism",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
           ]
         }
       ]
@@ -3130,9 +3908,9 @@
       "type": "Enchantment",
       "family": "#% increased Armour and Evasion",
       "tags": [
+        "defences",
         "armour",
-        "evasion",
-        "defences"
+        "evasion"
       ],
       "spawn_tags": [
         "str_dex_armour",
@@ -3283,6 +4061,7 @@
       "type": "Enchantment",
       "family": "#% to Chaos Resistance",
       "tags": [
+        "chaos_resistance",
         "chaos",
         "resistance"
       ],
@@ -3314,7 +4093,14 @@
       "type": "Enchantment",
       "family": "#% to all Maximum Elemental Resistances",
       "tags": [
+        "cold_resistance",
+        "elemental_resistance",
+        "fire_resistance",
+        "lightning_resistance",
         "elemental",
+        "fire",
+        "cold",
+        "lightning",
         "resistance"
       ],
       "spawn_tags": [
@@ -3581,6 +4367,9 @@
       "type": "Suffix",
       "family": "#% to Cold and Chaos Resistances",
       "tags": [
+        "chaos_resistance",
+        "cold_resistance",
+        "elemental_resistance",
         "unveiled_mod",
         "kurgal_mod",
         "elemental",
@@ -3619,6 +4408,9 @@
       "type": "Suffix",
       "family": "#% to Fire and Chaos Resistances",
       "tags": [
+        "chaos_resistance",
+        "elemental_resistance",
+        "fire_resistance",
         "unveiled_mod",
         "amanamu_mod",
         "elemental",
@@ -3657,6 +4449,9 @@
       "type": "Suffix",
       "family": "#% to Lightning and Chaos Resistances",
       "tags": [
+        "chaos_resistance",
+        "elemental_resistance",
+        "lightning_resistance",
         "unveiled_mod",
         "ulaman_mod",
         "elemental",
@@ -3760,43 +4555,6 @@
       "section": "Essence",
       "section_key": "essence",
       "type": "Prefix",
-      "family": "# to # Physical Thorns damage",
-      "tags": [
-        "physical_damage",
-        "damage",
-        "physical"
-      ],
-      "spawn_tags": [
-        "body_armour",
-        "shield",
-        "belt",
-        "default"
-      ],
-      "stat_template": "# to # Physical Thorns damage",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of Hysteria",
-          "min_ilvl": 63,
-          "weight": 0,
-          "values": [
-            [
-              64,
-              97
-            ],
-            [
-              97,
-              145
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Prefix",
       "family": "# to maximum Life",
       "tags": [
         "resource",
@@ -3858,16 +4616,16 @@
       "section": "Essence",
       "section_key": "essence",
       "type": "Prefix",
-      "family": "#% increased Armour, Evasion or Energy Shield",
+      "family": "#% increased Armour, Evasion and Energy Shield",
       "tags": [
-        "armour",
-        "defences"
+        "defences",
+        "armour"
       ],
       "spawn_tags": [
         "str_armour",
         "default"
       ],
-      "stat_template": "#% increased Armour, Evasion or Energy Shield",
+      "stat_template": "#% increased Armour, Evasion and Energy Shield",
       "num_tiers": 18,
       "tiers": [
         {
@@ -4091,48 +4849,6 @@
     {
       "section": "Essence",
       "section_key": "essence",
-      "type": "Prefix",
-      "family": "Allocates a random Notable Passive Skill",
-      "tags": [],
-      "spawn_tags": [
-        "default"
-      ],
-      "stat_template": "Allocates a random Notable Passive Skill",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of Delirium",
-          "min_ilvl": 1,
-          "weight": 0,
-          "values": []
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Prefix",
-      "family": "Mark of the Abyssal Lord",
-      "tags": [],
-      "spawn_tags": [
-        "default"
-      ],
-      "stat_template": "Mark of the Abyssal Lord",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of the Abyss",
-          "min_ilvl": 1,
-          "weight": 0,
-          "values": []
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
       "type": "Suffix",
       "family": "# to Strength, Dexterity or Intelligence",
       "tags": [
@@ -4275,6 +4991,7 @@
       "type": "Suffix",
       "family": "#% to Chaos Resistance",
       "tags": [
+        "chaos_resistance",
         "chaos",
         "resistance"
       ],
@@ -4332,6 +5049,8 @@
       "type": "Suffix",
       "family": "#% to Cold Resistance",
       "tags": [
+        "cold_resistance",
+        "elemental_resistance",
         "elemental",
         "cold",
         "resistance"
@@ -4390,6 +5109,8 @@
       "type": "Suffix",
       "family": "#% to Fire Resistance",
       "tags": [
+        "elemental_resistance",
+        "fire_resistance",
         "elemental",
         "fire",
         "resistance"
@@ -4448,6 +5169,8 @@
       "type": "Suffix",
       "family": "#% to Lightning Resistance",
       "tags": [
+        "elemental_resistance",
+        "lightning_resistance",
         "elemental",
         "lightning",
         "resistance"
@@ -4501,23 +5224,65 @@
       ]
     },
     {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Suffix",
-      "family": "Mark of the Abyssal Lord",
-      "tags": [],
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "# to # Physical Thorns damage",
+      "tags": [
+        "physical_damage",
+        "damage",
+        "physical"
+      ],
       "spawn_tags": [
+        "body_armour",
+        "shield",
+        "belt",
         "default"
       ],
-      "stat_template": "Mark of the Abyssal Lord",
+      "stat_template": "# to # Physical Thorns damage",
       "num_tiers": 1,
       "tiers": [
         {
           "tier": 1,
-          "name": "Essence of the Abyss",
-          "min_ilvl": 1,
+          "name": "Essence of Hysteria",
+          "min_ilvl": 63,
           "weight": 0,
-          "values": []
+          "values": [
+            [
+              64,
+              97
+            ],
+            [
+              98,
+              145
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "#% increased Runic Ward",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Sovereign Alloy",
+          "min_ilvl": 25,
+          "weight": 0,
+          "values": [
+            [
+              24,
+              30
+            ]
+          ]
         }
       ]
     },
@@ -4582,6 +5347,102 @@
     {
       "section": "Perfect Essence",
       "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "Allocates a random Notable Passive Skill",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Allocates a random Notable Passive Skill",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of Delirium",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "Mark of the Abyssal Lord",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Mark of the Abyssal Lord",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of the Abyss",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "#% increased Presence Area of Effect",
+      "tags": [
+        "aura"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Presence Area of Effect",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Expansive Alloy",
+          "min_ilvl": 25,
+          "weight": 0,
+          "values": [
+            [
+              35,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "#% reduced Slowing Potency of Debuffs on You",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% reduced Slowing Potency of Debuffs on You",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Cyclonic Alloy",
+          "min_ilvl": 45,
+          "weight": 0,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
       "type": "Suffix",
       "family": "Hits against you have #% reduced Critical Damage Bonus",
       "tags": [],
@@ -4606,13 +5467,34 @@
       ]
     },
     {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "Mark of the Abyssal Lord",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Mark of the Abyssal Lord",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of the Abyss",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
-      "family": "# Charm Slot",
+      "family": "# Charm Slots",
       "tags": [],
       "spawn_tags": [],
-      "stat_template": "# Charm Slot",
+      "stat_template": "# Charm Slots",
       "num_tiers": 1,
       "tiers": [
         {
@@ -4621,6 +5503,28 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "# Suffix Modifier allowedlocal maximum mods allowed + [#]",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# Suffix Modifier allowedlocal maximum mods allowed + [#]",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Serle's Triumph",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1,
             1
           ]
         }
@@ -4716,11 +5620,56 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "# to Armour# to Evasion Rating# to maximum Energy Shield",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# to Armour# to Evasion Rating# to maximum Energy Shield",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of Foundations",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30,
+            30,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "# to Deflection Rating per # maximum Runic Ward",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# to Deflection Rating per # maximum Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Glancing",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            3,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "# to Dexterity",
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Dexterity",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -4737,7 +5686,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -4746,7 +5695,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -4759,7 +5717,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Intelligence",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -4776,7 +5734,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -4785,7 +5743,60 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Resolve Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "# to Spirit per Idol socketed in your Equipment",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# to Spirit per Idol socketed in your Equipment",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Carved Majesty",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "# to Spirit# to Spirit per # Levels",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# to Spirit# to Spirit per # Levels",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of the Blossom",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            50,
+            -1,
+            2
           ]
         }
       ]
@@ -4798,7 +5809,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Strength",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -4815,7 +5826,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -4824,7 +5835,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -4837,7 +5857,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Stun Threshold",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -4845,7 +5865,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            40
+            50
           ]
         },
         {
@@ -4854,7 +5874,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            60
+            75
           ]
         },
         {
@@ -4863,7 +5883,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            80
+            100
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Stone Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            125
           ]
         }
       ]
@@ -4876,7 +5905,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to maximum Life",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -4884,7 +5913,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            20
+            30
           ]
         },
         {
@@ -4893,7 +5922,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            30
+            45
           ]
         },
         {
@@ -4902,7 +5931,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            40
+            60
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Body Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            75
           ]
         }
       ]
@@ -4915,7 +5953,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to maximum Mana",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -4923,7 +5961,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            15
+            20
           ]
         },
         {
@@ -4932,7 +5970,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            25
+            30
           ]
         },
         {
@@ -4941,7 +5979,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            35
+            40
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Mind Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            50
           ]
         }
       ]
@@ -4950,15 +5997,42 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
-      "family": "#% faster start of Energy Shield Recharge",
+      "family": "# to maximum Runic Ward",
       "tags": [],
       "spawn_tags": [],
-      "stat_template": "#% faster start of Energy Shield Recharge",
-      "num_tiers": 1,
+      "stat_template": "# to maximum Runic Ward",
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
-          "name": "Atmohua's Soul Core of Retreat",
+          "name": "Lesser Ward Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Ward Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Greater Ward Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            25
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Ward Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
@@ -4971,11 +6045,54 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "#% Life Recovery from Flasks also applies to Runic Ward",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% Life Recovery from Flasks also applies to Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Nourishment",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% chance to inflict Bleeding on Hit#% reduced Slowing Potency of Debuffs on You",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% chance to inflict Bleeding on Hit#% reduced Slowing Potency of Debuffs on You",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Edyrns Tusks",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            50,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "#% increased Armour, Evasion and Energy Shield",
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Armour, Evasion and Energy Shield",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5003,6 +6120,36 @@
           "values": [
             18
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Iron Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% increased Deflection Rating",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Deflection Rating",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Hawk Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10
+          ]
         }
       ]
     },
@@ -5022,7 +6169,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            50
+            30
           ]
         }
       ]
@@ -5035,7 +6182,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Life and Mana Recovery from Flasks",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5052,7 +6199,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
           ]
         },
         {
@@ -5061,7 +6208,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            12
+            16
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Vision Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
           ]
         }
       ]
@@ -5074,7 +6230,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Mana Regeneration Rate",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5102,6 +6258,37 @@
           "values": [
             18
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Inspiration Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% increased Movement Speed when on Full Life#% increased Evasion Rating when on Full Life",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Movement Speed when on Full Life#% increased Evasion Rating when on Full Life",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Foxshade",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10,
+            100
+          ]
         }
       ]
     },
@@ -5121,7 +6308,97 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            5
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% increased Runic Ward",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Reinforcement",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% increased Runic Ward Regeneration Rate",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Runic Ward Regeneration Rate",
+      "num_tiers": 4,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lesser Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            8
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            12
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Greater Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            16
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Charging Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% increased Stun Threshold if you've been Stunned Recently",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Stun Threshold if you've been Stunned Recently",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Carved Mischief",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            200
           ]
         }
       ]
@@ -5151,6 +6428,27 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "#% of Armour also applies to Chaos Damage",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% of Armour also applies to Chaos Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Panther Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "#% of Armour also applies to Chaos Damage while on full Energy Shield",
       "tags": [],
       "spawn_tags": [],
@@ -5163,7 +6461,49 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% of Armour also applies to Elemental Damage",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% of Armour also applies to Elemental Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Blackbraid",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
             50
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% of Chaos Damage from Hits taken as a Damage of a random Element",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% of Chaos Damage from Hits taken as a Damage of a random Element",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Emergent Possibility",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -5185,6 +6525,69 @@
           "weight": 0,
           "values": [
             15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% of Damage taken bypasses Energy Shield",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% of Damage taken bypasses Energy Shield",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Stoat Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% of Damage taken from Hits bypasses Energy Shield if Energy Shield is below half",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% of Damage taken from Hits bypasses Energy Shield if Energy Shield is below half",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of The Unleashed",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% of Melee Physical Damage taken reflected to Attacker",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% of Melee Physical Damage taken reflected to Attacker",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Bramblejack",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            250
           ]
         }
       ]
@@ -5281,7 +6684,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% to Cold Resistance",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5298,7 +6701,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            12
+            14
           ]
         },
         {
@@ -5307,7 +6710,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            14
+            18
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Glacial Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            22
           ]
         }
       ]
@@ -5320,7 +6732,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% to Fire Resistance",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5337,7 +6749,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            12
+            14
           ]
         },
         {
@@ -5346,7 +6758,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            14
+            18
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Desert Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            22
           ]
         }
       ]
@@ -5359,7 +6780,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% to Lightning Resistance",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5376,7 +6797,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            12
+            14
           ]
         },
         {
@@ -5385,28 +6806,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            14
+            18
           ]
-        }
-      ]
-    },
-    {
-      "section": "Rune / Augment",
-      "section_key": "socketable",
-      "type": "Type 0",
-      "family": "#% to Quality of all Skills",
-      "tags": [],
-      "spawn_tags": [],
-      "stat_template": "#% to Quality of all Skills",
-      "num_tiers": 1,
-      "tiers": [
+        },
         {
-          "tier": 1,
-          "name": "Fox Idol",
+          "tier": 4,
+          "name": "Perfect Storm Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            2
+            22
           ]
         }
       ]
@@ -5428,6 +6837,89 @@
           "weight": 0,
           "values": [
             5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% to all Maximum Elemental Resistances#% to all Elemental Resistances",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% to all Maximum Elemental Resistances#% to all Elemental Resistances",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of the Prism",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            -10,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Can have # additional Crafted Modifiers",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Can have # additional Crafted Modifiers",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Astrid's Creativity",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Can roll Soul modifiers",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Can roll Soul modifiers",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's Tending",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Cannot be Ignited# Physical Damage taken from Attack Hits",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Cannot be Ignited# Physical Damage taken from Attack Hits",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Ashrend",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            -10
           ]
         }
       ]
@@ -5520,6 +7012,136 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "Every # seconds, gain Guard equal to #% of maximum Runic Ward for # seconds",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Every # seconds, gain Guard equal to #% of maximum Runic Ward for # seconds",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Protection",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            4,
+            20,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Gain # Rage when Hit by an EnemyGain # Rage when Critically Hit by an Enemy",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain # Rage when Hit by an EnemyGain # Rage when Critically Hit by an Enemy",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Bristleboar",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Gain #% of maximum Life as Extra maximum Runic Ward",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain #% of maximum Life as Extra maximum Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Heart",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Gain Deflection Rating equal to #% of Evasion Rating",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain Deflection Rating equal to #% of Evasion Rating",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Briskwrap",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Gain Maximum Energy Shield equal to #% of totalStrength Requirements of Equipped Armour Items",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain Maximum Energy Shield equal to #% of totalStrength Requirements of Equipped Armour Items",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Emergent Vigour",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Gain additional Ailment Threshold equal to #% of maximum Energy ShieldGain additional Stun Threshold equal to #% of maximum Energy Shield",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain additional Ailment Threshold equal to #% of maximum Energy ShieldGain additional Stun Threshold equal to #% of maximum Energy Shield",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Atmohua's Soul Core of Retreat",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "Hits against you have #% reduced Critical Damage Bonus",
       "tags": [],
       "spawn_tags": [],
@@ -5533,6 +7155,27 @@
           "weight": 0,
           "values": [
             20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Idols socketed in this item gain the benefits of their Bonded modifiersdisplay additional socketable mods for idols [#]",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Idols socketed in this item gain the benefits of their Bonded modifiersdisplay additional socketable mods for idols [#]",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Fox Idol",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
           ]
         }
       ]
@@ -5583,11 +7226,53 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "Prevent #% of Damage from Deflected Hits if you'veDeflected no Hits Recently",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Prevent #% of Damage from Deflected Hits if you'veDeflected no Hits Recently",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Carved Cunning",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Recover #% of maximum Life for each Endurance Charge consumed",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Recover #% of maximum Life for each Endurance Charge consumed",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Kingsguard",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "Regenerate #% of maximum Life per second",
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Regenerate #% of maximum Life per second",
-      "num_tiers": 4,
+      "num_tiers": 5,
       "tiers": [
         {
           "tier": 1,
@@ -5595,7 +7280,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            0.25
+            0.35
           ]
         },
         {
@@ -5604,7 +7289,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            0.3
+            0.4
           ]
         },
         {
@@ -5613,17 +7298,104 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            0.35
+            0.45
           ]
         },
         {
           "tier": 4,
+          "name": "Perfect Rebirth Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            0.5
+          ]
+        },
+        {
+          "tier": 5,
           "name": "Tecrod's Gaze",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
             1.5
           ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Skills have #% chance to not remove Charges but still count as consuming them",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Skills have #% chance to not remove Charges but still count as consuming them",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Idol of Eramir",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Thorns Damage is Lucky against targets with Fully Broken Armour",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Thorns Damage is Lucky against targets with Fully Broken Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Emergent Instinct",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Upgrades a socketed Rune",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Upgrades a socketed Rune",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Masterwork Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Aldur's Legacy",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
         }
       ]
     },
@@ -5644,6 +7416,786 @@
           "weight": 0,
           "values": [
             50
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "# to maximum Life# to maximum Mana",
+      "tags": [
+        "resource",
+        "life",
+        "mana"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "# to maximum Life# to maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              19,
+              189
+            ],
+            [
+              19,
+              189
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Armour and Energy Shield# to Spirit",
+      "tags": [
+        "defences",
+        "armour",
+        "energy_shield"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "dex_int_armour",
+        "str_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Armour and Energy Shield# to Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              1,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Armour and Energy Shield# to maximum Mana",
+      "tags": [
+        "defences",
+        "resource",
+        "mana",
+        "armour",
+        "energy_shield"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "dex_int_armour",
+        "str_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Armour and Energy Shield# to maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              7,
+              57
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Armour and Evasion# to Spirit",
+      "tags": [
+        "defences",
+        "armour",
+        "evasion"
+      ],
+      "spawn_tags": [
+        "str_int_armour",
+        "dex_int_armour",
+        "str_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Armour and Evasion# to Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              1,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Armour and Evasion# to maximum Mana",
+      "tags": [
+        "defences",
+        "resource",
+        "mana",
+        "armour",
+        "evasion"
+      ],
+      "spawn_tags": [
+        "str_int_armour",
+        "dex_int_armour",
+        "str_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Armour and Evasion# to maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              7,
+              57
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Armour# to Spirit",
+      "tags": [
+        "defences",
+        "armour"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "dex_int_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Armour# to Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              1,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Armour# to maximum Mana",
+      "tags": [
+        "defences",
+        "resource",
+        "mana",
+        "armour"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "dex_int_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Armour# to maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              7,
+              57
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Energy Shield# to Spirit",
+      "tags": [
+        "defences",
+        "energy_shield"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "dex_int_armour",
+        "str_armour",
+        "dex_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Energy Shield# to Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              1,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Energy Shield# to maximum Mana",
+      "tags": [
+        "defences",
+        "resource",
+        "mana",
+        "energy_shield"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "dex_int_armour",
+        "str_armour",
+        "dex_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Energy Shield# to maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              7,
+              57
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Evasion Rating# to Spirit",
+      "tags": [
+        "defences",
+        "evasion"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "dex_int_armour",
+        "str_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion Rating# to Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              1,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Evasion Rating# to maximum Mana",
+      "tags": [
+        "defences",
+        "resource",
+        "mana",
+        "evasion"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "dex_int_armour",
+        "str_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion Rating# to maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              7,
+              57
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Evasion and Energy Shield# to Spirit",
+      "tags": [
+        "defences",
+        "evasion",
+        "energy_shield"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "str_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion and Energy Shield# to Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              1,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Evasion and Energy Shield# to maximum Mana",
+      "tags": [
+        "defences",
+        "resource",
+        "mana",
+        "evasion",
+        "energy_shield"
+      ],
+      "spawn_tags": [
+        "str_dex_armour",
+        "str_int_armour",
+        "str_armour",
+        "dex_armour",
+        "int_armour",
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion and Energy Shield# to maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              52
+            ],
+            [
+              7,
+              57
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased Spirit",
+      "tags": [],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased Spirit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              1,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased maximum Life",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased maximum Life",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              1,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Prefix",
+      "family": "#% increased maximum Mana",
+      "tags": [
+        "resource",
+        "mana"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% increased maximum Mana",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Medved's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              1,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Suffix",
+      "family": "#% reduced Duration of Ailments on You",
+      "tags": [
+        "bleed",
+        "poison",
+        "physical",
+        "elemental",
+        "fire",
+        "cold",
+        "lightning",
+        "chaos",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% reduced Duration of Ailments on You",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Soul",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Suffix",
+      "family": "#% to Cold and Chaos Resistances",
+      "tags": [
+        "chaos_resistance",
+        "cold_resistance",
+        "elemental_resistance",
+        "elemental",
+        "cold",
+        "chaos",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% to Cold and Chaos Resistances",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Soul",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              31
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Suffix",
+      "family": "#% to Fire and Chaos Resistances",
+      "tags": [
+        "chaos_resistance",
+        "elemental_resistance",
+        "fire_resistance",
+        "elemental",
+        "fire",
+        "chaos",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% to Fire and Chaos Resistances",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Soul",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              31
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Suffix",
+      "family": "#% to Lightning and Chaos Resistances",
+      "tags": [
+        "chaos_resistance",
+        "elemental_resistance",
+        "lightning_resistance",
+        "elemental",
+        "lightning",
+        "chaos",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "#% to Lightning and Chaos Resistances",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Soul",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              31
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "soul",
+      "section_key": "soul",
+      "type": "Suffix",
+      "family": "Hits against you have #% reduced Critical Damage Bonus",
+      "tags": [
+        "damage",
+        "critical"
+      ],
+      "spawn_tags": [
+        "soul",
+        "default"
+      ],
+      "stat_template": "Hits against you have #% reduced Critical Damage Bonus",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Soul",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              99
+            ]
           ]
         }
       ]

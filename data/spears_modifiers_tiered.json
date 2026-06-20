@@ -1,8 +1,8 @@
 {
   "source_url": "https://poe2db.tw/us/Spears",
   "item_slug": "Spears",
-  "total_groups": 135,
-  "total_mods": 357,
+  "total_groups": 170,
+  "total_mods": 412,
   "modifiers": [
     {
       "section": "Base Modifiers",
@@ -106,7 +106,7 @@
         {
           "tier": 8,
           "name": "Reliable",
-          "min_ilvl": 11,
+          "min_ilvl": 13,
           "weight": 800,
           "values": [
             [
@@ -118,7 +118,7 @@
         {
           "tier": 9,
           "name": "Precise",
-          "min_ilvl": 1,
+          "min_ilvl": 8,
           "weight": 800,
           "values": [
             [
@@ -136,9 +136,12 @@
       "family": "#% increased Elemental Damage with Attacks",
       "tags": [
         "elemental_damage",
+        "has_attack_mod",
         "damage",
         "elemental",
-        "attack"
+        "fire",
+        "cold",
+        "lightning"
       ],
       "spawn_tags": [
         "bow",
@@ -455,7 +458,7 @@
         {
           "tier": 7,
           "name": "Journeyman's",
-          "min_ilvl": 11,
+          "min_ilvl": 14,
           "weight": 1000,
           "values": [
             [
@@ -471,7 +474,7 @@
         {
           "tier": 8,
           "name": "Squire's",
-          "min_ilvl": 1,
+          "min_ilvl": 8,
           "weight": 1000,
           "values": [
             [
@@ -1411,7 +1414,7 @@
         "default"
       ],
       "stat_template": "# to Level of all Melee Skills",
-      "num_tiers": 5,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -1419,7 +1422,7 @@
           "min_ilvl": 81,
           "weight": 50,
           "values": [
-            5
+            4
           ]
         },
         {
@@ -1428,7 +1431,7 @@
           "min_ilvl": 55,
           "weight": 125,
           "values": [
-            4
+            3
           ]
         },
         {
@@ -1437,7 +1440,7 @@
           "min_ilvl": 36,
           "weight": 250,
           "values": [
-            3
+            2
           ]
         },
         {
@@ -1445,15 +1448,6 @@
           "name": "of Dueling",
           "min_ilvl": 18,
           "weight": 375,
-          "values": [
-            2
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Combat",
-          "min_ilvl": 2,
-          "weight": 500,
           "values": [
             1
           ]
@@ -1472,7 +1466,7 @@
         "default"
       ],
       "stat_template": "# to Level of all Projectile Skills",
-      "num_tiers": 5,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -1480,7 +1474,7 @@
           "min_ilvl": 81,
           "weight": 50,
           "values": [
-            5
+            4
           ]
         },
         {
@@ -1489,7 +1483,7 @@
           "min_ilvl": 55,
           "weight": 125,
           "values": [
-            4
+            3
           ]
         },
         {
@@ -1498,7 +1492,7 @@
           "min_ilvl": 36,
           "weight": 250,
           "values": [
-            3
+            2
           ]
         },
         {
@@ -1506,15 +1500,6 @@
           "name": "of the Fletcher",
           "min_ilvl": 18,
           "weight": 375,
-          "values": [
-            2
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of the Archer",
-          "min_ilvl": 2,
-          "weight": 500,
           "values": [
             1
           ]
@@ -2480,17 +2465,16 @@
         "attack"
       ],
       "spawn_tags": [
-        "ranged",
         "weapon",
         "default"
       ],
       "stat_template": "Leeches (#—#)% of Physical Damage as Life",
-      "num_tiers": 5,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
           "name": "of the Vampire",
-          "min_ilvl": 81,
+          "min_ilvl": 65,
           "weight": 1000,
           "values": [
             9,
@@ -2500,7 +2484,7 @@
         {
           "tier": 2,
           "name": "of the Lamprey",
-          "min_ilvl": 68,
+          "min_ilvl": 54,
           "weight": 1000,
           "values": [
             8,
@@ -2510,7 +2494,7 @@
         {
           "tier": 3,
           "name": "of the Remora",
-          "min_ilvl": 54,
+          "min_ilvl": 38,
           "weight": 1000,
           "values": [
             7,
@@ -2520,21 +2504,11 @@
         {
           "tier": 4,
           "name": "of the Locust",
-          "min_ilvl": 38,
+          "min_ilvl": 21,
           "weight": 1000,
           "values": [
             6,
             6.9
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of the Parasite",
-          "min_ilvl": 21,
-          "weight": 1000,
-          "values": [
-            5,
-            5.9
           ]
         }
       ]
@@ -2551,17 +2525,16 @@
         "attack"
       ],
       "spawn_tags": [
-        "ranged",
         "weapon",
         "default"
       ],
       "stat_template": "Leeches (#—#)% of Physical Damage as Mana",
-      "num_tiers": 5,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
           "name": "of the Desperate",
-          "min_ilvl": 81,
+          "min_ilvl": 65,
           "weight": 1000,
           "values": [
             8,
@@ -2571,7 +2544,7 @@
         {
           "tier": 2,
           "name": "of the Drought",
-          "min_ilvl": 68,
+          "min_ilvl": 54,
           "weight": 1000,
           "values": [
             7,
@@ -2581,7 +2554,7 @@
         {
           "tier": 3,
           "name": "of the Arid",
-          "min_ilvl": 54,
+          "min_ilvl": 38,
           "weight": 1000,
           "values": [
             6,
@@ -2591,21 +2564,11 @@
         {
           "tier": 4,
           "name": "of the Parched",
-          "min_ilvl": 38,
+          "min_ilvl": 21,
           "weight": 1000,
           "values": [
             5,
             5.9
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of the Thirsty",
-          "min_ilvl": 21,
-          "weight": 1000,
-          "values": [
-            4,
-            4.9
           ]
         }
       ]
@@ -2656,11 +2619,32 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
+      "family": "#% increased Attack Speed while missing Runic Ward",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Attack Speed while missing Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Armature",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
       "family": "#% increased Damage against Immobilised Enemies",
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Damage against Immobilised Enemies",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2687,6 +2671,36 @@
           "weight": 0,
           "values": [
             40
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Stone Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% increased Endurance, Frenzy and Power Charge Duration",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% increased Endurance, Frenzy and Power Charge Duration",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Ancient Rune of Prowess",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
           ]
         }
       ]
@@ -2720,7 +2734,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Freeze Buildup",
-      "num_tiers": 3,
+      "num_tiers": 5,
       "tiers": [
         {
           "tier": 1,
@@ -2748,6 +2762,24 @@
           "values": [
             30
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Glacial Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "Rune of Accumulation",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
+          ]
         }
       ]
     },
@@ -2759,7 +2791,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Ignite Magnitude",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2767,7 +2799,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            25
+            30
           ]
         },
         {
@@ -2776,7 +2808,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            25
+            30
           ]
         },
         {
@@ -2785,7 +2817,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            25
+            30
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Desert Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
           ]
         }
       ]
@@ -2798,7 +2839,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Magnitude of Shock you inflict",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2821,6 +2862,15 @@
         {
           "tier": 3,
           "name": "Greater Storm Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Storm Rune",
           "min_ilvl": 1,
           "weight": 0,
           "values": [
@@ -2858,7 +2908,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased effect of Fully Broken Armour",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2886,6 +2936,15 @@
           "values": [
             20
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Iron Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
+          ]
         }
       ]
     },
@@ -2897,7 +2956,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased maximum Life",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2925,6 +2984,15 @@
           "values": [
             5
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Body Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
         }
       ]
     },
@@ -2936,7 +3004,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased maximum Mana",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -2964,6 +3032,15 @@
           "values": [
             5
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Mind Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
         }
       ]
     },
@@ -2975,7 +3052,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% of Skill Mana Costs Converted to Life Costs",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -3002,6 +3079,36 @@
           "weight": 0,
           "values": [
             12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Inspiration Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "#% reduced Runic Ward Cost Efficiency",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% reduced Runic Ward Cost Efficiency",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Annihilation",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10
           ]
         }
       ]
@@ -3077,7 +3184,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Adds # to # Physical Damage to AttacksAdds # to # Cold damage to Attacks",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -3114,6 +3221,18 @@
             5,
             8
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Resolve Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            6,
+            10,
+            5,
+            8
+          ]
         }
       ]
     },
@@ -3125,7 +3244,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Adds # to # Physical Damage to AttacksAdds # to # Fire damage to Attacks",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -3162,6 +3281,18 @@
             6,
             10
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            6,
+            10,
+            6,
+            10
+          ]
         }
       ]
     },
@@ -3173,7 +3304,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Adds # to # Physical Damage to AttacksAdds # to # Lightning damage to Attacks",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -3210,6 +3341,18 @@
             1,
             16
           ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            6,
+            10,
+            1,
+            16
+          ]
         }
       ]
     },
@@ -3221,7 +3364,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Attacks have #% to Critical Hit Chance",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -3248,6 +3391,36 @@
           "weight": 0,
           "values": [
             1
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Vision Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "Break #% increased Armour",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Break #% increased Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Disintegration",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10
           ]
         }
       ]
@@ -3277,10 +3450,10 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
-      "family": "Gain #% of Elemental Damage as Extra Chaos Damage",
+      "family": "Gain #% of Physical Damage as extra Chaos Damage",
       "tags": [],
       "spawn_tags": [],
-      "stat_template": "Gain #% of Elemental Damage as Extra Chaos Damage",
+      "stat_template": "Gain #% of Physical Damage as extra Chaos Damage",
       "num_tiers": 1,
       "tiers": [
         {
@@ -3319,6 +3492,25 @@
       "section": "Bonded (Shaman Runes)",
       "section_key": "bonded",
       "type": "Type 0",
+      "family": "Knocks Enemies Back on Hit",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Knocks Enemies Back on Hit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Tyranny's Grip",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
       "family": "Minions deal #% increased Damage",
       "tags": [],
       "spawn_tags": [],
@@ -3344,7 +3536,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Regenerate #% of maximum Life per second",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -3371,6 +3563,36 @@
           "weight": 0,
           "values": [
             0.4
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Rebirth Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Bonded (Shaman Runes)",
+      "section_key": "bonded",
+      "type": "Type 0",
+      "family": "rage effect +% [#]",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "rage effect +% [#]",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of Confrontation",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            10
           ]
         }
       ]
@@ -3447,9 +3669,12 @@
       "family": "#% increased Elemental Damage with Attacks",
       "tags": [
         "elemental_damage",
+        "has_attack_mod",
         "damage",
         "elemental",
-        "attack"
+        "fire",
+        "cold",
+        "lightning"
       ],
       "spawn_tags": [
         "bow",
@@ -4753,27 +4978,6 @@
     {
       "section": "Essence",
       "section_key": "essence",
-      "type": "Prefix",
-      "family": "Mark of the Abyssal Lord",
-      "tags": [],
-      "spawn_tags": [
-        "default"
-      ],
-      "stat_template": "Mark of the Abyssal Lord",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of the Abyss",
-          "min_ilvl": 1,
-          "weight": 0,
-          "values": []
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
       "type": "Suffix",
       "family": "# to Strength, Dexterity or Intelligence",
       "tags": [
@@ -5014,23 +5218,32 @@
       ]
     },
     {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Suffix",
-      "family": "Mark of the Abyssal Lord",
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "# to Accuracy Rating#% increased Attack Speed",
       "tags": [],
       "spawn_tags": [
         "default"
       ],
-      "stat_template": "Mark of the Abyssal Lord",
+      "stat_template": "# to Accuracy Rating#% increased Attack Speed",
       "num_tiers": 1,
       "tiers": [
         {
           "tier": 1,
-          "name": "Essence of the Abyss",
-          "min_ilvl": 1,
+          "name": "Celestial Alloy",
+          "min_ilvl": 65,
           "weight": 0,
-          "values": []
+          "values": [
+            [
+              327,
+              427
+            ],
+            [
+              5,
+              8
+            ]
+          ]
         }
       ]
     },
@@ -5160,6 +5373,27 @@
     {
       "section": "Perfect Essence",
       "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "Mark of the Abyssal Lord",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Mark of the Abyssal Lord",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of the Abyss",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
       "type": "Suffix",
       "family": "# to Level of all Attack Skills",
       "tags": [
@@ -5177,7 +5411,63 @@
           "min_ilvl": 72,
           "weight": 0,
           "values": [
-            3
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "# to Weapon Range",
+      "tags": [
+        "attack"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "# to Weapon Range",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "The Runefather's Alloy",
+          "min_ilvl": 65,
+          "weight": 0,
+          "values": [
+            [
+              8,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "# to maximum Runic Ward",
+      "tags": [
+        "runic_ward"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "# to maximum Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Protective Alloy",
+          "min_ilvl": 25,
+          "weight": 0,
+          "values": [
+            [
+              51,
+              74
+            ]
           ]
         }
       ]
@@ -5211,6 +5501,134 @@
       ]
     },
     {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "#% increased Magnitude of Ailments you inflict",
+      "tags": [
+        "damage",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Magnitude of Ailments you inflict",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Prismatic Alloy",
+          "min_ilvl": 45,
+          "weight": 0,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "#% increased Physical Damage# to all Attributes",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Physical Damage# to all Attributes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Transcendent Alloy",
+          "min_ilvl": 65,
+          "weight": 0,
+          "values": [
+            [
+              15,
+              20
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "#% increased effect of Socketed Augment Items",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased effect of Socketed Augment Items",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Sovereign Alloy",
+          "min_ilvl": 65,
+          "weight": 0,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "Mark of the Abyssal Lord",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Mark of the Abyssal Lord",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of the Abyss",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "# Suffix Modifier allowedlocal maximum mods allowed + [#]",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "# Suffix Modifier allowedlocal maximum mods allowed + [#]",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Serle's Triumph",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
@@ -5218,7 +5636,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Accuracy Rating",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5226,7 +5644,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            50
+            60
           ]
         },
         {
@@ -5235,7 +5653,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            80
+            90
           ]
         },
         {
@@ -5244,7 +5662,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            110
+            120
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Vision Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            150
           ]
         }
       ]
@@ -5257,7 +5684,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Dexterity",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5274,7 +5701,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -5283,7 +5710,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Adept Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -5296,7 +5732,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Intelligence",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5313,7 +5749,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -5322,7 +5758,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Resolve Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -5356,7 +5801,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "# to Strength",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5373,7 +5818,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            9
           ]
         },
         {
@@ -5382,7 +5827,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            12
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Robust Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
           ]
         }
       ]
@@ -5425,6 +5879,27 @@
           "weight": 0,
           "values": [
             15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "#% chance when you gain a Charge to gain an additional Charge",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "#% chance when you gain a Charge to gain an additional Charge",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Ancient Rune of Prowess",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            30
           ]
         }
       ]
@@ -5605,7 +6080,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "#% increased Physical Damage",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -5632,6 +6107,15 @@
           "weight": 0,
           "values": [
             18
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Iron Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20
           ]
         }
       ]
@@ -5785,6 +6269,28 @@
         },
         {
           "tier": 4,
+          "name": "Perfect Glacial Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            16,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Adds # to # Cold Damage against Chilled Enemies",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Adds # to # Cold Damage against Chilled Enemies",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
           "name": "Lady Hestra's Rune of Winter",
           "min_ilvl": 1,
           "weight": 0,
@@ -5837,6 +6343,28 @@
         },
         {
           "tier": 4,
+          "name": "Perfect Desert Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            17,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Adds # to # Fire Damage to Attacks against Ignited Enemies",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Adds # to # Fire Damage to Attacks against Ignited Enemies",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
           "name": "Thane Myrk's Rune of Summer",
           "min_ilvl": 1,
           "weight": 0,
@@ -5889,6 +6417,28 @@
         },
         {
           "tier": 4,
+          "name": "Perfect Storm Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Adds # to # Lightning Damage against Shocked Enemies",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Adds # to # Lightning Damage against Shocked Enemies",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
           "name": "Thane Leld's Rune of Spring",
           "min_ilvl": 1,
           "weight": 0,
@@ -5945,6 +6495,48 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "Attacks Break Armour equal to #% of maximum Runic Ward",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Attacks Break Armour equal to #% of maximum Runic Ward",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Disintegration",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Attacks spend #% of your maximum Runic Ward if possible to gain that much added Physical damage",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Attacks spend #% of your maximum Runic Ward if possible to gain that much added Physical damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Annihilation",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "Attacks with this Weapon Penetrate #% Elemental Resistances",
       "tags": [],
       "spawn_tags": [],
@@ -5987,11 +6579,32 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "Can have # additional Crafted Modifiers",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Can have # additional Crafted Modifiers",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Astrid's Creativity",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "Causes #% increased Stun Buildup",
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Causes #% increased Stun Buildup",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -6008,7 +6621,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            25
+            30
           ]
         },
         {
@@ -6017,7 +6630,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            30
+            40
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Stone Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            50
           ]
         }
       ]
@@ -6093,7 +6715,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Gain # Life per enemy killed",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -6101,7 +6723,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            10
+            15
           ]
         },
         {
@@ -6110,7 +6732,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            20
+            25
           ]
         },
         {
@@ -6119,7 +6741,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            30
+            35
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Rebirth Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            45
           ]
         }
       ]
@@ -6132,7 +6763,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Gain # Mana per enemy killed",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -6140,7 +6771,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            8
+            10
           ]
         },
         {
@@ -6149,7 +6780,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            16
+            20
           ]
         },
         {
@@ -6158,7 +6789,38 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            24
+            30
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Inspiration Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Gain # Rage on Melee Hit# to Maximum Rage",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain # Rage on Melee Hit# to Maximum Rage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of Confrontation",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            4,
+            -10
           ]
         }
       ]
@@ -6209,11 +6871,32 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "Gain maximum Runic Ward equal to #% of this Weapon's maximum damage",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Gain maximum Runic Ward equal to #% of this Weapon's maximum damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Warding Rune of Armature",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "Leeches #% of Physical Damage as Life",
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Leeches #% of Physical Damage as Life",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -6221,7 +6904,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            2
+            3
           ]
         },
         {
@@ -6230,7 +6913,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            2.5
+            4
           ]
         },
         {
@@ -6239,7 +6922,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            3
+            5
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Body Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            6
           ]
         }
       ]
@@ -6252,7 +6944,7 @@
       "tags": [],
       "spawn_tags": [],
       "stat_template": "Leeches #% of Physical Damage as Mana",
-      "num_tiers": 3,
+      "num_tiers": 4,
       "tiers": [
         {
           "tier": 1,
@@ -6260,7 +6952,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            1.5
+            2
           ]
         },
         {
@@ -6269,7 +6961,7 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            2
+            3
           ]
         },
         {
@@ -6278,7 +6970,16 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": [
-            2.5
+            4
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "Perfect Mind Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            5
           ]
         }
       ]
@@ -6329,6 +7030,28 @@
       "section": "Rune / Augment",
       "section_key": "socketable",
       "type": "Type 0",
+      "family": "On Hitting an enemy, gains maximum added Cold damage equal to the enemy's Power for # seconds, up to a total of #",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "On Hitting an enemy, gains maximum added Cold damage equal to the enemy's Power for # seconds, up to a total of #",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rune of Accumulation",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": [
+            20,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
       "family": "Recover #% of maximum Life on Kill",
       "tags": [],
       "spawn_tags": [],
@@ -6363,6 +7086,338 @@
           "weight": 0,
           "values": [
             2
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Strikes deal Splash Damage",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Strikes deal Splash Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Legacy of Tyranny's Grip",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "Upgrades a socketed Rune",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "Upgrades a socketed Rune",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Masterwork Rune",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Rune / Augment",
+      "section_key": "socketable",
+      "type": "Type 0",
+      "family": "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power",
+      "tags": [],
+      "spawn_tags": [],
+      "stat_template": "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Aldur's Legacy",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Prefix",
+      "family": "#% increased Explicit Critical Modifier magnitudes",
+      "tags": [
+        "critical"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Critical Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Thrud's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Prefix",
+      "family": "#% increased Explicit Speed Modifier magnitudes",
+      "tags": [
+        "speed"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Speed Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Thrud's",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Chaos Modifier magnitudes",
+      "tags": [
+        "chaos"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Chaos Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Cold Modifier magnitudes",
+      "tags": [
+        "elemental",
+        "cold"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Cold Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Elemental Damage Modifier magnitudes",
+      "tags": [
+        "elemental"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Elemental Damage Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Fire Modifier magnitudes",
+      "tags": [
+        "elemental",
+        "fire"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Fire Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Lightning Modifier magnitudes",
+      "tags": [
+        "elemental",
+        "lightning"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Lightning Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Mana Modifier magnitudes",
+      "tags": [
+        "resource",
+        "mana"
+      ],
+      "spawn_tags": [
+        "sword",
+        "axe",
+        "mace",
+        "spear",
+        "claw",
+        "dagger",
+        "flail",
+        "crossbow",
+        "warstaff",
+        "talisman",
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Mana Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "destruction",
+      "section_key": "destruction",
+      "type": "Suffix",
+      "family": "#% increased Explicit Physical Modifier magnitudes",
+      "tags": [
+        "physical"
+      ],
+      "spawn_tags": [
+        "destruction",
+        "default"
+      ],
+      "stat_template": "#% increased Explicit Physical Modifier magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Destruction",
+          "min_ilvl": 65,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              15
+            ]
           ]
         }
       ]

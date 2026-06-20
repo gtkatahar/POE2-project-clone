@@ -9,7 +9,9 @@
       "section_key": "normal",
       "type": "Prefix",
       "family": "#% increased Duration",
-      "tags": [],
+      "tags": [
+        "charm"
+      ],
       "spawn_tags": [
         "utility_flask",
         "default"
@@ -84,7 +86,9 @@
       "section_key": "normal",
       "type": "Prefix",
       "family": "Also grants # Guard",
-      "tags": [],
+      "tags": [
+        "charm"
+      ],
       "spawn_tags": [
         "utility_flask",
         "default"
@@ -172,6 +176,7 @@
       "type": "Prefix",
       "family": "Recover # Life when Used",
       "tags": [
+        "charm",
         "resource",
         "life"
       ],
@@ -286,6 +291,7 @@
       "type": "Prefix",
       "family": "Recover # Mana when Used",
       "tags": [
+        "charm",
         "resource",
         "mana"
       ],

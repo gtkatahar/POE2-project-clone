@@ -2,39 +2,202 @@
   "item": {
     "item_class": "Talismans",
     "rarity": "Rare",
-    "name": "Corruption Invocation",
-    "base": "Wildwood Talisman",
-    "item_level": 84,
+    "name": "Rift Mimic",
+    "base": "Jade Talisman",
+    "item_level": 82,
     "stat_lines": [
-      "+7 to Level of all Melee Skills (fractured)",
-      "+23% to Critical Damage Bonus"
-    ]
+      "87(86-99)% increased Elemental Damage with Attacks",
+      "+5 to Level of all Melee Skills"
+    ],
+    "implicit_stat_lines": []
   },
   "results": [
     {
-      "item_stat": "+7 to Level of all Melee Skills (fractured)",
-      "is_fractured": true,
+      "item_stat": "87(86-99)% increased Elemental Damage with Attacks",
+      "is_fractured": false,
       "item_values": [
-        7
+        87
+      ],
+      "template": "#% increased elemental damage with attacks",
+      "matched": [
+        {
+          "section": "Base Modifiers",
+          "type": "Prefix",
+          "family": "#% increased Elemental Damage with Attacks",
+          "tags": [
+            "elemental_damage",
+            "damage",
+            "elemental",
+            "attack"
+          ],
+          "stat_template": "#% increased Elemental Damage with Attacks",
+          "num_tiers": 6,
+          "matched_tier": {
+            "tier": 3,
+            "name": "Unleashed",
+            "min_ilvl": 46,
+            "weight": 500,
+            "values": [
+              [
+                86,
+                99
+              ]
+            ]
+          },
+          "all_tiers": [
+            {
+              "tier": 1,
+              "name": "Devastating",
+              "min_ilvl": 81,
+              "weight": 500,
+              "values": [
+                [
+                  120,
+                  139
+                ]
+              ]
+            },
+            {
+              "tier": 2,
+              "name": "Overpowering",
+              "min_ilvl": 60,
+              "weight": 500,
+              "values": [
+                [
+                  100,
+                  119
+                ]
+              ]
+            },
+            {
+              "tier": 3,
+              "name": "Unleashed",
+              "min_ilvl": 46,
+              "weight": 500,
+              "values": [
+                [
+                  86,
+                  99
+                ]
+              ]
+            },
+            {
+              "tier": 4,
+              "name": "Empowering",
+              "min_ilvl": 33,
+              "weight": 500,
+              "values": [
+                [
+                  72,
+                  85
+                ]
+              ]
+            },
+            {
+              "tier": 5,
+              "name": "Infusing",
+              "min_ilvl": 16,
+              "weight": 500,
+              "values": [
+                [
+                  48,
+                  71
+                ]
+              ]
+            },
+            {
+              "tier": 6,
+              "name": "Catalysing",
+              "min_ilvl": 4,
+              "weight": 500,
+              "values": [
+                [
+                  34,
+                  47
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "unmatched": [
+        {
+          "section": "Corrupted (Vaal Orb)",
+          "type": "Enchantment",
+          "family": "#% increased Elemental Damage with Attacks",
+          "tags": [
+            "elemental_damage",
+            "damage",
+            "elemental",
+            "attack"
+          ],
+          "stat_template": "#% increased Elemental Damage with Attacks",
+          "num_tiers": 1,
+          "matched_tier": null,
+          "all_tiers": [
+            {
+              "tier": 1,
+              "name": "CorruptionWeaponElementalDamageTwoHand1",
+              "min_ilvl": 1,
+              "weight": 1,
+              "values": [
+                [
+                  40,
+                  50
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Rune / Augment",
+          "type": "Type 0",
+          "family": "#% increased Elemental Damage with Attacks",
+          "tags": [],
+          "stat_template": "#% increased Elemental Damage with Attacks",
+          "num_tiers": 1,
+          "matched_tier": null,
+          "all_tiers": [
+            {
+              "tier": 1,
+              "name": "Soul Core of Citaqualotl",
+              "min_ilvl": 1,
+              "weight": 0,
+              "values": [
+                30
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_stat": "+5 to Level of all Melee Skills",
+      "is_fractured": false,
+      "item_values": [
+        5
       ],
       "template": "# to level of all melee skills",
       "matched": [
         {
           "section": "Base Modifiers",
           "type": "Suffix",
-          "family": "IncreaseSocketedGemLevel",
+          "family": "# to Level of all Melee Skills",
           "tags": [
             "attack"
           ],
           "stat_template": "# to Level of all Melee Skills",
           "num_tiers": 5,
           "matched_tier": {
-            "tier": 1,
-            "name": "of War",
-            "min_ilvl": 81,
-            "weight": 100,
+            "tier": 2,
+            "name": "of Battle",
+            "min_ilvl": 55,
+            "weight": 250,
             "values": [
-              7
+              [
+                5,
+                6
+              ]
             ]
           },
           "all_tiers": [
@@ -90,163 +253,6 @@
         }
       ],
       "unmatched": []
-    },
-    {
-      "item_stat": "+23% to Critical Damage Bonus",
-      "is_fractured": false,
-      "item_values": [
-        23
-      ],
-      "template": "#% to critical damage bonus",
-      "matched": [
-        {
-          "section": "Base Modifiers",
-          "type": "Suffix",
-          "family": "CriticalStrikeMultiplier",
-          "tags": [
-            "damage",
-            "attack",
-            "critical"
-          ],
-          "stat_template": "#% to Critical Damage Bonus",
-          "num_tiers": 6,
-          "matched_tier": {
-            "tier": 1,
-            "name": "of Destruction",
-            "min_ilvl": 73,
-            "weight": 125,
-            "values": [
-              [
-                23,
-                25
-              ]
-            ]
-          },
-          "all_tiers": [
-            {
-              "tier": 1,
-              "name": "of Destruction",
-              "min_ilvl": 73,
-              "weight": 125,
-              "values": [
-                [
-                  23,
-                  25
-                ]
-              ]
-            },
-            {
-              "tier": 2,
-              "name": "of Ferocity",
-              "min_ilvl": 59,
-              "weight": 250,
-              "values": [
-                [
-                  20,
-                  22
-                ]
-              ]
-            },
-            {
-              "tier": 3,
-              "name": "of Fury",
-              "min_ilvl": 44,
-              "weight": 500,
-              "values": [
-                [
-                  17,
-                  19
-                ]
-              ]
-            },
-            {
-              "tier": 4,
-              "name": "of Rage",
-              "min_ilvl": 30,
-              "weight": 1000,
-              "values": [
-                [
-                  14,
-                  16
-                ]
-              ]
-            },
-            {
-              "tier": 5,
-              "name": "of Anger",
-              "min_ilvl": 21,
-              "weight": 1000,
-              "values": [
-                [
-                  12,
-                  13
-                ]
-              ]
-            },
-            {
-              "tier": 6,
-              "name": "of Ire",
-              "min_ilvl": 8,
-              "weight": 1000,
-              "values": [
-                [
-                  10,
-                  11
-                ]
-              ]
-            }
-          ]
-        }
-      ],
-      "unmatched": [
-        {
-          "section": "Corrupted (Vaal Orb)",
-          "type": "Enchantment",
-          "family": "CriticalStrikeMultiplier",
-          "tags": [
-            "damage",
-            "attack",
-            "critical"
-          ],
-          "stat_template": "#% to Critical Damage Bonus",
-          "num_tiers": 1,
-          "matched_tier": null,
-          "all_tiers": [
-            {
-              "tier": 1,
-              "name": "CorruptionLocalCriticalStrikeMultiplier1",
-              "min_ilvl": 1,
-              "weight": 1,
-              "values": [
-                [
-                  5,
-                  10
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "section": "Rune / Augment",
-          "type": "Type 0",
-          "family": "SoulCoreofTicaba",
-          "tags": [],
-          "stat_template": "#% to Critical Damage Bonus",
-          "num_tiers": 1,
-          "matched_tier": null,
-          "all_tiers": [
-            {
-              "tier": 1,
-              "name": "Soul Core of Ticaba",
-              "min_ilvl": 1,
-              "weight": 0,
-              "values": [
-                5
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }

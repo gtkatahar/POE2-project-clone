@@ -1,8 +1,8 @@
 {
   "source_url": "https://poe2db.tw/us/Quivers",
   "item_slug": "Quivers",
-  "total_groups": 37,
-  "total_mods": 130,
+  "total_groups": 39,
+  "total_mods": 132,
   "modifiers": [
     {
       "section": "Base Modifiers",
@@ -1080,24 +1080,56 @@
         "default"
       ],
       "stat_template": "# to Level of all Projectile Skills",
-      "num_tiers": 2,
+      "num_tiers": 1,
       "tiers": [
         {
           "tier": 1,
-          "name": "of the Fletcher",
-          "min_ilvl": 41,
-          "weight": 250,
-          "values": [
-            2
-          ]
-        },
-        {
-          "tier": 2,
           "name": "of the Archer",
           "min_ilvl": 5,
           "weight": 500,
           "values": [
             1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% Surpassing chance to fire an additional Arrow",
+      "tags": [
+        "attack"
+      ],
+      "spawn_tags": [
+        "quiver",
+        "default"
+      ],
+      "stat_template": "#% Surpassing chance to fire an additional Arrow",
+      "num_tiers": 2,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Splintering",
+          "min_ilvl": 80,
+          "weight": 1,
+          "values": [
+            [
+              41,
+              60
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Surplus",
+          "min_ilvl": 46,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              40
+            ]
           ]
         }
       ]
@@ -1250,6 +1282,7 @@
       "type": "Suffix",
       "family": "#% increased Critical Damage Bonus for Attack Damage",
       "tags": [
+        "damage",
         "attack",
         "critical"
       ],
@@ -2186,56 +2219,6 @@
     {
       "section": "Essence",
       "section_key": "essence",
-      "type": "Prefix",
-      "family": "#% increased Damage with Bow Skills",
-      "tags": [
-        "damage"
-      ],
-      "spawn_tags": [
-        "quiver",
-        "default"
-      ],
-      "stat_template": "#% increased Damage with Bow Skills",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of Hysteria",
-          "min_ilvl": 60,
-          "weight": 0,
-          "values": [
-            [
-              43,
-              50
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
-      "type": "Prefix",
-      "family": "Mark of the Abyssal Lord",
-      "tags": [],
-      "spawn_tags": [
-        "default"
-      ],
-      "stat_template": "Mark of the Abyssal Lord",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Essence of the Abyss",
-          "min_ilvl": 1,
-          "weight": 0,
-          "values": []
-        }
-      ]
-    },
-    {
-      "section": "Essence",
-      "section_key": "essence",
       "type": "Suffix",
       "family": "# to Strength, Dexterity or Intelligence",
       "tags": [
@@ -2373,8 +2356,84 @@
       ]
     },
     {
-      "section": "Essence",
-      "section_key": "essence",
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "#% increased Damage with Bow Skills",
+      "tags": [
+        "damage"
+      ],
+      "spawn_tags": [
+        "quiver",
+        "default"
+      ],
+      "stat_template": "#% increased Damage with Bow Skills",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of Hysteria",
+          "min_ilvl": 60,
+          "weight": 0,
+          "values": [
+            [
+              43,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Prefix",
+      "family": "Mark of the Abyssal Lord",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Mark of the Abyssal Lord",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Essence of the Abyss",
+          "min_ilvl": 1,
+          "weight": 0,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
+      "type": "Suffix",
+      "family": "#% chance to Chain an additional time",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% chance to Chain an additional time",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Mystic Alloy",
+          "min_ilvl": 45,
+          "weight": 0,
+          "values": [
+            [
+              25,
+              35
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Perfect Essence",
+      "section_key": "perfect_essence",
       "type": "Suffix",
       "family": "Mark of the Abyssal Lord",
       "tags": [],

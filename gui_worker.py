@@ -178,10 +178,8 @@ class CraftWorker(QThread):
                 ]
                 if unknown:
                     lines = "\n  • ".join(unknown)
-                    raise RuntimeError(
-                        f"Unrecognised mod(s) — cannot continue crafting:\n  • {lines}\n\n"
-                        "Check that the correct item type / modifier DB is loaded, "
-                        "or update the data file."
+                    self.log_line.emit(
+                        f"WARNING — unrecognised mod(s) (not in DB):\n  • {lines}"
                     )
                 return results
 

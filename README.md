@@ -49,12 +49,37 @@ What it does:
 4. Runs a quick import smoke-test
 5. Offers to launch the GUI immediately
 
+## PowerShell Runner Scripts
+
+Each entry point has a dedicated `.ps1` wrapper that always invokes the `.venv` Python, regardless of what Python is on the system `PATH`. Pass any arguments straight through.
+
+| Script | Entry point | Purpose |
+|--------|------------|---------|
+| [run_gui.ps1](run_gui.ps1) | `gui_main.py` | Launch the GUI |
+| [run_build_target.ps1](run_build_target.ps1) | `build_target.py` | CLI target builder |
+| [run_identify.ps1](run_identify.ps1) | `identify.py` | Identify modifiers from a text file |
+| [run_main_test.ps1](run_main_test.ps1) | `main_test.py` | Inventory scanner / mat snapshot |
+| [run_craft_plan.ps1](run_craft_plan.ps1) | `craft_plan.py` | Crafting planner and automation |
+| [run_calibrate.ps1](run_calibrate.ps1) | `calibrate.py` | Recalibrate inventory grid coordinates |
+| [run_scrape.ps1](run_scrape.ps1) | `scrape.py` | Scrape one item type from poe2db |
+| [run_scrape_all.ps1](run_scrape_all.ps1) | `scrape_all.py` | Scrape all item types from poe2db |
+
+Run any of them from PowerShell in the project root — no activation step needed:
+
+```powershell
+.\run_gui.ps1
+.\run_identify.ps1 myitem.txt --slug Talismans
+.\run_main_test.ps1 --mats
+```
+
+> **Tip:** If you see a policy error, run `Set-ExecutionPolicy -Scope Process RemoteSigned` first (same as the setup script does).
+
 ## GUI (recommended)
 
 Launch the GUI:
 
 ```powershell
-py gui_main.py
+.\run_gui.ps1
 ```
 
 The GUI has four tabs:
@@ -91,25 +116,25 @@ Switch the dropdown to browse and add mods from any section into your search tar
 Identify one item from a text file:
 
 ```powershell
-py identify.py myitem.txt --slug Talismans
+.\run_identify.ps1 myitem.txt --slug Talismans
 ```
 
 Scan inventory and identify items (CLI):
 
 ```powershell
-py main_test.py --slug Talismans
+.\run_main_test.ps1 --slug Talismans
 ```
 
 Capture a crafting-mat inventory snapshot (CLI):
 
 ```powershell
-py main_test.py --mats
+.\run_main_test.ps1 --mats
 ```
 
 Run the crafting planner (CLI):
 
 ```powershell
-py craft_plan.py
+.\run_craft_plan.ps1
 ```
 
 Run tests:
@@ -120,7 +145,7 @@ Run tests:
 
 ## Typical Flow
 
-1. Launch `py gui_main.py`.
+1. Launch `.\run_gui.ps1`.
 2. Go to the **Materials** tab and click **Scan Inventory** to generate `crafting_mats.json`.
 3. Go to the **Targets** tab, click **New**, and build your target — picking mods from any section via the Section dropdown.
 4. Select the target and click **Set as Active**.
@@ -131,7 +156,7 @@ Run tests:
 - This project uses real mouse and keyboard automation through `pyautogui`.
 - Make sure the game window and inventory are in the expected state before starting.
 - The mouse failsafe is enabled in [windows/mouse.py](C:/Users/DjuDja/Desktop/POE2%20project/windows/mouse.py).
-- Re-run `py calibrate.py` if your inventory grid coordinates drift after changing resolution or UI scale.
+- Re-run `.\run_calibrate.ps1` if your inventory grid coordinates drift after changing resolution or UI scale.
 
 ## Generated Files
 

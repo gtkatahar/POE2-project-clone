@@ -135,6 +135,7 @@ def identify(stat_lines: list[str], lookup: dict) -> list[dict]:
             tier = _match_tier(item_values, group["tiers"])
             entry = {
                 "section":       group["section"],
+                "section_key":   group.get("section_key", "normal"),
                 "type":          group["type"],
                 "family":        group["family"],
                 "tags":          group["tags"],
@@ -144,6 +145,11 @@ def identify(stat_lines: list[str], lookup: dict) -> list[dict]:
                 "all_tiers":     group["tiers"],
             }
             (matched if tier else unmatched).append(entry)
+
+        # Always put base-modifier (normal) matches first so callers that
+        # only inspect matched[0] see the canonical base-mod interpretation.
+        matched.sort(key=lambda e: (0 if e["section_key"] == "normal" else 1))
+        unmatched.sort(key=lambda e: (0 if e["section_key"] == "normal" else 1))
 
         results.append({
             "item_stat":    line,

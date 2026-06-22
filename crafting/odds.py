@@ -157,25 +157,26 @@ def _classify_current_magic_item(
         return None
 
     for result in identify_matches(stat_lines):
-        line_type = None
-        line_family = None
-        if result["matched"]:
-            line_type = result["matched"][0]["type"].lower()
-            line_family = result["matched"][0]["family"]
-        elif result["unmatched"]:
-            line_type = result["unmatched"][0]["type"].lower()
-            line_family = result["unmatched"][0]["family"]
-
-        if line_type is None or line_family is None:
+        # A stat line may match multiple groups (e.g. normal T3 and
+        # breach_caster T1 share the same rolled value).  Check every
+        # candidate so that target/keeper entries from any section are found.
+        candidates = result["matched"] or result["unmatched"]
+        if not candidates:
             return None
 
-        for entry in target_entries:
-            if entry["type"].lower() == line_type and entry["family"] == line_family:
-                return "TP" if line_type == "prefix" else "TS"
-        for entry in keeper_entries:
-            if entry["type"].lower() == line_type and entry["family"] == line_family:
-                return "KP" if line_type == "prefix" else "KS"
-        return "BP" if line_type == "prefix" else "BS"
+        for candidate in candidates:
+            lt = candidate["type"].lower()
+            lf = candidate["family"]
+            for entry in target_entries:
+                if entry["type"].lower() == lt and entry["family"] == lf:
+                    return "TP" if lt == "prefix" else "TS"
+            for entry in keeper_entries:
+                if entry["type"].lower() == lt and entry["family"] == lf:
+                    return "KP" if lt == "prefix" else "KS"
+
+        # None of the interpretations matched a target or keeper entry.
+        lt = candidates[0]["type"].lower()
+        return "BP" if lt == "prefix" else "BS"
 
     return None
 

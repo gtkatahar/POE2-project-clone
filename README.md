@@ -5,14 +5,19 @@ Python automation tools for Path of Exile 2 crafting on Windows.
 This project can:
 - scrape modifier databases from `poe2db.tw`
 - read item tooltips from the game with `Ctrl+C`
-- identify affixes and rolled tiers
+- identify affixes and rolled tiers across **all mod sections** (base, runes, bonded, essence, corrupted, etc.)
 - scan inventory contents and crafting mats
-- build target-mod configs
+- build target-mod configs via a dark-themed GUI or the command line
 - automate a few crafting loops with mouse and keyboard input
 
 ## Project Layout
 
-- [build_target.py](C:/Users/DjuDja/Desktop/POE2%20project/build_target.py): interactive target builder for desired mods
+- [gui_main.py](C:/Users/DjuDja/Desktop/POE2%20project/gui_main.py): **main GUI entry point** (PyQt6, dark theme)
+- [gui_window.py](C:/Users/DjuDja/Desktop/POE2%20project/gui_window.py): main window and all tab widgets
+- [gui_mod_builder.py](C:/Users/DjuDja/Desktop/POE2%20project/gui_mod_builder.py): target/mod-builder dialog with per-section mod picker
+- [gui_worker.py](C:/Users/DjuDja/Desktop/POE2%20project/gui_worker.py): background worker threads for scan and craft operations
+- [gui_settings.py](C:/Users/DjuDja/Desktop/POE2%20project/gui_settings.py): settings persistence and Settings tab
+- [build_target.py](C:/Users/DjuDja/Desktop/POE2%20project/build_target.py): CLI target builder (alternative to the GUI)
 - [identify.py](C:/Users/DjuDja/Desktop/POE2%20project/identify.py): identify modifiers from a pasted item text file
 - [main_test.py](C:/Users/DjuDja/Desktop/POE2%20project/main_test.py): inventory scanner and mat snapshot generator
 - [craft_plan.py](C:/Users/DjuDja/Desktop/POE2%20project/craft_plan.py): crafting planner and automation entry point
@@ -36,13 +41,44 @@ py -m venv .venv
 .\.venv\Scripts\pip install -r requirements.txt
 ```
 
-## Common Commands
+## GUI (recommended)
 
-Build or edit a target:
+Launch the GUI:
 
 ```powershell
-py build_target.py
+py gui_main.py
 ```
+
+The GUI has four tabs:
+
+| Tab | Purpose |
+|-----|---------|
+| **Materials** | Scan your crafting-currency inventory and save a snapshot |
+| **Targets** | Browse, create, edit, and activate saved target configs |
+| **Craft** | Choose a strategy and run the crafting loop |
+| **Settings** | Auto-minimize, font size, default strategy |
+
+### Mod Builder — Section picker
+
+When creating or editing a target the **Mod Builder** dialog shows a **Section** dropdown above the mod filter. It exposes every section present in the loaded item's modifier database:
+
+| Section key | Display name |
+|-------------|--------------|
+| `normal` | Base Modifiers |
+| `socketable` | Rune / Augment |
+| `bonded` | Bonded (Shaman Runes) |
+| `marksman` | Marksman |
+| `corrupted` | Corrupted (Vaal Orb) |
+| `essence` | Essence |
+| `desecrated` | Desecrated Modifiers |
+| `decay` | Decay |
+| `perfect_essence` | Perfect Essence |
+
+Switch the dropdown to browse and add mods from any section into your search target. The text filter and Prefix / Suffix filter still apply on top; set the type filter to **All** when browsing sections that use non-standard types such as `Type 0` or `Enchantment`.
+
+> **Note:** Only Base Modifier (prefix/suffix) mods contribute to crafting-cost estimates. Mods from other sections are matched during item scans but are excluded from the aug/annul probability calculations.
+
+## Common Commands
 
 Identify one item from a text file:
 
@@ -50,19 +86,19 @@ Identify one item from a text file:
 py identify.py myitem.txt --slug Talismans
 ```
 
-Scan inventory and identify items:
+Scan inventory and identify items (CLI):
 
 ```powershell
 py main_test.py --slug Talismans
 ```
 
-Capture a crafting-mat inventory snapshot:
+Capture a crafting-mat inventory snapshot (CLI):
 
 ```powershell
 py main_test.py --mats
 ```
 
-Run the crafting planner:
+Run the crafting planner (CLI):
 
 ```powershell
 py craft_plan.py
@@ -76,10 +112,11 @@ Run tests:
 
 ## Typical Flow
 
-1. Run `py main_test.py --mats` once to generate `crafting_mats.json`.
-2. Run `py build_target.py` to define target mods.
-3. Put the base item in inventory cell `[0,0]`.
-4. Run `py craft_plan.py` and choose a strategy.
+1. Launch `py gui_main.py`.
+2. Go to the **Materials** tab and click **Scan Inventory** to generate `crafting_mats.json`.
+3. Go to the **Targets** tab, click **New**, and build your target — picking mods from any section via the Section dropdown.
+4. Select the target and click **Set as Active**.
+5. Put the base item in inventory cell `[0,0]`, go to the **Craft** tab, choose a strategy, and click **Start**.
 
 ## Safety Notes
 
@@ -95,5 +132,7 @@ These files are produced during normal use:
 - `inventory_scan.json`
 - `item_mod_result.json`
 - `_craft_plan.json`
+- `settings.json`
+- `saved_targets/*.json`
 
 They are treated as local/generated artifacts by the `.gitignore`.

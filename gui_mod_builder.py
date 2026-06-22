@@ -47,6 +47,32 @@ def _load_db_groups(slug: str) -> list[dict]:
     ]
 
 
+def _load_all_db_groups(slug: str) -> dict[str, list[dict]]:
+    """Return {section_key: [groups]} for all sections in the slug's DB file."""
+    db_path = DATA_DIR / f"{slug.lower()}_modifiers_tiered.json"
+    if not db_path.exists():
+        return {}
+    db = json.loads(db_path.read_text(encoding="utf-8"))
+    result: dict[str, list[dict]] = {}
+    for g in db["modifiers"]:
+        sk = g.get("section_key", "normal")
+        result.setdefault(sk, []).append(g)
+    return result
+
+
+_SECTION_LABELS: dict[str, str] = {
+    "normal": "Base Modifiers",
+    "socketable": "Rune / Augment",
+    "bonded": "Bonded (Shaman Runes)",
+    "marksman": "Marksman",
+    "corrupted": "Corrupted (Vaal Orb)",
+    "essence": "Essence",
+    "desecrated": "Desecrated Modifiers",
+    "decay": "Decay",
+    "perfect_essence": "Perfect Essence",
+}
+
+
 def _format_values(values: list) -> str:
     parts = []
     for v in values:
@@ -61,14 +87,26 @@ def _format_values(values: list) -> str:
 
 
 def _mod_display(group: dict) -> str:
-    t = "PRE" if group["type"].lower() == "prefix" else "SUF"
-    return f"[{t}] {group['family']}"
+    t_raw = group["type"].lower()
+    if t_raw == "prefix":
+        tag = "PRE"
+    elif t_raw == "suffix":
+        tag = "SUF"
+    else:
+        tag = group["type"].upper()[:4]
+    return f"[{tag}] {group['family']}"
 
 
 def _selected_display(entry: dict, show_tier: bool = True) -> str:
-    t = "PRE" if entry["type"].lower() == "prefix" else "SUF"
+    t_raw = entry["type"].lower()
+    if t_raw == "prefix":
+        tag = "PRE"
+    elif t_raw == "suffix":
+        tag = "SUF"
+    else:
+        tag = entry["type"].upper()[:4]
     tier_str = f"  (T{entry['min_tier']}+)" if show_tier else ""
-    return f"[{t}] {entry['family']}{tier_str}"
+    return f"[{tag}] {entry['family']}{tier_str}"
 
 
 # ---------------------------------------------------------------------------
@@ -134,6 +172,7 @@ class ModListPanel(QWidget):
         self._max_prefixes = max_prefixes
         self._max_suffixes = max_suffixes
         self._db_groups: list[dict] = []
+        self._section_groups: dict[str, list[dict]] = {}
         self._selected: list[dict] = []
         self._type_filter = "all"
 
@@ -142,6 +181,15 @@ class ModListPanel(QWidget):
 
         # --- Left: available ---
         left = QVBoxLayout()
+
+        section_row = QHBoxLayout()
+        section_row.addWidget(QLabel("Section:"))
+        self._section_combo = QComboBox()
+        self._section_combo.setMinimumWidth(180)
+        section_row.addWidget(self._section_combo)
+        section_row.addStretch()
+        left.addLayout(section_row)
+
         filter_row = QHBoxLayout()
         self._filter_edit = QLineEdit()
         self._filter_edit.setPlaceholderText("Filter mods...")
@@ -184,6 +232,7 @@ class ModListPanel(QWidget):
         splitter.setSizes([300, 250])
         layout.addWidget(splitter)
 
+        self._section_combo.currentIndexChanged.connect(self._on_section_changed)
         self._filter_edit.textChanged.connect(self._apply_filter)
         self._filter_combo.currentTextChanged.connect(self._on_type_filter)
         self._avail_list.itemDoubleClicked.connect(self._add_selected)
@@ -192,6 +241,22 @@ class ModListPanel(QWidget):
 
     def set_db_groups(self, groups: list[dict]) -> None:
         self._db_groups = groups
+        self._populate_available()
+
+    def set_db_groups_all(self, section_groups: dict[str, list[dict]]) -> None:
+        """Load all sections; populate the Section dropdown and show the first section."""
+        self._section_groups = section_groups
+        self._section_combo.blockSignals(True)
+        self._section_combo.clear()
+        for key in section_groups:
+            label = _SECTION_LABELS.get(key, key.replace("_", " ").title())
+            self._section_combo.addItem(label, userData=key)
+        self._section_combo.blockSignals(False)
+        self._on_section_changed(0)
+
+    def _on_section_changed(self, _idx: int) -> None:
+        key = self._section_combo.currentData()
+        self._db_groups = self._section_groups.get(key, []) if key else []
         self._populate_available()
 
     def _populate_available(self) -> None:
@@ -381,9 +446,9 @@ class ModBuilderDialog(QDialog):
         slug = self._slug_combo.currentData()
         if not slug:
             return
-        groups = _load_db_groups(slug)
-        self._main_panel.set_db_groups(groups)
-        self._fifty_panel.set_db_groups(groups)
+        all_groups = _load_all_db_groups(slug)
+        self._main_panel.set_db_groups_all(all_groups)
+        self._fifty_panel.set_db_groups_all(all_groups)
 
     def _on_mode_changed(self, search_checked: bool) -> None:
         if search_checked:

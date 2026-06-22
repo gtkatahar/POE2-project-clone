@@ -43,12 +43,12 @@ def load_target_mods(target_data: dict | None = None) -> tuple[list[dict], list[
     if not db_path.exists():
         raise TargetConfigError(f"modifier DB for '{slug}' not found at {db_path}")
 
-    db_groups = [
-        group
-        for group in json.loads(db_path.read_text(encoding="utf-8"))["modifiers"]
-        if group.get("section") == "Base Modifiers"
-    ]
-    mod_lookup = build_lookup(db_groups)
+    all_groups = json.loads(db_path.read_text(encoding="utf-8"))["modifiers"]
+    # All sections go into the lookup so item scans can identify runes, bonded,
+    # essence, corrupted, etc. mods when they appear on a scanned item.
+    mod_lookup = build_lookup(all_groups)
+    # Odds / crafting calculations only apply to the normal prefix/suffix pool.
+    db_groups = [g for g in all_groups if g.get("section") == "Base Modifiers"]
 
     if target_data.get("mode") == "search":
         target_entries = target_data.get("mods", [])

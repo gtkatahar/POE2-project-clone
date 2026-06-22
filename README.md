@@ -30,16 +30,24 @@ This project can:
 
 ## Requirements
 
-- Windows
-- Python 3.14-compatible environment
+- Windows 10 / 11
+- Python 3.11+ (installed automatically by the setup script if missing)
 - Path of Exile 2 running in a mode where item tooltips can be copied with `Ctrl+C`
 
-Install dependencies with:
+## Installation
+
+Run the setup script once — it handles everything, including Python if it isn't installed yet:
 
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\pip install -r requirements.txt
+.\setup.ps1
 ```
+
+What it does:
+1. Detects Python 3.11+; installs Python 3.13 via **winget** (or a direct download fallback) if not found
+2. Creates a `.venv` virtual environment
+3. Upgrades pip and installs all packages from `requirements.txt`
+4. Runs a quick import smoke-test
+5. Offers to launch the GUI immediately
 
 ## GUI (recommended)
 

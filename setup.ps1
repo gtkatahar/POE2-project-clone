@@ -123,14 +123,15 @@ Write-Ok "All packages installed."
 
 Write-Step "Verifying key imports..."
 
-$checkScript = 'import PyQt6.QtWidgets, pyautogui, requests, bs4; print("imports OK")'
-$result = & $venvPython -c $checkScript 2>&1
+$checkFile = Join-Path $env:TEMP 'poe2_setup_check.py'
+Set-Content -Path $checkFile -Value 'import PyQt6.QtWidgets, pyautogui, requests, bs4' -Encoding UTF8
+& $venvPython $checkFile 2>&1 | Out-Null
+Remove-Item $checkFile -Force -ErrorAction SilentlyContinue
 
-if ("$result" -match 'imports OK') {
+if ($LASTEXITCODE -eq 0) {
     Write-Ok "All core imports verified."
 } else {
-    Write-Warn "Import check returned unexpected output -- packages may not be fully installed."
-    Write-Host "    $result" -ForegroundColor Yellow
+    Write-Warn "One or more imports failed -- check the output above."
 }
 
 # --- 6. Done -----------------------------------------------------------------

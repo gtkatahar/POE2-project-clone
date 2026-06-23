@@ -1,17 +1,12 @@
 {
   "Chaos Orb": {
-    "count": 428,
+    "count": 615,
     "max_stack": 20,
     "description": "Shift click to unstack."
   },
   "Scroll of Wisdom": {
-    "count": 19,
+    "count": 22,
     "max_stack": 40,
-    "description": "Shift click to unstack."
-  },
-  "Omen of Amelioration": {
-    "count": 8,
-    "max_stack": 10,
     "description": "Shift click to unstack."
   }
 }

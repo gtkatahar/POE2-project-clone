@@ -4132,7 +4132,7 @@
       "section": "Desecrated Modifiers",
       "section_key": "desecrated",
       "type": "Prefix",
-      "family": "Warcries Empower an additional Attack",
+      "family": "Warcries Empower # additional Attacks",
       "tags": [
         "unveiled_mod",
         "kurgal_mod",
@@ -4143,7 +4143,7 @@
         "default",
         "kurgal_mod"
       ],
-      "stat_template": "Warcries Empower an additional Attack",
+      "stat_template": "Warcries Empower # additional Attacks",
       "num_tiers": 1,
       "tiers": [
         {
@@ -4151,7 +4151,12 @@
           "name": "Kurgal's",
           "min_ilvl": 65,
           "weight": 1,
-          "values": []
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
         }
       ]
     },

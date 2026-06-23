@@ -1,8 +1,8 @@
 {
   "source_url": "https://poe2db.tw/us/Rings",
   "item_slug": "Rings",
-  "total_groups": 113,
-  "total_mods": 369,
+  "total_groups": 114,
+  "total_mods": 375,
   "modifiers": [
     {
       "section": "Base Modifiers",
@@ -3673,7 +3673,7 @@
           "tier": 1,
           "name": "Ulaman's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3706,7 +3706,7 @@
           "tier": 1,
           "name": "Kurgal's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               20,
@@ -3739,7 +3739,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               20,
@@ -3772,7 +3772,7 @@
           "tier": 1,
           "name": "Ulaman's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               20,
@@ -3807,7 +3807,7 @@
           "tier": 1,
           "name": "Kurgal's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3842,7 +3842,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3874,7 +3874,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -3909,7 +3909,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               9,
@@ -3944,7 +3944,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               9,
@@ -3979,7 +3979,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               9,
@@ -4011,7 +4011,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -4047,7 +4047,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               10,
@@ -4079,7 +4079,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -4112,7 +4112,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               3,
@@ -4145,7 +4145,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               12,
@@ -4178,7 +4178,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               12,
@@ -4219,7 +4219,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               13,
@@ -4260,7 +4260,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               13,
@@ -4301,7 +4301,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               13,
@@ -4335,7 +4335,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               2,
@@ -4369,7 +4369,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               2,
@@ -4401,7 +4401,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               20,
@@ -5720,6 +5720,102 @@
             [
               8,
               10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "breach_caster",
+      "section_key": "breach_caster",
+      "type": "Suffix",
+      "family": "#% increased Mana Regeneration Rate",
+      "tags": [
+        "resource",
+        "mana"
+      ],
+      "spawn_tags": [
+        "ring",
+        "amulet",
+        "focus",
+        "sceptre",
+        "wand",
+        "trap",
+        "genesis_tree_caster",
+        "default"
+      ],
+      "stat_template": "#% increased Mana Regeneration Rate",
+      "num_tiers": 6,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Nirvana",
+          "min_ilvl": 79,
+          "weight": 1,
+          "values": [
+            [
+              60,
+              69
+            ]
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "of Euphoria",
+          "min_ilvl": 55,
+          "weight": 1,
+          "values": [
+            [
+              50,
+              59
+            ]
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "of Bliss",
+          "min_ilvl": 42,
+          "weight": 1,
+          "values": [
+            [
+              40,
+              49
+            ]
+          ]
+        },
+        {
+          "tier": 4,
+          "name": "of Elation",
+          "min_ilvl": 29,
+          "weight": 1,
+          "values": [
+            [
+              30,
+              39
+            ]
+          ]
+        },
+        {
+          "tier": 5,
+          "name": "of Joy",
+          "min_ilvl": 18,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              29
+            ]
+          ]
+        },
+        {
+          "tier": 6,
+          "name": "of Excitement",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              19
             ]
           ]
         }

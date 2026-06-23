@@ -3685,7 +3685,7 @@
           "tier": 1,
           "name": "Kurgal's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3721,7 +3721,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3757,7 +3757,7 @@
           "tier": 1,
           "name": "Ulaman's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3789,7 +3789,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -3820,7 +3820,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               5,
@@ -3853,7 +3853,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,

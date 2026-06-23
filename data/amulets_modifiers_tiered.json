@@ -1,8 +1,8 @@
 {
   "source_url": "https://poe2db.tw/us/Amulets",
   "item_slug": "Amulets",
-  "total_groups": 124,
-  "total_mods": 431,
+  "total_groups": 97,
+  "total_mods": 296,
   "modifiers": [
     {
       "section": "Base Modifiers",
@@ -3542,7 +3542,7 @@
           "tier": 1,
           "name": "Ulaman's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               20,
@@ -3576,7 +3576,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               35,
@@ -3608,7 +3608,7 @@
           "tier": 1,
           "name": "Ulaman's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3641,7 +3641,7 @@
           "tier": 1,
           "name": "Ulaman's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               10,
@@ -3674,7 +3674,7 @@
           "tier": 1,
           "name": "Kurgal's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               35,
@@ -3707,7 +3707,7 @@
           "tier": 1,
           "name": "Ulaman's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               35,
@@ -3739,7 +3739,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3774,7 +3774,7 @@
           "tier": 1,
           "name": "Kurgal's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3806,7 +3806,7 @@
           "tier": 1,
           "name": "Kurgal's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               10,
@@ -3841,7 +3841,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               15,
@@ -3873,7 +3873,7 @@
           "tier": 1,
           "name": "Amanamu's",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -3908,7 +3908,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               9,
@@ -3940,7 +3940,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             1
           ]
@@ -3972,7 +3972,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               9,
@@ -4007,7 +4007,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               9,
@@ -4039,7 +4039,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -4075,7 +4075,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               10,
@@ -4106,7 +4106,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               10,
@@ -4138,7 +4138,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -4171,7 +4171,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               3,
@@ -4205,7 +4205,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -4246,7 +4246,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               13,
@@ -4287,7 +4287,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               13,
@@ -4328,7 +4328,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               13,
@@ -4360,7 +4360,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               3,
@@ -4391,7 +4391,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               8,
@@ -4422,7 +4422,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               10,
@@ -4454,7 +4454,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               12,
@@ -4488,7 +4488,7 @@
           "tier": 1,
           "name": "of Ulaman",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               2,
@@ -4522,7 +4522,7 @@
           "tier": 1,
           "name": "of Kurgal",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               2,
@@ -4554,7 +4554,7 @@
           "tier": 1,
           "name": "of Amanamu",
           "min_ilvl": 65,
-          "weight": "",
+          "weight": 1,
           "values": [
             [
               20,
@@ -5348,2144 +5348,6 @@
           "min_ilvl": 1,
           "weight": 0,
           "values": []
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Prefix",
-      "family": "#% increased Curse Magnitudes",
-      "tags": [
-        "caster",
-        "curse"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased Curse Magnitudes",
-      "num_tiers": 4,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Dooming",
-          "min_ilvl": 77,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Maledicting",
-          "min_ilvl": 61,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Condemning",
-          "min_ilvl": 47,
-          "weight": 1,
-          "values": [
-            [
-              4,
-              6
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Hexing",
-          "min_ilvl": 31,
-          "weight": 1,
-          "values": [
-            [
-              2,
-              3
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Prefix",
-      "family": "#% increased Mana Cost Efficiency of Spells",
-      "tags": [
-        "resource",
-        "mana",
-        "caster"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased Mana Cost Efficiency of Spells",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Calculating",
-          "min_ilvl": 77,
-          "weight": 1,
-          "values": [
-            [
-              23,
-              26
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Sagacious",
-          "min_ilvl": 64,
-          "weight": 1,
-          "values": [
-            [
-              19,
-              22
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Astute",
-          "min_ilvl": 53,
-          "weight": 1,
-          "values": [
-            [
-              16,
-              18
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Prudent",
-          "min_ilvl": 42,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              15
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "Considerate",
-          "min_ilvl": 29,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "Thoughtful",
-          "min_ilvl": 12,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Prefix",
-      "family": "#% increased Spell Damage",
-      "tags": [
-        "caster_damage",
-        "damage",
-        "caster"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased Spell Damage",
-      "num_tiers": 8,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Runic",
-          "min_ilvl": 82,
-          "weight": 1,
-          "values": [
-            [
-              35,
-              39
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Glyphic",
-          "min_ilvl": 71,
-          "weight": 1,
-          "values": [
-            [
-              30,
-              34
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Incanter's",
-          "min_ilvl": 63,
-          "weight": 1,
-          "values": [
-            [
-              26,
-              29
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Occultist's",
-          "min_ilvl": 55,
-          "weight": 1,
-          "values": [
-            [
-              22,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "Professor's",
-          "min_ilvl": 46,
-          "weight": 1,
-          "values": [
-            [
-              18,
-              21
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "Scholar's",
-          "min_ilvl": 31,
-          "weight": 1,
-          "values": [
-            [
-              14,
-              17
-            ]
-          ]
-        },
-        {
-          "tier": 7,
-          "name": "Adept's",
-          "min_ilvl": 20,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              13
-            ]
-          ]
-        },
-        {
-          "tier": 8,
-          "name": "Apprentice's",
-          "min_ilvl": 9,
-          "weight": 1,
-          "values": [
-            [
-              6,
-              9
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Prefix",
-      "family": "#% increased Spell Damage during any Flask Effect",
-      "tags": [
-        "caster_damage",
-        "damage",
-        "caster"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased Spell Damage during any Flask Effect",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Exhilarating",
-          "min_ilvl": 80,
-          "weight": 1,
-          "values": [
-            [
-              50,
-              55
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Energising",
-          "min_ilvl": 67,
-          "weight": 1,
-          "values": [
-            [
-              44,
-              49
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Elevating",
-          "min_ilvl": 53,
-          "weight": 1,
-          "values": [
-            [
-              38,
-              43
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Awakening",
-          "min_ilvl": 39,
-          "weight": 1,
-          "values": [
-            [
-              32,
-              37
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "Stimulating",
-          "min_ilvl": 26,
-          "weight": 1,
-          "values": [
-            [
-              26,
-              31
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "Activating",
-          "min_ilvl": 12,
-          "weight": 1,
-          "values": [
-            [
-              20,
-              25
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Prefix",
-      "family": "#% increased effect of Arcane Surge on you",
-      "tags": [
-        "resource",
-        "mana",
-        "caster"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased effect of Arcane Surge on you",
-      "num_tiers": 4,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Passionate",
-          "min_ilvl": 79,
-          "weight": 1,
-          "values": [
-            [
-              33,
-              39
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Spirited",
-          "min_ilvl": 61,
-          "weight": 1,
-          "values": [
-            [
-              26,
-              32
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Enthusiastic",
-          "min_ilvl": 47,
-          "weight": 1,
-          "values": [
-            [
-              19,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Eager",
-          "min_ilvl": 24,
-          "weight": 1,
-          "values": [
-            [
-              12,
-              18
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Prefix",
-      "family": "#% of Damage is taken from Mana before Life",
-      "tags": [
-        "resource",
-        "life",
-        "mana"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% of Damage is taken from Mana before Life",
-      "num_tiers": 4,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Enervating",
-          "min_ilvl": 77,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              15
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Exhausting",
-          "min_ilvl": 52,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Draining",
-          "min_ilvl": 39,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Taxing",
-          "min_ilvl": 23,
-          "weight": 1,
-          "values": [
-            [
-              4,
-              6
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Prefix",
-      "family": "Spells have #% increased Cooldown Recovery Rate",
-      "tags": [
-        "caster"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "Spells have #% increased Cooldown Recovery Rate",
-      "num_tiers": 5,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Ingenious",
-          "min_ilvl": 74,
-          "weight": 1,
-          "values": [
-            [
-              21,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Trailblazing",
-          "min_ilvl": 59,
-          "weight": 1,
-          "values": [
-            [
-              16,
-              20
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Pioneering",
-          "min_ilvl": 41,
-          "weight": 1,
-          "values": [
-            [
-              11,
-              15
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Inventive",
-          "min_ilvl": 28,
-          "weight": 1,
-          "values": [
-            [
-              6,
-              10
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "Imagninative",
-          "min_ilvl": 12,
-          "weight": 1,
-          "values": [
-            [
-              2,
-              4
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Suffix",
-      "family": "# to Level of all Spell Skills",
-      "tags": [
-        "caster",
-        "gem"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "# to Level of all Spell Skills",
-      "num_tiers": 1,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Jordan",
-          "min_ilvl": 45,
-          "weight": 1,
-          "values": [
-            1
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Suffix",
-      "family": "#% chance for Remnants you pick up to count as picking up an additional Remnant",
-      "tags": [],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% chance for Remnants you pick up to count as picking up an additional Remnant",
-      "num_tiers": 5,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Multiplication",
-          "min_ilvl": 73,
-          "weight": 1,
-          "values": [
-            [
-              15,
-              16
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Magnification",
-          "min_ilvl": 61,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              14
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Expansion",
-          "min_ilvl": 49,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Proliferation",
-          "min_ilvl": 37,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Accumulation",
-          "min_ilvl": 24,
-          "weight": 1,
-          "values": [
-            [
-              4,
-              6
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Suffix",
-      "family": "#% increased Cast Speed during any Flask Effect",
-      "tags": [
-        "caster_speed",
-        "caster",
-        "speed"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased Cast Speed during any Flask Effect",
-      "num_tiers": 4,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Accelerating",
-          "min_ilvl": 76,
-          "weight": 1,
-          "values": [
-            [
-              17,
-              19
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Hastening",
-          "min_ilvl": 59,
-          "weight": 1,
-          "values": [
-            [
-              14,
-              16
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Quickening",
-          "min_ilvl": 41,
-          "weight": 1,
-          "values": [
-            [
-              11,
-              13
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Hurrying",
-          "min_ilvl": 22,
-          "weight": 1,
-          "values": [
-            [
-              8,
-              10
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Suffix",
-      "family": "#% increased Critical Hit Chance for Spells",
-      "tags": [
-        "caster_critical",
-        "caster",
-        "critical"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased Critical Hit Chance for Spells",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Unmaking",
-          "min_ilvl": 81,
-          "weight": 1,
-          "values": [
-            [
-              22,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Ruin",
-          "min_ilvl": 70,
-          "weight": 1,
-          "values": [
-            [
-              19,
-              21
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Calamity",
-          "min_ilvl": 58,
-          "weight": 1,
-          "values": [
-            [
-              16,
-              18
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Disaster",
-          "min_ilvl": 45,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              15
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Havoc",
-          "min_ilvl": 32,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "of Menace",
-          "min_ilvl": 18,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Suffix",
-      "family": "#% increased Critical Spell Damage Bonus",
-      "tags": [
-        "caster_critical",
-        "caster",
-        "critical"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "#% increased Critical Spell Damage Bonus",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Destruction",
-          "min_ilvl": 80,
-          "weight": 1,
-          "values": [
-            [
-              26,
-              29
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Ferocity",
-          "min_ilvl": 69,
-          "weight": 1,
-          "values": [
-            [
-              22,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Fury",
-          "min_ilvl": 57,
-          "weight": 1,
-          "values": [
-            [
-              18,
-              21
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Rage",
-          "min_ilvl": 44,
-          "weight": 1,
-          "values": [
-            [
-              14,
-              17
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Anger",
-          "min_ilvl": 30,
-          "weight": 1,
-          "values": [
-            [
-              11,
-              13
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "of Ire",
-          "min_ilvl": 17,
-          "weight": 1,
-          "values": [
-            [
-              8,
-              10
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Suffix",
-      "family": "Remnants can be collected from #% further away",
-      "tags": [],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "Remnants can be collected from #% further away",
-      "num_tiers": 5,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Engulfing",
-          "min_ilvl": 76,
-          "weight": 1,
-          "values": [
-            [
-              44,
-              51
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Absorbing",
-          "min_ilvl": 64,
-          "weight": 1,
-          "values": [
-            [
-              36,
-              43
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Amassing",
-          "min_ilvl": 51,
-          "weight": 1,
-          "values": [
-            [
-              28,
-              35
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Collecting",
-          "min_ilvl": 38,
-          "weight": 1,
-          "values": [
-            [
-              20,
-              27
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Receiving",
-          "min_ilvl": 26,
-          "weight": 1,
-          "values": [
-            [
-              12,
-              19
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_caster",
-      "section_key": "breach_caster",
-      "type": "Suffix",
-      "family": "Spell Skills have #% increased Area of Effect",
-      "tags": [
-        "caster"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_caster",
-        "default"
-      ],
-      "stat_template": "Spell Skills have #% increased Area of Effect",
-      "num_tiers": 3,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Understanding",
-          "min_ilvl": 69,
-          "weight": 1,
-          "values": [
-            [
-              12,
-              14
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Experimentation",
-          "min_ilvl": 48,
-          "weight": 1,
-          "values": [
-            [
-              9,
-              11
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Analysis",
-          "min_ilvl": 23,
-          "weight": 1,
-          "values": [
-            [
-              6,
-              8
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Prefix",
-      "family": "Minions Revive #% faster",
-      "tags": [
-        "minion"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions Revive #% faster",
-      "num_tiers": 4,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Restless",
-          "min_ilvl": 76,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Waking",
-          "min_ilvl": 63,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Rousing",
-          "min_ilvl": 45,
-          "weight": 1,
-          "values": [
-            [
-              3,
-              5
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Stirring",
-          "min_ilvl": 24,
-          "weight": 1,
-          "values": [
-            [
-              1,
-              2
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Prefix",
-      "family": "Minions deal #% increased Damage",
-      "tags": [
-        "minion_damage",
-        "damage",
-        "minion"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions deal #% increased Damage",
-      "num_tiers": 8,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Puppeteer's",
-          "min_ilvl": 82,
-          "weight": 1,
-          "values": [
-            [
-              28,
-              31
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Manipulator's",
-          "min_ilvl": 70,
-          "weight": 1,
-          "values": [
-            [
-              25,
-              27
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Exploiter's",
-          "min_ilvl": 65,
-          "weight": 1,
-          "values": [
-            [
-              22,
-              24
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Conspirator's",
-          "min_ilvl": 54,
-          "weight": 1,
-          "values": [
-            [
-              19,
-              21
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "Plotter's",
-          "min_ilvl": 46,
-          "weight": 1,
-          "values": [
-            [
-              16,
-              18
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "Schemer's",
-          "min_ilvl": 33,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              15
-            ]
-          ]
-        },
-        {
-          "tier": 7,
-          "name": "Conniver's",
-          "min_ilvl": 26,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 8,
-          "name": "Hustler's",
-          "min_ilvl": 13,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Prefix",
-      "family": "Minions deal #% increased Damage with Command Skills",
-      "tags": [
-        "minion_damage",
-        "damage",
-        "minion"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions deal #% increased Damage with Command Skills",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Custodian's",
-          "min_ilvl": 81,
-          "weight": 1,
-          "values": [
-            [
-              53,
-              61
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Shepherd's",
-          "min_ilvl": 63,
-          "weight": 1,
-          "values": [
-            [
-              45,
-              52
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Sentry's",
-          "min_ilvl": 52,
-          "weight": 1,
-          "values": [
-            [
-              37,
-              44
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Watcher's",
-          "min_ilvl": 44,
-          "weight": 1,
-          "values": [
-            [
-              29,
-              36
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "Lookout's",
-          "min_ilvl": 35,
-          "weight": 1,
-          "values": [
-            [
-              21,
-              28
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "Guide's",
-          "min_ilvl": 18,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              20
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Prefix",
-      "family": "Minions have #% increased maximum Life",
-      "tags": [
-        "resource",
-        "life",
-        "minion"
-      ],
-      "spawn_tags": [
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% increased maximum Life",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "Fortifying",
-          "min_ilvl": 75,
-          "weight": 1,
-          "values": [
-            [
-              27,
-              30
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "Bolstering",
-          "min_ilvl": 67,
-          "weight": 1,
-          "values": [
-            [
-              23,
-              26
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "Reinforcing",
-          "min_ilvl": 52,
-          "weight": 1,
-          "values": [
-            [
-              19,
-              22
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "Toughening",
-          "min_ilvl": 41,
-          "weight": 1,
-          "values": [
-            [
-              15,
-              18
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "Bracing",
-          "min_ilvl": 29,
-          "weight": 1,
-          "values": [
-            [
-              11,
-              14
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "Bearing",
-          "min_ilvl": 18,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              10
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "# to Level of all Minion Skills",
-      "tags": [
-        "minion",
-        "gem"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "# to Level of all Minion Skills",
-      "num_tiers": 2,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of the Despot",
-          "min_ilvl": 64,
-          "weight": 1,
-          "values": [
-            2
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of the Taskmaster",
-          "min_ilvl": 36,
-          "weight": 1,
-          "values": [
-            1
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Minions have #% increased Area of Effect",
-      "tags": [
-        "minion"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% increased Area of Effect",
-      "num_tiers": 5,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Stampeding",
-          "min_ilvl": 73,
-          "weight": 1,
-          "values": [
-            [
-              21,
-              24
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Storming",
-          "min_ilvl": 61,
-          "weight": 1,
-          "values": [
-            [
-              17,
-              20
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Trampling",
-          "min_ilvl": 49,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              16
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Bustling",
-          "min_ilvl": 36,
-          "weight": 1,
-          "values": [
-            [
-              9,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Scurrying",
-          "min_ilvl": 23,
-          "weight": 1,
-          "values": [
-            [
-              5,
-              8
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Minions have #% increased Attack and Cast Speed",
-      "tags": [
-        "caster_speed",
-        "minion_speed",
-        "attack",
-        "caster",
-        "speed",
-        "minion"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% increased Attack and Cast Speed",
-      "num_tiers": 4,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Control",
-          "min_ilvl": 80,
-          "weight": 1,
-          "values": [
-            [
-              9,
-              10
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Management",
-          "min_ilvl": 69,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              8
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Direction",
-          "min_ilvl": 53,
-          "weight": 1,
-          "values": [
-            [
-              5,
-              6
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Guidance",
-          "min_ilvl": 31,
-          "weight": 1,
-          "values": [
-            [
-              3,
-              4
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Minions have #% increased Critical Damage Bonus",
-      "tags": [
-        "minion_damage",
-        "damage",
-        "minion",
-        "critical"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% increased Critical Damage Bonus",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Extinction",
-          "min_ilvl": 80,
-          "weight": 1,
-          "values": [
-            [
-              31,
-              35
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Eradication",
-          "min_ilvl": 69,
-          "weight": 1,
-          "values": [
-            [
-              26,
-              30
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Devastation",
-          "min_ilvl": 57,
-          "weight": 1,
-          "values": [
-            [
-              21,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Elimination",
-          "min_ilvl": 44,
-          "weight": 1,
-          "values": [
-            [
-              16,
-              20
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Purging",
-          "min_ilvl": 30,
-          "weight": 1,
-          "values": [
-            [
-              11,
-              15
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "of Quashing",
-          "min_ilvl": 17,
-          "weight": 1,
-          "values": [
-            [
-              6,
-              10
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Minions have #% increased Critical Hit Chance",
-      "tags": [
-        "minion",
-        "critical"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% increased Critical Hit Chance",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Piercing",
-          "min_ilvl": 81,
-          "weight": 1,
-          "values": [
-            [
-              45,
-              52
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Lacinating",
-          "min_ilvl": 70,
-          "weight": 1,
-          "values": [
-            [
-              37,
-              44
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Puncturing",
-          "min_ilvl": 58,
-          "weight": 1,
-          "values": [
-            [
-              29,
-              36
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Gouging",
-          "min_ilvl": 45,
-          "weight": 1,
-          "values": [
-            [
-              21,
-              28
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Stinging",
-          "min_ilvl": 32,
-          "weight": 1,
-          "values": [
-            [
-              13,
-              20
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "of Pricking",
-          "min_ilvl": 18,
-          "weight": 1,
-          "values": [
-            [
-              5,
-              12
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Minions have #% increased Immobilisation buildup",
-      "tags": [
-        "minion"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% increased Immobilisation buildup",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Seizing",
-          "min_ilvl": 74,
-          "weight": 1,
-          "values": [
-            [
-              50,
-              55
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Grappling",
-          "min_ilvl": 65,
-          "weight": 1,
-          "values": [
-            [
-              44,
-              49
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Snaring",
-          "min_ilvl": 56,
-          "weight": 1,
-          "values": [
-            [
-              38,
-              43
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Gripping",
-          "min_ilvl": 48,
-          "weight": 1,
-          "values": [
-            [
-              32,
-              37
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Grasping",
-          "min_ilvl": 34,
-          "weight": 1,
-          "values": [
-            [
-              26,
-              31
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "of Clutching",
-          "min_ilvl": 16,
-          "weight": 1,
-          "values": [
-            [
-              20,
-              25
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Minions have #% increased Movement Speed",
-      "tags": [
-        "minion_speed",
-        "speed",
-        "minion"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% increased Movement Speed",
-      "num_tiers": 4,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Compulsion",
-          "min_ilvl": 77,
-          "weight": 1,
-          "values": [
-            [
-              14,
-              16
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Coercion",
-          "min_ilvl": 68,
-          "weight": 1,
-          "values": [
-            [
-              11,
-              13
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Pressure",
-          "min_ilvl": 48,
-          "weight": 1,
-          "values": [
-            [
-              8,
-              10
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Persuasion",
-          "min_ilvl": 27,
-          "weight": 1,
-          "values": [
-            [
-              5,
-              7
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Minions have #% to all Elemental Resistances",
-      "tags": [
-        "cold_resistance",
-        "elemental_resistance",
-        "fire_resistance",
-        "lightning_resistance",
-        "minion_resistance",
-        "elemental",
-        "fire",
-        "cold",
-        "lightning",
-        "resistance",
-        "minion"
-      ],
-      "spawn_tags": [
-        "belt",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Minions have #% to all Elemental Resistances",
-      "num_tiers": 6,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Adaptation",
-          "min_ilvl": 73,
-          "weight": 1,
-          "values": [
-            [
-              23,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Acclimatisation",
-          "min_ilvl": 66,
-          "weight": 1,
-          "values": [
-            [
-              20,
-              22
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of Conditioning",
-          "min_ilvl": 57,
-          "weight": 1,
-          "values": [
-            [
-              17,
-              19
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Desensitisation",
-          "min_ilvl": 49,
-          "weight": 1,
-          "values": [
-            [
-              14,
-              16
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Dullness",
-          "min_ilvl": 38,
-          "weight": 1,
-          "values": [
-            [
-              10,
-              12
-            ]
-          ]
-        },
-        {
-          "tier": 6,
-          "name": "of Numbness",
-          "min_ilvl": 22,
-          "weight": 1,
-          "values": [
-            [
-              7,
-              9
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "section": "breach_minion",
-      "section_key": "breach_minion",
-      "type": "Suffix",
-      "family": "Offering Skills have #% increased Duration",
-      "tags": [
-        "minion"
-      ],
-      "spawn_tags": [
-        "ring",
-        "genesis_tree_minion",
-        "default"
-      ],
-      "stat_template": "Offering Skills have #% increased Duration",
-      "num_tiers": 5,
-      "tiers": [
-        {
-          "tier": 1,
-          "name": "of Liturgy",
-          "min_ilvl": 79,
-          "weight": 1,
-          "values": [
-            [
-              46,
-              55
-            ]
-          ]
-        },
-        {
-          "tier": 2,
-          "name": "of Ceremony",
-          "min_ilvl": 68,
-          "weight": 1,
-          "values": [
-            [
-              36,
-              45
-            ]
-          ]
-        },
-        {
-          "tier": 3,
-          "name": "of the Rite",
-          "min_ilvl": 47,
-          "weight": 1,
-          "values": [
-            [
-              26,
-              35
-            ]
-          ]
-        },
-        {
-          "tier": 4,
-          "name": "of Observance",
-          "min_ilvl": 29,
-          "weight": 1,
-          "values": [
-            [
-              16,
-              25
-            ]
-          ]
-        },
-        {
-          "tier": 5,
-          "name": "of Tradition",
-          "min_ilvl": 15,
-          "weight": 1,
-          "values": [
-            [
-              6,
-              15
-            ]
-          ]
         }
       ]
     },

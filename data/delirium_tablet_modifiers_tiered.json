@@ -1,0 +1,854 @@
+{
+  "source_url": "https://poe2db.tw/us/Delirium_Tablet",
+  "item_slug": "Delirium_Tablet",
+  "total_groups": 33,
+  "total_mods": 33,
+  "modifiers": [
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Experience gain in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Experience gain in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Elevated",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              12,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Gold found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Gold found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Bountiful",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              35
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Pack Size in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Pack Size in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Breeding",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Rarity of Items found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Rarity of Items found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Collector's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              8,
+              12
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "% increased Quantity of Waystones found in MapMap contains # additional Azmeri Spirits",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% increased Quantity of Waystones found in MapMap contains # additional Azmeri Spirits",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Azmeri's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "% increased Quantity of Waystones found in MapMap is inhabited by # additional Rogue Exiles",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% increased Quantity of Waystones found in MapMap is inhabited by # additional Rogue Exiles",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Exiled",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains # additional Essences% increased Quantity of Waystones found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains # additional Essences% increased Quantity of Waystones found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Crystallised",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains # additional Rare Chests",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains # additional Rare Chests",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Treasurer's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map contains # additional Summoning Circles",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map contains # additional Summoning Circles",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Summoner's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map has #% increased Magic Monsters",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased Magic Monsters",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Teeming",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              30,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map has #% increased Monster Rarity",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased Monster Rarity",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Abounding",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Map has #% increased number of Rare Monsters",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased number of Rare Monsters",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Brimming",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              25,
+              35
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Monsters have #% increased Effectiveness",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Monsters have #% increased Effectiveness",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Challenger's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Quantity of Waystones found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Quantity of Waystones found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Cartographer",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              30,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Stack size of Simulacrum Splinters found in Map",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "#% increased Stack size of Simulacrum Splinters found in Map",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Simulacrum",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "% reduced Pack Size in Map% increased Quantity of Waystones found in MapMap contains # additional Shrines",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% reduced Pack Size in Map% increased Quantity of Waystones found in MapMap contains # additional Shrines",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Devoted",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "% reduced Pack Size in Map% increased Quantity of Waystones found in MapMap contains # additional Strongboxes",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "% reduced Pack Size in Map% increased Quantity of Waystones found in MapMap contains # additional Strongboxes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Antiquarian",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Delirium Encounters in Map are #% more likely to spawn Unique Bosses",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Delirium Encounters in Map are #% more likely to spawn Unique Bosses",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Phobia",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Delirium Fog in Map applies #% increased Deliriousness to Players",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Delirium Fog in Map applies #% increased Deliriousness to Players",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Madness",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Delirium Fog in Map dissipates #% slower",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Delirium Fog in Map dissipates #% slower",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Unending",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              20,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Delirium Fog in Map lasts # additional seconds before dissipating",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Delirium Fog in Map lasts # additional seconds before dissipating",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Eternity",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              12
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Delirium Fog in Map spawns #% increased Fracturing Mirrors",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Delirium Fog in Map spawns #% increased Fracturing Mirrors",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Mirrors",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Delirium Fog in Map spawns #% increased MirrorShards",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Delirium Fog in Map spawns #% increased MirrorShards",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Shattering",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              12,
+              26
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Delirium Monsters in Map have #% increased Pack Size",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Delirium Monsters in Map have #% increased Pack Size",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Persecution",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has # additional random Modifiers",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has # additional random Modifiers",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Undertaking",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% increased chance to contain Azmeri Spirits",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased chance to contain Azmeri Spirits",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Spirits",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              70,
+              100
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% increased chance to contain Essences",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased chance to contain Essences",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Essence",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              70,
+              100
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% increased chance to contain Rogue Exiles",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased chance to contain Rogue Exiles",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Exile",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              70,
+              100
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% increased chance to contain Shrines",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased chance to contain Shrines",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Shrines",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              70,
+              100
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% increased chance to contain Strongboxes",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased chance to contain Strongboxes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Strongboxes",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              70,
+              100
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Map has #% increased chance to contain a Summoning Circle",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Map has #% increased chance to contain a Summoning Circle",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Summoning",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              70,
+              100
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Slaying Rare Monsters in Map pauses the Delirium Mirror Timer for # seconds",
+      "tags": [],
+      "spawn_tags": [
+        "tower_augment_delirium",
+        "default"
+      ],
+      "stat_template": "Slaying Rare Monsters in Map pauses the Delirium Mirror Timer for # seconds",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Freeze Time",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Unique Monsters have # additional Rare Modifier",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Unique Monsters have # additional Rare Modifier",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Contest",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

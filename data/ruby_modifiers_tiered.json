@@ -1,0 +1,3404 @@
+{
+  "source_url": "https://poe2db.tw/us/Ruby",
+  "item_slug": "Ruby",
+  "total_groups": 108,
+  "total_mods": 108,
+  "modifiers": [
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "# to Maximum Rage",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "# to Maximum Rage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Angry",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% chance for Attack Hits to apply Incision",
+      "tags": [
+        "bleed",
+        "physical",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% chance for Attack Hits to apply Incision",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Incise",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% chance to inflict Bleeding on Hit",
+      "tags": [
+        "bleed",
+        "physical",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% chance to inflict Bleeding on Hit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Bleeding",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Area of Effect",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Area of Effect",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Blasting",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Armour",
+      "tags": [
+        "defences",
+        "armour"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Armoured",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Armour, Evasion and Energy Shield from Equipped Shield",
+      "tags": [
+        "defences"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Armour, Evasion and Energy Shield from Equipped Shield",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Shielding",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              18,
+              32
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Attack Damage",
+      "tags": [
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Attack Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Combat",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Block chance",
+      "tags": [
+        "block"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Block chance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Protecting",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Damage against Enemies with Fully Broken Armour",
+      "tags": [
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Damage against Enemies with Fully Broken Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Exploiting",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Damage while Shapeshifted",
+      "tags": [
+        "damage"
+      ],
+      "spawn_tags": [
+        "intjewel",
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Damage while Shapeshifted",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Bestial",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Damage with Maces",
+      "tags": [
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Damage with Maces",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Beating",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Damage with Plant Skills",
+      "tags": [
+        "damage"
+      ],
+      "spawn_tags": [
+        "intjewel",
+        "strjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Damage with Plant Skills",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Overgrown",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Damage with Warcries",
+      "tags": [
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Damage with Warcries",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Yelling",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Elemental Damage",
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "fire",
+        "cold",
+        "lightning"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Elemental Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Prismatic",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Fire Damage",
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "fire"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Fire Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Flaming",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Global Physical Damage",
+      "tags": [
+        "physical_damage",
+        "damage",
+        "physical"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Global Physical Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Sharpened",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Ignite Magnitude",
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "fire",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Ignite Magnitude",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Burning",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Magnitude of Bleeding you inflict",
+      "tags": [
+        "bleed",
+        "physical_damage",
+        "damage",
+        "physical",
+        "attack",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Magnitude of Bleeding you inflict",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Haemorrhaging",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Melee Damage",
+      "tags": [
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Melee Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Clashing",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Presence Area of Effect",
+      "tags": [
+        "aura"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Presence Area of Effect",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Iconic",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Thorns damage",
+      "tags": [
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Thorns damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Retaliating",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Totem Damage",
+      "tags": [
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Totem Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Shaman's",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "#% increased Totem Life",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Totem Life",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Carved",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Banner Skills have #% increased Area of Effect",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Banner Skills have #% increased Area of Effect",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Rallying",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Break #% increased Armour",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Break #% increased Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Shattering",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Damage Penetrates #% Fire Resistance",
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "fire"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Damage Penetrates #% Fire Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Searing",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Empowered Attacks deal #% increased Damage",
+      "tags": [
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Empowered Attacks deal #% increased Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Empowering",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Minions have #% increased Area of Effect",
+      "tags": [
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Minions have #% increased Area of Effect",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Companion",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Prefix",
+      "family": "Minions have #% increased maximum Life",
+      "tags": [
+        "resource",
+        "life",
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Minions have #% increased maximum Life",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Fortuitous",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Armour Break Duration",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Armour Break Duration",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Resonating",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Bleeding Duration",
+      "tags": [
+        "bleed",
+        "physical",
+        "attack",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Bleeding Duration",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Haemophilia",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Flammability Magnitude",
+      "tags": [
+        "elemental",
+        "fire",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Flammability Magnitude",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Ignition",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Glory generation for Banner Skills",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Glory generation for Banner Skills",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Valour",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Knockback Distance",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Knockback Distance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Fending",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Life Regeneration rate",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Life Regeneration rate",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Regeneration",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Skill Effect Duration",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Skill Effect Duration",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Lengthening",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Skill Speed while Shapeshifted",
+      "tags": [
+        "speed"
+      ],
+      "spawn_tags": [
+        "intjewel",
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Skill Speed while Shapeshifted",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Wild",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Stun Buildup",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Stun Buildup",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Stunning",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Stun Buildup with Maces",
+      "tags": [
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Stun Buildup with Maces",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Thumping",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Stun Threshold",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Stun Threshold",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Withstanding",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Totem Placement speed",
+      "tags": [
+        "speed"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Totem Placement speed",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Ancestry",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Warcry Cooldown Recovery Rate",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Warcry Cooldown Recovery Rate",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Rallying",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased Warcry Speed",
+      "tags": [
+        "speed"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Warcry Speed",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Lungs",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% increased amount of Life Leeched",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased amount of Life Leeched",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Frenzy",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% of Skill Mana Costs Converted to Life Costs",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% of Skill Mana Costs Converted to Life Costs",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Sacrifice",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "#% to Maximum Fire Resistance",
+      "tags": [
+        "elemental_resistance",
+        "fire_resistance",
+        "elemental",
+        "fire",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% to Maximum Fire Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Phoenix",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Banner Skills have #% increased Duration",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Banner Skills have #% increased Duration",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Inspiring",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              15,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Gain # Rage on Melee Hit",
+      "tags": [
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Gain # Rage on Melee Hit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Raging",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Gain # Rage when Hit by an Enemy",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Gain # Rage when Hit by an Enemy",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Retribution",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              1,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Base Modifiers",
+      "section_key": "normal",
+      "type": "Suffix",
+      "family": "Minions have #% additional Physical Damage Reduction",
+      "tags": [
+        "physical",
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Minions have #% additional Physical Damage Reduction",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of Confidence",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              6,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "# to Dexterity",
+      "tags": [
+        "attribute"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "# to Dexterity",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelDexterity1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "# to Intelligence",
+      "tags": [
+        "attribute"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "# to Intelligence",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelIntelligence1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "# to Strength",
+      "tags": [
+        "attribute"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "# to Strength",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelStrength1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "#% to Chaos Resistance",
+      "tags": [
+        "chaos_resistance",
+        "chaos",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% to Chaos Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelChaosResist1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              3,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "#% to Cold Resistance",
+      "tags": [
+        "cold_resistance",
+        "elemental_resistance",
+        "elemental",
+        "cold",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% to Cold Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelColdResist1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "#% to Fire Resistance",
+      "tags": [
+        "elemental_resistance",
+        "fire_resistance",
+        "elemental",
+        "fire",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% to Fire Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelFireResist1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "#% to Lightning Resistance",
+      "tags": [
+        "elemental_resistance",
+        "lightning_resistance",
+        "elemental",
+        "lightning",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% to Lightning Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelLightningResist1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "Cannot be Blinded",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Cannot be Blinded",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelBlindImmunity1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "Corrupted Blood cannot be inflicted on you",
+      "tags": [
+        "bleed",
+        "physical",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Corrupted Blood cannot be inflicted on you",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelCorruptedBloodImmunity1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "Immune to Maim",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Immune to Maim",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelMaimImmunity1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Corrupted (Vaal Orb)",
+      "section_key": "corrupted",
+      "type": "Enchantment",
+      "family": "You cannot be Hindered",
+      "tags": [
+        "blue_herring"
+      ],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "You cannot be Hindered",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "CorruptionJewelHinderImmunity1",
+          "min_ilvl": 1,
+          "weight": 1,
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Armour#% increased Attack Damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "armour",
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Armour#% increased Attack Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Armour#% increased Thorns damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "armour",
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Armour#% increased Thorns damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Armour#% increased Totem Damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "armour",
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Armour#% increased Totem Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased ArmourMinions deal #% increased Damage",
+      "tags": [
+        "defences",
+        "minion_damage",
+        "unveiled_mod",
+        "armour",
+        "damage",
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased ArmourMinions deal #% increased Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Chaos Damage#% increased Withered Magnitude",
+      "tags": [
+        "chaos_damage",
+        "unveiled_mod",
+        "damage",
+        "chaos"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Chaos Damage#% increased Withered Magnitude",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Cold DamageDamage Penetrates #% Cold Resistance",
+      "tags": [
+        "elemental_damage",
+        "unveiled_mod",
+        "damage",
+        "elemental",
+        "cold"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Cold DamageDamage Penetrates #% Cold Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Elemental Damage#% increased Magnitude of Ailments you inflict",
+      "tags": [
+        "elemental_damage",
+        "unveiled_mod",
+        "damage",
+        "elemental",
+        "fire",
+        "cold",
+        "lightning",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Elemental Damage#% increased Magnitude of Ailments you inflict",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Evasion Rating#% increased Attack Damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "evasion",
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion Rating#% increased Attack Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Evasion Rating#% increased Thorns damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "evasion",
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion Rating#% increased Thorns damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Evasion Rating#% increased Totem Damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "evasion",
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion Rating#% increased Totem Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Evasion RatingMinions deal #% increased Damage",
+      "tags": [
+        "defences",
+        "minion_damage",
+        "unveiled_mod",
+        "evasion",
+        "damage",
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Evasion RatingMinions deal #% increased Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Exposure Effect",
+      "tags": [
+        "unveiled_mod",
+        "elemental",
+        "fire",
+        "cold",
+        "lightning"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Exposure Effect",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Fire DamageDamage Penetrates #% Fire Resistance",
+      "tags": [
+        "elemental_damage",
+        "unveiled_mod",
+        "damage",
+        "elemental",
+        "fire"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Fire DamageDamage Penetrates #% Fire Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Global Physical DamageBreak #% increased Armour",
+      "tags": [
+        "defences",
+        "physical_damage",
+        "unveiled_mod",
+        "armour",
+        "damage",
+        "physical"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Global Physical DamageBreak #% increased Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Lightning DamageDamage Penetrates #% Lightning Resistance",
+      "tags": [
+        "elemental_damage",
+        "unveiled_mod",
+        "damage",
+        "elemental",
+        "lightning"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Lightning DamageDamage Penetrates #% Lightning Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Magnitude of Abyssal Wasting you inflict",
+      "tags": [
+        "unveiled_mod"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Magnitude of Abyssal Wasting you inflict",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Presence Area of EffectAura Skills have #% increased Magnitudes",
+      "tags": [
+        "unveiled_mod",
+        "aura"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Presence Area of EffectAura Skills have #% increased Magnitudes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              8,
+              15
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Spell Damage#% increased Armour",
+      "tags": [
+        "caster_damage",
+        "defences",
+        "unveiled_mod",
+        "armour",
+        "damage",
+        "caster"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Spell Damage#% increased Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Spell Damage#% increased Evasion Rating",
+      "tags": [
+        "caster_damage",
+        "defences",
+        "unveiled_mod",
+        "evasion",
+        "damage",
+        "caster"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Spell Damage#% increased Evasion Rating",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Spell Damage#% increased maximum Energy Shield",
+      "tags": [
+        "caster_damage",
+        "defences",
+        "unveiled_mod",
+        "energy_shield",
+        "damage",
+        "caster"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Spell Damage#% increased maximum Energy Shield",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased Warcry Buff Effect#% increased Damage with Warcries",
+      "tags": [
+        "unveiled_mod",
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Warcry Buff Effect#% increased Damage with Warcries",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased chance to Poison#% increased Magnitude of Poison you inflict",
+      "tags": [
+        "poison",
+        "unveiled_mod",
+        "damage",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased chance to Poison#% increased Magnitude of Poison you inflict",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased chance to inflict Bleeding#% increased Magnitude of Bleeding you inflict",
+      "tags": [
+        "bleed",
+        "physical_damage",
+        "unveiled_mod",
+        "damage",
+        "physical",
+        "ailment"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased chance to inflict Bleeding#% increased Magnitude of Bleeding you inflict",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased maximum Energy Shield#% increased Attack Damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "energy_shield",
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased maximum Energy Shield#% increased Attack Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased maximum Energy Shield#% increased Thorns damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "energy_shield",
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased maximum Energy Shield#% increased Thorns damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased maximum Energy Shield#% increased Totem Damage",
+      "tags": [
+        "defences",
+        "unveiled_mod",
+        "energy_shield",
+        "damage"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased maximum Energy Shield#% increased Totem Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "#% increased maximum Energy ShieldMinions deal #% increased Damage",
+      "tags": [
+        "defences",
+        "minion_damage",
+        "unveiled_mod",
+        "energy_shield",
+        "damage",
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased maximum Energy ShieldMinions deal #% increased Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "Companions deal #% increased DamageCompanions have #% increased maximum Life",
+      "tags": [
+        "minion_damage",
+        "resource",
+        "unveiled_mod",
+        "life",
+        "damage",
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "Companions deal #% increased DamageCompanions have #% increased maximum Life",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Prefix",
+      "family": "Minions have #% increased maximum Lifeminion area of effect +% [#,#]",
+      "tags": [
+        "resource",
+        "unveiled_mod",
+        "life",
+        "minion"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "Minions have #% increased maximum Lifeminion area of effect +% [#,#]",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Lightless",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              8
+            ],
+            3,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Suffix",
+      "family": "#% increased Dexterity",
+      "tags": [
+        "unveiled_mod",
+        "attribute"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Dexterity",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Abyss",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Suffix",
+      "family": "#% increased Intelligence",
+      "tags": [
+        "unveiled_mod",
+        "attribute"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Intelligence",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Abyss",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Desecrated Modifiers",
+      "section_key": "desecrated",
+      "type": "Suffix",
+      "family": "#% increased Strength",
+      "tags": [
+        "unveiled_mod",
+        "attribute"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "intjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Strength",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "of the Abyss",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Prefix",
+      "family": "# Suffix Modifier allowed",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "# Suffix Modifier allowed",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Potent Liquid Contempt",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Prefix",
+      "family": "# to Maximum Rage",
+      "tags": [],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "# to Maximum Rage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Concentrated Liquid Suffering",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Prefix",
+      "family": "#% increased Armour",
+      "tags": [
+        "defences",
+        "armour"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Armour",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Diluted Liquid Ire",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Prefix",
+      "family": "#% increased Attack Damage",
+      "tags": [
+        "damage",
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "dexjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Attack Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Liquid Paranoia",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Prefix",
+      "family": "#% increased Effect of Suffixes",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Effect of Suffixes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Potent Liquid Ferocity",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              40,
+              60
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Prefix",
+      "family": "#% increased Fire Damage",
+      "tags": [
+        "elemental_damage",
+        "damage",
+        "elemental",
+        "fire"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Fire Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Diluted Liquid Guilt",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Prefix",
+      "family": "#% increased Global Physical Damage",
+      "tags": [
+        "physical_damage",
+        "damage",
+        "physical"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Global Physical Damage",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Diluted Liquid Greed",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              15
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "# Prefix Modifier allowed",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "# Prefix Modifier allowed",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Potent Liquid Contempt",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "#% increased Effect of Prefixes",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "#% increased Effect of Prefixes",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Potent Liquid Ferocity",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              40,
+              60
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "#% increased Life Regeneration rate",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Life Regeneration rate",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Liquid Disgust",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "#% increased Warcry Speed",
+      "tags": [
+        "speed"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% increased Warcry Speed",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Concentrated Liquid Fear",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              10,
+              20
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "#% of Skill Mana Costs Converted to Life Costs",
+      "tags": [
+        "resource",
+        "life"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% of Skill Mana Costs Converted to Life Costs",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Liquid Envy",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "#% to Maximum Fire Resistance",
+      "tags": [
+        "elemental_resistance",
+        "fire_resistance",
+        "elemental",
+        "fire",
+        "resistance"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "#% to Maximum Fire Resistance",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Concentrated Liquid Isolation",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "Debilitate Enemies on Hit while you have an Emerald and a Sapphire socketed in your tree",
+      "tags": [],
+      "spawn_tags": [
+        "default"
+      ],
+      "stat_template": "Debilitate Enemies on Hit while you have an Emerald and a Sapphire socketed in your tree",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Potent Liquid Melancholy",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": []
+        }
+      ]
+    },
+    {
+      "section": "liquid",
+      "section_key": "liquid",
+      "type": "Suffix",
+      "family": "Gain # Rage on Melee Hit",
+      "tags": [
+        "attack"
+      ],
+      "spawn_tags": [
+        "strjewel",
+        "default"
+      ],
+      "stat_template": "Gain # Rage on Melee Hit",
+      "num_tiers": 1,
+      "tiers": [
+        {
+          "tier": 1,
+          "name": "Liquid Despair",
+          "min_ilvl": 1,
+          "weight": "",
+          "values": [
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

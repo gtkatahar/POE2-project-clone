@@ -245,6 +245,42 @@ def calibrate() -> None:
     print(f"  cell size  : {cell_w}×{cell_h}")
 
 
+def calibrate_from_box(x1: int, y1: int, x2: int, y2: int) -> dict:
+    """
+    Calibrate from a single drag-box enclosing the OUTER edges of the whole
+    grid (top-left corner of cell (0,0) to bottom-right corner of the last
+    cell). Used by the GUI's drag-to-select calibration overlay.
+    Saves the result to data/inventory_config.json automatically.
+    """
+    cfg = _load_config()
+    cols = cfg["grid_cols"]
+    rows = cfg["grid_rows"]
+
+    left, top = min(x1, x2), min(y1, y2)
+    width, height = abs(x2 - x1), abs(y2 - y1)
+    cell_w = round(width / cols)
+    cell_h = round(height / rows)
+
+    sw, sh = get_screen_size()
+
+    config = {
+        "base_w":    sw,
+        "base_h":    sh,
+        "origin_x":  left + cell_w // 2,
+        "origin_y":  top + cell_h // 2,
+        "cell_w":    cell_w,
+        "cell_h":    cell_h,
+        "grid_cols": cols,
+        "grid_rows": rows,
+    }
+
+    _CONFIG_PATH.parent.mkdir(exist_ok=True)
+    _CONFIG_PATH.write_text(
+        json.dumps(config, indent=2), encoding="utf-8"
+    )
+    return config
+
+
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------

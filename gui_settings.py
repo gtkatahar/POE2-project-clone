@@ -7,10 +7,12 @@ from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGroupBox,
     QCheckBox, QLabel, QSpinBox, QRadioButton, QButtonGroup,
-    QPushButton, QPlainTextEdit, QMessageBox,
+    QPushButton, QPlainTextEdit, QMessageBox, QDialog,
 )
 
 from gui_worker import ScrapeWorker
+from gui_calibration import CalibrationOverlay
+from windows.inventory import _load_config, calibrate_from_box
 
 ROOT_DIR = Path(__file__).resolve().parent
 SETTINGS_FILE = ROOT_DIR / "settings.json"
@@ -146,6 +148,26 @@ class SettingsTab(QWidget):
         self._btn_cancel_scrape.clicked.connect(self._on_cancel_scrape)
 
         layout.addWidget(data_group)
+
+        # --- Inventory Calibration ---
+        calib_group = QGroupBox("Inventory Calibration")
+        calib_layout = QVBoxLayout(calib_group)
+
+        self._calib_status = QLabel()
+        self._calib_status.setStyleSheet("color: #aaa; font-size: 11px;")
+        self._refresh_calib_status()
+        calib_layout.addWidget(self._calib_status)
+
+        calib_row = QHBoxLayout()
+        self._btn_calibrate = QPushButton("Calibrate Inventory Grid")
+        self._btn_calibrate.setFixedHeight(34)
+        calib_row.addWidget(self._btn_calibrate)
+        calib_row.addStretch()
+        calib_layout.addLayout(calib_row)
+
+        self._btn_calibrate.clicked.connect(self._on_calibrate)
+
+        layout.addWidget(calib_group)
         layout.addStretch()
 
     def _on_auto_minimize(self, checked: bool) -> None:
@@ -210,3 +232,21 @@ class SettingsTab(QWidget):
         self._btn_rescrape.setEnabled(True)
         self._btn_cancel_scrape.setVisible(False)
         self._scrape_log.appendPlainText(f"\nERROR: {msg}")
+
+    def _refresh_calib_status(self) -> None:
+        cfg = _load_config()
+        self._calib_status.setText(
+            f"Current: {cfg['cell_w']}×{cfg['cell_h']}px cells, "
+            f"origin ({cfg['origin_x']}, {cfg['origin_y']}) "
+            f"@ {cfg['base_w']}×{cfg['base_h']}"
+        )
+
+    def _on_calibrate(self) -> None:
+        self.window().showMinimized()
+        dlg = CalibrationOverlay(self)
+        result = dlg.exec()
+        self.window().showNormal()
+
+        if result == QDialog.DialogCode.Accepted and dlg.result_box():
+            calibrate_from_box(*dlg.result_box())
+            self._refresh_calib_status()

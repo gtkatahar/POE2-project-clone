@@ -291,6 +291,7 @@ class TargetsTab(QWidget):
         self._btn_set_active.setStyleSheet(
             "QPushButton { background: #4a7a1e; color: #ddd; font-weight: bold; }"
             "QPushButton:hover { background: #5a9a28; }"
+            "QPushButton:disabled { background: #3a3a3a; color: #777; }"
         )
         self._btn_edit = QPushButton("Edit")
         self._btn_dup = QPushButton("Duplicate")
@@ -358,7 +359,7 @@ class TargetsTab(QWidget):
         self._btn_delete.clicked.connect(self._on_delete)
 
         self._refresh_list()
-        self._show_current_active()
+        self._update_active_status(self._selected_path())
 
     def _refresh_list(self) -> None:
         current_name = None
@@ -402,24 +403,34 @@ class TargetsTab(QWidget):
             item = self._save_list.item(i)
             item.setHidden(bool(text) and text not in item.text().lower())
 
-    def _show_current_active(self) -> None:
-        if TARGET_FILE.exists():
-            try:
-                data = json.loads(TARGET_FILE.read_text(encoding="utf-8"))
-                mods = _mods_from_data(data)
-                slug = data.get("slug", "?")
-                self._lbl_active.setText(f"Active: {slug}  ({len(mods)} mod(s))")
-            except Exception:
-                pass
+    def _update_active_status(self, path: Path | None) -> None:
+        """Reflect whether the selected target is the active one, and toggle Set Active."""
+        if path is None:
+            self._lbl_active.setText("No target selected")
+            self._lbl_active.setStyleSheet("font-size: 13px; font-weight: bold; color: #999;")
+            self._btn_set_active.setEnabled(False)
+            return
+
+        active_source = _read_active_source()
+        if active_source is not None and path.name == active_source:
+            self._lbl_active.setText("● Active")
+            self._lbl_active.setStyleSheet("font-size: 13px; font-weight: bold; color: #6fc22e;")
+            self._btn_set_active.setEnabled(False)
+        else:
+            self._lbl_active.setText("○ Not Active")
+            self._lbl_active.setStyleSheet("font-size: 13px; font-weight: bold; color: #999;")
+            self._btn_set_active.setEnabled(True)
 
     def _on_selection_changed(self, item: QListWidgetItem | None) -> None:
         if item is None:
+            self._update_active_status(None)
             return
         path: Path = item.data(Qt.ItemDataRole.UserRole)
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
             self._populate_detail(data, path)
             self._note_if_active(data)
+            self._update_active_status(path)
         except Exception as exc:
             QMessageBox.warning(self, "Load Error", str(exc))
 
@@ -611,11 +622,9 @@ class TargetsTab(QWidget):
         else:
             ACTIVE_SOURCE_FILE.unlink(missing_ok=True)
 
-        slug = active.get("slug", "?")
-        mods = _mods_from_data(active)
-        self._lbl_active.setText(f"Active: {slug}  ({len(mods)} mod(s))")
         self.active_target_changed.emit(active)
         self._refresh_list()
+        self._update_active_status(self._selected_path())
         self._lbl_edit_note.setVisible(False)
 
     def _on_set_active(self) -> None:

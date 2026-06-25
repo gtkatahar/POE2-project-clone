@@ -12,10 +12,10 @@ from PyQt6.QtWidgets import (
     QTableWidgetItem, QHeaderView, QListWidget, QListWidgetItem,
     QGroupBox, QRadioButton, QButtonGroup, QPlainTextEdit,
     QSplitter, QFrame, QMessageBox, QScrollBar, QAbstractItemView,
-    QSizePolicy,
+    QSizePolicy, QLineEdit, QComboBox,
 )
 
-from gui_mod_builder import ModBuilderDialog
+from gui_mod_builder import ModBuilderDialog, _load_all_db_groups
 from gui_worker import ScanWorker, CraftWorker
 from gui_settings import SettingsTab, load_settings
 
@@ -24,6 +24,7 @@ ROOT_DIR = Path(__file__).resolve().parent
 SAVES_DIR = ROOT_DIR / "saved_targets"
 TARGET_FILE = ROOT_DIR / "target_mods.json"
 MATS_FILE = ROOT_DIR / "crafting_mats.json"
+ACTIVE_SOURCE_FILE = ROOT_DIR / "active_target_source.txt"
 
 STRATEGY_LABELS = [
     ("scan_only",      "Scan Only  (no automation)"),
@@ -60,6 +61,37 @@ def _target_to_active(data: dict) -> dict:
     """Strip metadata fields to produce a target_mods.json-compatible dict."""
     keys = ("slug", "mode", "mods", "prefixes", "suffixes", "fifty_fifty")
     return {k: data[k] for k in keys if k in data}
+
+
+def _read_active_source() -> str | None:
+    """Return the filename of the saved target that was last used to set the
+    active target, or None if unknown (e.g. never set since this feature shipped)."""
+    if ACTIVE_SOURCE_FILE.exists():
+        try:
+            name = ACTIVE_SOURCE_FILE.read_text(encoding="utf-8").strip()
+            return name or None
+        except Exception:
+            return None
+    return None
+
+
+def _mode_display(mode: str) -> str:
+    if mode == "search":
+        return "search (matches any of the listed mods)"
+    if mode == "target":
+        return "target (strict — exactly 3 prefixes + 3 suffixes)"
+    return mode
+
+
+def _find_tier_options(slug: str, family: str) -> list[dict] | None:
+    """Look up the real tier list for a mod family from its slug's DB file."""
+    groups_by_section = _load_all_db_groups(slug)
+    for groups in groups_by_section.values():
+        for g in groups:
+            if g.get("family") == family:
+                tiers = g.get("tiers", [])
+                return sorted(tiers, key=lambda t: t.get("tier", 0))
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -216,71 +248,95 @@ class TargetsTab(QWidget):
     def __init__(self, main_window: "MainWindow") -> None:
         super().__init__()
         self._main = main_window
+        self._current_path: Path | None = None
+        self._mod_row_refs: list[tuple[str, int]] = []
+        self._fifty_row_refs: list[tuple[str, int]] = []
 
         layout = QHBoxLayout(self)
 
         # --- Left sidebar ---
         left = QVBoxLayout()
-        left.addWidget(QLabel("Saved Targets:"))
+
+        header_row = QHBoxLayout()
+        header_row.addWidget(QLabel("Saved Targets:"))
+        header_row.addStretch()
+        self._btn_new = QPushButton("New")
+        self._btn_new.setFixedHeight(24)
+        header_row.addWidget(self._btn_new)
+        left.addLayout(header_row)
+
+        self._filter_edit = QLineEdit()
+        self._filter_edit.setPlaceholderText("Filter by name or item type...")
+        left.addWidget(self._filter_edit)
 
         self._save_list = QListWidget()
         self._save_list.setAlternatingRowColors(True)
         left.addWidget(self._save_list, 1)
-
-        btn_col = QVBoxLayout()
-        self._btn_new = QPushButton("New")
-        self._btn_edit = QPushButton("Edit")
-        self._btn_dup = QPushButton("Duplicate")
-        self._btn_set_active = QPushButton("Set Active")
-        self._btn_set_active.setStyleSheet(
-            "QPushButton { background: #4a7a1e; color: #ddd; font-weight: bold; }"
-            "QPushButton:hover { background: #5a9a28; }"
-        )
-        self._btn_delete = QPushButton("Delete")
-        self._btn_delete.setStyleSheet(
-            "QPushButton { background: #7a1e1e; color: #ddd; }"
-            "QPushButton:hover { background: #9a2828; }"
-        )
-        for btn in (self._btn_new, self._btn_edit, self._btn_dup,
-                    self._btn_set_active, self._btn_delete):
-            btn.setFixedHeight(30)
-            btn_col.addWidget(btn)
-        left.addLayout(btn_col)
 
         left_widget = QWidget()
         left_widget.setLayout(left)
 
         # --- Right detail panel ---
         right = QVBoxLayout()
+        right.setSpacing(8)
+        right.setContentsMargins(8, 4, 4, 4)
 
+        active_row = QHBoxLayout()
         self._lbl_active = QLabel("No active target")
         self._lbl_active.setStyleSheet("font-size: 13px; font-weight: bold; color: #b8943f;")
-        right.addWidget(self._lbl_active)
+        active_row.addWidget(self._lbl_active)
+        active_row.addStretch()
+
+        self._btn_set_active = QPushButton("Set Active")
+        self._btn_set_active.setStyleSheet(
+            "QPushButton { background: #4a7a1e; color: #ddd; font-weight: bold; }"
+            "QPushButton:hover { background: #5a9a28; }"
+        )
+        self._btn_edit = QPushButton("Edit")
+        self._btn_dup = QPushButton("Duplicate")
+        self._btn_delete = QPushButton("Delete")
+        self._btn_delete.setStyleSheet(
+            "QPushButton { background: #7a1e1e; color: #ddd; }"
+            "QPushButton:hover { background: #9a2828; }"
+        )
+        for btn in (self._btn_set_active, self._btn_edit, self._btn_dup, self._btn_delete):
+            btn.setFixedHeight(26)
+            active_row.addWidget(btn)
+        right.addLayout(active_row)
 
         self._lbl_meta = _small_label("")
         right.addWidget(self._lbl_meta)
+
+        self._lbl_edit_note = _small_label("", color="#d4a840")
+        self._lbl_edit_note.setVisible(False)
+        right.addWidget(self._lbl_edit_note)
+
         right.addWidget(_hr())
 
         mods_label = QLabel("Mods:")
         mods_label.setStyleSheet("font-weight: bold;")
         right.addWidget(mods_label)
 
-        self._mod_table = QTableWidget(0, 4)
-        self._mod_table.setHorizontalHeaderLabels(["Type", "Family", "Min Tier", "Tags"])
+        self._mod_table = QTableWidget(0, 5)
+        self._mod_table.setHorizontalHeaderLabels(["Type", "Family", "Min Tier", "Tags", ""])
         self._mod_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
+        self._mod_table.horizontalHeader().setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
         self._mod_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self._mod_table.setAlternatingRowColors(True)
+        self._mod_table.setWordWrap(True)
         right.addWidget(self._mod_table, 3)
 
         self._fifty_label = QLabel("50-50 Keeper Mods:")
         self._fifty_label.setStyleSheet("font-weight: bold; margin-top: 8px;")
         right.addWidget(self._fifty_label)
 
-        self._fifty_table = QTableWidget(0, 4)
-        self._fifty_table.setHorizontalHeaderLabels(["Type", "Family", "Min Tier", "Tags"])
+        self._fifty_table = QTableWidget(0, 5)
+        self._fifty_table.setHorizontalHeaderLabels(["Type", "Family", "Min Tier", "Tags", ""])
         self._fifty_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
+        self._fifty_table.horizontalHeader().setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
         self._fifty_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self._fifty_table.setAlternatingRowColors(True)
+        self._fifty_table.setWordWrap(True)
         right.addWidget(self._fifty_table, 1)
 
         right_widget = QWidget()
@@ -293,6 +349,7 @@ class TargetsTab(QWidget):
         layout.addWidget(splitter)
 
         # Connections
+        self._filter_edit.textChanged.connect(self._apply_filter)
         self._save_list.currentItemChanged.connect(self._on_selection_changed)
         self._btn_new.clicked.connect(self._on_new)
         self._btn_edit.clicked.connect(self._on_edit)
@@ -309,6 +366,8 @@ class TargetsTab(QWidget):
         if cur:
             current_name = cur.data(Qt.ItemDataRole.UserRole).name
 
+        active_source = _read_active_source()
+
         self._save_list.clear()
         SAVES_DIR.mkdir(exist_ok=True)
         paths = sorted(SAVES_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
@@ -321,6 +380,11 @@ class TargetsTab(QWidget):
                 label = f"{data.get('save_name', path.stem)}  ({slug}, {len(mods)} mods)"
                 item = QListWidgetItem(label)
                 item.setData(Qt.ItemDataRole.UserRole, path)
+                if active_source is not None and path.name == active_source:
+                    font = item.font()
+                    font.setBold(True)
+                    item.setFont(font)
+                    item.setForeground(QColor("#b8943f"))
                 self._save_list.addItem(item)
                 if current_name and path.name == current_name:
                     self._save_list.setCurrentItem(item)
@@ -329,6 +393,14 @@ class TargetsTab(QWidget):
 
         if self._save_list.currentRow() < 0 and self._save_list.count() > 0:
             self._save_list.setCurrentRow(0)
+
+        self._apply_filter(self._filter_edit.text())
+
+    def _apply_filter(self, text: str) -> None:
+        text = text.strip().lower()
+        for i in range(self._save_list.count()):
+            item = self._save_list.item(i)
+            item.setHidden(bool(text) and text not in item.text().lower())
 
     def _show_current_active(self) -> None:
         if TARGET_FILE.exists():
@@ -346,43 +418,135 @@ class TargetsTab(QWidget):
         path: Path = item.data(Qt.ItemDataRole.UserRole)
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-            self._populate_detail(data)
+            self._populate_detail(data, path)
+            self._note_if_active(data)
         except Exception as exc:
             QMessageBox.warning(self, "Load Error", str(exc))
 
-    def _populate_detail(self, data: dict) -> None:
+    def _populate_detail(self, data: dict, path: Path) -> None:
         slug = data.get("slug", "?")
         mode = data.get("mode", "?")
         created = data.get("created_at", "?")
-        mods = _mods_from_data(data)
         fifty = data.get("fifty_fifty", [])
 
-        self._lbl_meta.setText(f"Slug: {slug}   Mode: {mode}   Created: {created}")
+        self._current_path = path
+        self._lbl_meta.setText(f"Slug: {slug}   Mode: {_mode_display(mode)}   Created: {created}")
+        self._lbl_edit_note.setVisible(False)
 
         self._mod_table.setRowCount(0)
-        for entry in mods:
-            self._add_mod_row(self._mod_table, entry)
+        self._mod_row_refs = []
+        if mode == "search":
+            for idx, entry in enumerate(data.get("mods", [])):
+                self._add_mod_row(self._mod_table, entry, slug, "mods", idx, self._mod_row_refs)
+        else:
+            for idx, entry in enumerate(data.get("prefixes", [])):
+                self._add_mod_row(self._mod_table, entry, slug, "prefixes", idx, self._mod_row_refs)
+            for idx, entry in enumerate(data.get("suffixes", [])):
+                self._add_mod_row(self._mod_table, entry, slug, "suffixes", idx, self._mod_row_refs)
+        self._mod_table.resizeRowsToContents()
 
         self._fifty_table.setRowCount(0)
-        for entry in fifty:
-            self._add_mod_row(self._fifty_table, entry)
+        self._fifty_row_refs = []
+        for idx, entry in enumerate(fifty):
+            self._add_mod_row(self._fifty_table, entry, slug, "fifty_fifty", idx, self._fifty_row_refs)
+        self._fifty_table.resizeRowsToContents()
 
-        has_fifty = bool(fifty)
-        self._fifty_label.setVisible(has_fifty)
-        self._fifty_table.setVisible(has_fifty)
-
-    def _add_mod_row(self, table: QTableWidget, entry: dict) -> None:
+    def _add_mod_row(
+        self, table: QTableWidget, entry: dict, slug: str,
+        list_key: str, index: int, row_refs: list[tuple[str, int]],
+    ) -> None:
         row = table.rowCount()
         table.insertRow(row)
+        row_refs.append((list_key, index))
+
         t = entry.get("type", "?")
         prefix = "PRE" if t.lower() == "prefix" else "SUF"
         table.setItem(row, 0, QTableWidgetItem(prefix))
-        table.setItem(row, 1, QTableWidgetItem(entry.get("family", "")))
-        tier_item = QTableWidgetItem(f"T{entry.get('min_tier', '?')}+")
-        tier_item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
-        table.setItem(row, 2, tier_item)
+
+        family = entry.get("family", "")
+        family_item = QTableWidgetItem(family)
+        family_item.setToolTip(family)
+        table.setItem(row, 1, family_item)
+
+        tier_options = _find_tier_options(slug, family)
+        if tier_options:
+            combo = QComboBox()
+            current_tier = entry.get("min_tier")
+            select_index = 0
+            for i, tier_info in enumerate(tier_options):
+                combo.addItem(f"T{tier_info['tier']}+", tier_info["tier"])
+                if tier_info["tier"] == current_tier:
+                    select_index = i
+            combo.setCurrentIndex(select_index)
+            combo.currentIndexChanged.connect(
+                lambda _idx, le=list_key, ix=index, c=combo: self._on_tier_changed(le, ix, c)
+            )
+            table.setCellWidget(row, 2, combo)
+        else:
+            tier_item = QTableWidgetItem(f"T{entry.get('min_tier', '?')}+")
+            tier_item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+            table.setItem(row, 2, tier_item)
+
         tags = ", ".join(entry.get("tags", []))
-        table.setItem(row, 3, QTableWidgetItem(tags))
+        tags_item = QTableWidgetItem(tags)
+        tags_item.setToolTip(tags)
+        table.setItem(row, 3, tags_item)
+
+        remove_btn = QPushButton("✕")
+        remove_btn.setFixedSize(22, 22)
+        remove_btn.setToolTip("Remove this mod from the target")
+        remove_btn.setStyleSheet(
+            "QPushButton { background: #7a1e1e; color: #ddd; font-weight: bold; border-radius: 3px; }"
+            "QPushButton:hover { background: #9a2828; }"
+        )
+        remove_btn.clicked.connect(
+            lambda _checked, le=list_key, ix=index: self._on_remove_mod(le, ix)
+        )
+        table.setCellWidget(row, 4, remove_btn)
+
+    def _note_if_active(self, data: dict) -> None:
+        active_source = _read_active_source()
+        if self._current_path is not None and active_source == self._current_path.name:
+            self._lbl_edit_note.setText("Edited — click Set Active to apply this change")
+            self._lbl_edit_note.setVisible(True)
+            return
+        self._lbl_edit_note.setVisible(False)
+
+    def _on_tier_changed(self, list_key: str, index: int, combo: QComboBox) -> None:
+        if self._current_path is None:
+            return
+        new_tier = combo.currentData()
+        try:
+            data = json.loads(self._current_path.read_text(encoding="utf-8"))
+            data[list_key][index]["min_tier"] = new_tier
+            self._current_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+        except Exception as exc:
+            QMessageBox.warning(self, "Update Error", str(exc))
+            return
+        self._populate_detail(data, self._current_path)
+        self._note_if_active(data)
+        self._refresh_list()
+
+    def _on_remove_mod(self, list_key: str, index: int) -> None:
+        if self._current_path is None:
+            return
+        ans = QMessageBox.question(
+            self, "Remove Mod",
+            "Remove this mod from the target?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if ans != QMessageBox.StandardButton.Yes:
+            return
+        try:
+            data = json.loads(self._current_path.read_text(encoding="utf-8"))
+            del data[list_key][index]
+            self._current_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+        except Exception as exc:
+            QMessageBox.warning(self, "Update Error", str(exc))
+            return
+        self._populate_detail(data, self._current_path)
+        self._note_if_active(data)
+        self._refresh_list()
 
     def _selected_path(self) -> Path | None:
         item = self._save_list.currentItem()
@@ -434,22 +598,33 @@ class TargetsTab(QWidget):
             if result:
                 self._apply_active(result)
 
-    def _apply_active(self, data: dict) -> None:
+    def _apply_active(self, data: dict, source_path: Path | None = None) -> None:
         """Write data as the active target and update all UI state."""
         active = _target_to_active(data)
         TARGET_FILE.write_text(json.dumps(active, indent=2, ensure_ascii=False), encoding="utf-8")
         self._main.active_target_data = active
+
+        if source_path is None and data.get("save_name"):
+            source_path = SAVES_DIR / f"{data['save_name']}.json"
+        if source_path is not None and source_path.exists():
+            ACTIVE_SOURCE_FILE.write_text(source_path.name, encoding="utf-8")
+        else:
+            ACTIVE_SOURCE_FILE.unlink(missing_ok=True)
+
         slug = active.get("slug", "?")
         mods = _mods_from_data(active)
         self._lbl_active.setText(f"Active: {slug}  ({len(mods)} mod(s))")
         self.active_target_changed.emit(active)
+        self._refresh_list()
+        self._lbl_edit_note.setVisible(False)
 
     def _on_set_active(self) -> None:
+        path = self._selected_path()
         data = self._selected_data()
         if data is None:
             QMessageBox.information(self, "No Selection", "Select a target first.")
             return
-        self._apply_active(data)
+        self._apply_active(data, source_path=path)
         slug = data.get("slug", "?")
         QMessageBox.information(
             self, "Active Target Set",
@@ -468,6 +643,8 @@ class TargetsTab(QWidget):
         )
         if ans == QMessageBox.StandardButton.Yes:
             path.unlink(missing_ok=True)
+            if _read_active_source() == path.name:
+                ACTIVE_SOURCE_FILE.unlink(missing_ok=True)
             self._refresh_list()
 
 

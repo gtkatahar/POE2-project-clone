@@ -9,7 +9,7 @@ from PyQt6.QtGui import QFont, QColor, QTextCursor
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QTabWidget, QVBoxLayout, QHBoxLayout,
     QFormLayout, QLabel, QPushButton, QSpinBox, QTableWidget,
-    QTableWidgetItem, QHeaderView, QListWidget, QListWidgetItem,
+    QTableWidgetItem, QHeaderView, QTreeWidget, QTreeWidgetItem,
     QGroupBox, QRadioButton, QButtonGroup, QPlainTextEdit,
     QSplitter, QFrame, QMessageBox, QScrollBar, QAbstractItemView,
     QSizePolicy, QLineEdit, QComboBox,
@@ -81,6 +81,31 @@ def _mode_display(mode: str) -> str:
     if mode == "target":
         return "target (strict — exactly 3 prefixes + 3 suffixes)"
     return mode
+
+
+ATTR_TOKENS = {"str", "dex", "int"}
+
+
+def _split_slug(slug: str) -> tuple[str, tuple[str, ...]]:
+    """Split a slug into (category_key, attr_tokens).
+
+    Strips the longest trailing run of tokens drawn from {str, dex, int},
+    e.g. "boots_int" -> ("boots", ("int",)); "wands" -> ("wands", ())."""
+    tokens = slug.split("_")
+    cut = len(tokens)
+    while cut > 0 and tokens[cut - 1] in ATTR_TOKENS:
+        cut -= 1
+    if cut == 0:
+        cut = len(tokens)
+    return "_".join(tokens[:cut]), tuple(tokens[cut:])
+
+
+def _category_display(category_key: str) -> str:
+    return category_key.replace("_", " ").title()
+
+
+def _subcategory_display(attr_tokens: tuple[str, ...]) -> str:
+    return " ".join(t.title() for t in attr_tokens)
 
 
 def _find_tier_options(slug: str, family: str) -> list[dict] | None:
@@ -245,6 +270,9 @@ class MaterialsTab(QWidget):
 class TargetsTab(QWidget):
     active_target_changed = pyqtSignal(dict)
 
+    _ROLE_KIND = Qt.ItemDataRole.UserRole + 1  # "category" | "subcategory" | "leaf"
+    _ROLE_KEY = Qt.ItemDataRole.UserRole + 2   # category key or full slug
+
     def __init__(self, main_window: "MainWindow") -> None:
         super().__init__()
         self._main = main_window
@@ -265,13 +293,29 @@ class TargetsTab(QWidget):
         header_row.addWidget(self._btn_new)
         left.addLayout(header_row)
 
+        expand_row = QHBoxLayout()
+        expand_row.addStretch()
+        self._btn_expand_all = QPushButton("Expand All")
+        self._btn_collapse_all = QPushButton("Collapse All")
+        for btn in (self._btn_expand_all, self._btn_collapse_all):
+            btn.setFixedHeight(20)
+            expand_row.addWidget(btn)
+        left.addLayout(expand_row)
+
+        self._category_filter = QComboBox()
+        self._category_filter.addItem("All Categories", userData=None)
+        left.addWidget(self._category_filter)
+
         self._filter_edit = QLineEdit()
         self._filter_edit.setPlaceholderText("Filter by name or item type...")
         left.addWidget(self._filter_edit)
 
-        self._save_list = QListWidget()
-        self._save_list.setAlternatingRowColors(True)
-        left.addWidget(self._save_list, 1)
+        self._save_tree = QTreeWidget()
+        self._save_tree.setHeaderHidden(True)
+        self._save_tree.setColumnCount(1)
+        self._save_tree.setAlternatingRowColors(True)
+        self._tree_ever_populated = False
+        left.addWidget(self._save_tree, 1)
 
         left_widget = QWidget()
         left_widget.setLayout(left)
@@ -351,7 +395,11 @@ class TargetsTab(QWidget):
 
         # Connections
         self._filter_edit.textChanged.connect(self._apply_filter)
-        self._save_list.currentItemChanged.connect(self._on_selection_changed)
+        self._category_filter.currentIndexChanged.connect(self._apply_filter)
+        self._save_tree.currentItemChanged.connect(self._on_selection_changed)
+        self._save_tree.itemClicked.connect(self._on_item_clicked)
+        self._btn_expand_all.clicked.connect(self._save_tree.expandAll)
+        self._btn_collapse_all.clicked.connect(self._save_tree.collapseAll)
         self._btn_new.clicked.connect(self._on_new)
         self._btn_edit.clicked.connect(self._on_edit)
         self._btn_dup.clicked.connect(self._on_duplicate)
@@ -362,46 +410,160 @@ class TargetsTab(QWidget):
         self._update_active_status(self._selected_path())
 
     def _refresh_list(self) -> None:
-        current_name = None
-        cur = self._save_list.currentItem()
-        if cur:
-            current_name = cur.data(Qt.ItemDataRole.UserRole).name
+        expanded_state: dict[tuple[str, str], bool] = {}
+
+        def snapshot(item: QTreeWidgetItem) -> None:
+            kind = item.data(0, self._ROLE_KIND)
+            if kind != "leaf":
+                expanded_state[(kind, item.data(0, self._ROLE_KEY))] = item.isExpanded()
+            for i in range(item.childCount()):
+                snapshot(item.child(i))
+
+        for i in range(self._save_tree.topLevelItemCount()):
+            snapshot(self._save_tree.topLevelItem(i))
+
+        selected_key: tuple[str, str] | None = None
+        cur = self._save_tree.currentItem()
+        if cur is not None:
+            kind = cur.data(0, self._ROLE_KIND)
+            if kind == "leaf":
+                selected_key = ("leaf", cur.data(0, Qt.ItemDataRole.UserRole).name)
+            else:
+                selected_key = (kind, cur.data(0, self._ROLE_KEY))
 
         active_source = _read_active_source()
 
-        self._save_list.clear()
+        self._save_tree.clear()
         SAVES_DIR.mkdir(exist_ok=True)
         paths = sorted(SAVES_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+
+        groups: dict[str, dict[str | None, list[tuple[Path, dict]]]] = {}
         for path in paths:
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
-                slug = data.get("slug", "?")
-                mode = data.get("mode", "?")
-                mods = _mods_from_data(data)
-                label = f"{data.get('save_name', path.stem)}  ({slug}, {len(mods)} mods)"
-                item = QListWidgetItem(label)
-                item.setData(Qt.ItemDataRole.UserRole, path)
-                if active_source is not None and path.name == active_source:
-                    font = item.font()
-                    font.setBold(True)
-                    item.setFont(font)
-                    item.setForeground(QColor("#b8943f"))
-                self._save_list.addItem(item)
-                if current_name and path.name == current_name:
-                    self._save_list.setCurrentItem(item)
             except Exception:
                 continue
+            slug = data.get("slug", "?")
+            category_key, attr_tokens = _split_slug(slug)
+            subcat_key = slug if attr_tokens else None
+            groups.setdefault(category_key, {}).setdefault(subcat_key, []).append((path, data))
 
-        if self._save_list.currentRow() < 0 and self._save_list.count() > 0:
-            self._save_list.setCurrentRow(0)
+        selected_item: QTreeWidgetItem | None = None
+        active_item: QTreeWidgetItem | None = None
+        first_leaf: QTreeWidgetItem | None = None
 
-        self._apply_filter(self._filter_edit.text())
+        def add_leaf(parent: QTreeWidgetItem, path: Path, data: dict) -> QTreeWidgetItem:
+            nonlocal first_leaf, selected_item, active_item
+            mods = _mods_from_data(data)
+            label = f"{data.get('save_name', path.stem)}  ({len(mods)} mods)"
+            leaf_item = QTreeWidgetItem([label])
+            leaf_item.setData(0, Qt.ItemDataRole.UserRole, path)
+            leaf_item.setData(0, self._ROLE_KIND, "leaf")
+            if active_source is not None and path.name == active_source:
+                font = leaf_item.font(0)
+                font.setBold(True)
+                leaf_item.setFont(0, font)
+                leaf_item.setForeground(0, QColor("#b8943f"))
+                active_item = leaf_item
+            parent.addChild(leaf_item)
+            if first_leaf is None:
+                first_leaf = leaf_item
+            if selected_key == ("leaf", path.name):
+                selected_item = leaf_item
+            return leaf_item
 
-    def _apply_filter(self, text: str) -> None:
-        text = text.strip().lower()
-        for i in range(self._save_list.count()):
-            item = self._save_list.item(i)
-            item.setHidden(bool(text) and text not in item.text().lower())
+        for category_key in sorted(groups):
+            subcats = groups[category_key]
+            total = sum(len(leaves) for leaves in subcats.values())
+            cat_item = QTreeWidgetItem([f"{_category_display(category_key)} ({total})"])
+            cat_item.setData(0, self._ROLE_KIND, "category")
+            cat_item.setData(0, self._ROLE_KEY, category_key)
+            self._save_tree.addTopLevelItem(cat_item)
+            cat_item.setExpanded(expanded_state.get(("category", category_key), True))
+            if selected_key == ("category", category_key):
+                selected_item = cat_item
+
+            for path, data in subcats.get(None, []):
+                add_leaf(cat_item, path, data)
+
+            subcat_keys = [k for k in subcats if k is not None]
+            subcat_keys.sort(key=lambda k: _subcategory_display(_split_slug(k)[1]))
+            for subcat_key in subcat_keys:
+                leaves = subcats[subcat_key]
+                _, attr_tokens = _split_slug(subcat_key)
+                sub_item = QTreeWidgetItem([f"{_subcategory_display(attr_tokens)} ({len(leaves)})"])
+                sub_item.setData(0, self._ROLE_KIND, "subcategory")
+                sub_item.setData(0, self._ROLE_KEY, subcat_key)
+                cat_item.addChild(sub_item)
+                sub_item.setExpanded(expanded_state.get(("subcategory", subcat_key), True))
+                if selected_key == ("subcategory", subcat_key):
+                    selected_item = sub_item
+                for path, data in leaves:
+                    add_leaf(sub_item, path, data)
+
+        if active_item is not None:
+            parent = active_item.parent()
+            while parent is not None:
+                parent.setExpanded(True)
+                parent = parent.parent()
+
+        if not self._tree_ever_populated:
+            self._save_tree.expandAll()
+            self._tree_ever_populated = True
+
+        if selected_item is None:
+            selected_item = first_leaf
+        if selected_item is not None:
+            self._save_tree.setCurrentItem(selected_item)
+
+        self._refresh_category_filter(sorted(groups))
+        self._apply_filter()
+
+    def _refresh_category_filter(self, category_keys: list[str]) -> None:
+        current = self._category_filter.currentData()
+        self._category_filter.blockSignals(True)
+        self._category_filter.clear()
+        self._category_filter.addItem("All Categories", userData=None)
+        select_index = 0
+        for i, key in enumerate(category_keys, start=1):
+            self._category_filter.addItem(_category_display(key), userData=key)
+            if key == current:
+                select_index = i
+        self._category_filter.setCurrentIndex(select_index)
+        self._category_filter.blockSignals(False)
+
+    def _apply_filter(self, _value=None) -> None:
+        text = self._filter_edit.text().strip().lower()
+        cat_key = self._category_filter.currentData()
+        for i in range(self._save_tree.topLevelItemCount()):
+            self._apply_filter_recursive(self._save_tree.topLevelItem(i), text, cat_key)
+
+    def _apply_filter_recursive(self, item: QTreeWidgetItem, text: str, cat_key: str | None) -> bool:
+        kind = item.data(0, self._ROLE_KIND)
+        if kind == "category" and cat_key is not None and item.data(0, self._ROLE_KEY) != cat_key:
+            item.setHidden(True)
+            return False
+        if kind == "leaf":
+            visible = (
+                not text
+                or text in item.text(0).lower()
+                or self._ancestor_text_matches(item, text)
+            )
+        else:
+            visible = any(
+                self._apply_filter_recursive(item.child(i), text, cat_key)
+                for i in range(item.childCount())
+            )
+        item.setHidden(not visible)
+        return visible
+
+    def _ancestor_text_matches(self, item: QTreeWidgetItem, text: str) -> bool:
+        parent = item.parent()
+        while parent is not None:
+            if text in parent.text(0).lower():
+                return True
+            parent = parent.parent()
+        return False
 
     def _update_active_status(self, path: Path | None) -> None:
         """Reflect whether the selected target is the active one, and toggle Set Active."""
@@ -421,11 +583,15 @@ class TargetsTab(QWidget):
             self._lbl_active.setStyleSheet("font-size: 13px; font-weight: bold; color: #999;")
             self._btn_set_active.setEnabled(True)
 
-    def _on_selection_changed(self, item: QListWidgetItem | None) -> None:
-        if item is None:
+    def _on_selection_changed(
+        self, current: QTreeWidgetItem | None, previous: QTreeWidgetItem | None = None
+    ) -> None:
+        if current is None or current.data(0, self._ROLE_KIND) != "leaf":
+            self._current_path = None
+            self._clear_detail_panel()
             self._update_active_status(None)
             return
-        path: Path = item.data(Qt.ItemDataRole.UserRole)
+        path: Path = current.data(0, Qt.ItemDataRole.UserRole)
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
             self._populate_detail(data, path)
@@ -433,6 +599,18 @@ class TargetsTab(QWidget):
             self._update_active_status(path)
         except Exception as exc:
             QMessageBox.warning(self, "Load Error", str(exc))
+
+    def _on_item_clicked(self, item: QTreeWidgetItem, column: int) -> None:
+        if item.data(0, self._ROLE_KIND) != "leaf":
+            item.setExpanded(not item.isExpanded())
+
+    def _clear_detail_panel(self) -> None:
+        self._lbl_meta.setText("")
+        self._lbl_edit_note.setVisible(False)
+        self._mod_table.setRowCount(0)
+        self._mod_row_refs = []
+        self._fifty_table.setRowCount(0)
+        self._fifty_row_refs = []
 
     def _populate_detail(self, data: dict, path: Path) -> None:
         slug = data.get("slug", "?")
@@ -560,10 +738,10 @@ class TargetsTab(QWidget):
         self._refresh_list()
 
     def _selected_path(self) -> Path | None:
-        item = self._save_list.currentItem()
-        if item is None:
+        item = self._save_tree.currentItem()
+        if item is None or item.data(0, self._ROLE_KIND) != "leaf":
             return None
-        return item.data(Qt.ItemDataRole.UserRole)
+        return item.data(0, Qt.ItemDataRole.UserRole)
 
     def _selected_data(self) -> dict | None:
         path = self._selected_path()

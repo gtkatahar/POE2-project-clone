@@ -1,1 +1,1 @@
-wand_target_mods.json
+Sap_Jewel.json

@@ -25,6 +25,7 @@ crafting_mats.json
 inventory_scan.json
 item_mod_result.json
 _craft_plan.json
+target_mods.json
 
 # Local screenshots / scratch files
 *.log

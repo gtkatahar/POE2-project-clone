@@ -15,16 +15,18 @@ from PyQt6.QtWidgets import (
     QSizePolicy, QLineEdit, QComboBox, QToolButton,
 )
 
-from gui_mod_builder import ModBuilderDialog, _load_all_db_groups
+from gui_mod_builder import ModBuilderDialog
 from gui_worker import ScanWorker, CraftWorker
 from gui_settings import SettingsTab, load_settings
-
-
-ROOT_DIR = Path(__file__).resolve().parent
-SAVES_DIR = ROOT_DIR / "saved_targets"
-TARGET_FILE = ROOT_DIR / "target_mods.json"
-MATS_FILE = ROOT_DIR / "crafting_mats.json"
-ACTIVE_SOURCE_FILE = ROOT_DIR / "active_target_source.txt"
+from crafting.targets import (
+    load_all_db_groups,
+    mods_from_data,
+    target_to_active,
+    ACTIVE_SOURCE_FILE,
+    MATS_FILE,
+    SAVES_DIR,
+    TARGET_FILE,
+)
 
 STRATEGY_LABELS = [
     ("scan_only",      "Scan Only  (no automation)"),
@@ -49,18 +51,6 @@ def _hr() -> QFrame:
     line.setFrameShape(QFrame.Shape.HLine)
     line.setFrameShadow(QFrame.Shadow.Sunken)
     return line
-
-
-def _mods_from_data(data: dict) -> list[dict]:
-    if data.get("mode") == "search":
-        return data.get("mods", [])
-    return data.get("prefixes", []) + data.get("suffixes", [])
-
-
-def _target_to_active(data: dict) -> dict:
-    """Strip metadata fields to produce a target_mods.json-compatible dict."""
-    keys = ("slug", "mode", "mods", "prefixes", "suffixes", "fifty_fifty")
-    return {k: data[k] for k in keys if k in data}
 
 
 def _read_active_source() -> str | None:
@@ -110,7 +100,7 @@ def _subcategory_display(attr_tokens: tuple[str, ...]) -> str:
 
 def _find_tier_options(slug: str, family: str, section_key: str | None = None) -> list[dict] | None:
     """Look up the real tier list for a mod family from its slug's DB file."""
-    groups_by_section = _load_all_db_groups(slug)
+    groups_by_section = load_all_db_groups(slug)
     sections = (
         [groups_by_section[section_key]]
         if section_key and section_key in groups_by_section
@@ -478,7 +468,7 @@ class TargetsTab(QWidget):
 
         def add_leaf(parent: QTreeWidgetItem, path: Path, data: dict) -> QTreeWidgetItem:
             nonlocal first_leaf, selected_item, active_item
-            mods = _mods_from_data(data)
+            mods = mods_from_data(data)
             label = f"{data.get('save_name', path.stem)}  ({len(mods)} mods)"
             leaf_item = QTreeWidgetItem([label])
             leaf_item.setData(0, Qt.ItemDataRole.UserRole, path)
@@ -720,7 +710,7 @@ class TargetsTab(QWidget):
     def _note_if_active(self, data: dict) -> None:
         active_source = _read_active_source()
         if self._current_path is not None and active_source == self._current_path.name:
-            if _target_to_active(data) != self._main.active_target_data:
+            if target_to_active(data) != self._main.active_target_data:
                 self._lbl_edit_note.setText("Edited — click Set Active to apply this change")
                 self._lbl_edit_note.setVisible(True)
                 return
@@ -814,7 +804,7 @@ class TargetsTab(QWidget):
 
     def _apply_active(self, data: dict, source_path: Path | None = None) -> None:
         """Write data as the active target and update all UI state."""
-        active = _target_to_active(data)
+        active = target_to_active(data)
         TARGET_FILE.write_text(json.dumps(active, indent=2, ensure_ascii=False), encoding="utf-8")
         self._main.active_target_data = active
 
@@ -960,7 +950,7 @@ class CraftTab(QWidget):
         self._active_data = data
         slug = data.get("slug", "?")
         mode = data.get("mode", "?")
-        mods = _mods_from_data(data)
+        mods = mods_from_data(data)
         fifty = data.get("fifty_fifty", [])
         mod_lines = [f"  [{e['type'][:3].upper()}] {e['family']}  (T{e['min_tier']}+)" for e in mods]
         summary = f"<b>{slug}</b>  ({mode}, {len(mods)} mod(s))"

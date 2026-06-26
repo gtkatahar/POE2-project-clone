@@ -2,7 +2,6 @@
 
 import json
 from datetime import datetime
-from pathlib import Path
 
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QFont, QColor
@@ -14,10 +13,13 @@ from PyQt6.QtWidgets import (
     QDialogButtonBox, QScrollArea, QGroupBox, QSizePolicy,
 )
 
-
-ROOT_DIR = Path(__file__).resolve().parent
-DATA_DIR = ROOT_DIR / "data"
-SAVES_DIR = ROOT_DIR / "saved_targets"
+from crafting.targets import (
+    build_mod_entry,
+    load_all_db_groups,
+    sanitize_save_name,
+    SAVES,
+)
+from paths import DATA
 
 
 # ---------------------------------------------------------------------------
@@ -27,37 +29,11 @@ SAVES_DIR = ROOT_DIR / "saved_targets"
 def _list_slugs() -> list[tuple[str, str]]:
     """Return [(slug, display_name)] sorted alphabetically from data/*.json."""
     results = []
-    for path in sorted(DATA_DIR.glob("*_modifiers_tiered.json")):
+    for path in sorted(DATA.glob("*_modifiers_tiered.json")):
         slug = path.name.replace("_modifiers_tiered.json", "")
         display = slug.replace("_", " ").title()
         results.append((slug, display))
     return results
-
-
-def _load_db_groups(slug: str) -> list[dict]:
-    """Return Base Modifier groups from the slug's tiered DB file."""
-    db_path = DATA_DIR / f"{slug.lower()}_modifiers_tiered.json"
-    if not db_path.exists():
-        return []
-    db = json.loads(db_path.read_text(encoding="utf-8"))
-    return [
-        g for g in db["modifiers"]
-        if g.get("section") == "Base Modifiers"
-        and g.get("type", "").lower() in ("prefix", "suffix")
-    ]
-
-
-def _load_all_db_groups(slug: str) -> dict[str, list[dict]]:
-    """Return {section_key: [groups]} for all sections in the slug's DB file."""
-    db_path = DATA_DIR / f"{slug.lower()}_modifiers_tiered.json"
-    if not db_path.exists():
-        return {}
-    db = json.loads(db_path.read_text(encoding="utf-8"))
-    result: dict[str, list[dict]] = {}
-    for g in db["modifiers"]:
-        sk = g.get("section_key", "normal")
-        result.setdefault(sk, []).append(g)
-    return result
 
 
 _SECTION_LABELS: dict[str, str] = {
@@ -310,14 +286,7 @@ class ModListPanel(QWidget):
         if tier is None:
             return
 
-        entry = {
-            "type": group["type"],
-            "family": family,
-            "stat_template": group.get("stat_template", family),
-            "min_tier": tier,
-            "section_key": group.get("section_key", "normal"),
-            "tags": group.get("tags", []),
-        }
+        entry = build_mod_entry(group, tier)
         self._selected.append(entry)
         self._refresh_selected_list()
 
@@ -535,7 +504,7 @@ class ModBuilderDialog(QDialog):
 
         fifty = self._fifty_panel.get_selected()
 
-        safe_name = "".join(c if c.isalnum() or c in "-_" else "_" for c in name)
+        safe_name = sanitize_save_name(name)
 
         if mode == "search":
             result = {
@@ -559,8 +528,8 @@ class ModBuilderDialog(QDialog):
                 "fifty_fifty": fifty,
             }
 
-        SAVES_DIR.mkdir(exist_ok=True)
-        out_path = SAVES_DIR / f"{safe_name}.json"
+        SAVES.mkdir(exist_ok=True)
+        out_path = SAVES / f"{safe_name}.json"
         if out_path.exists():
             ans = QMessageBox.question(
                 self, "Overwrite?",

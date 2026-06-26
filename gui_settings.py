@@ -14,8 +14,7 @@ from gui_worker import ScrapeWorker
 from gui_calibration import CalibrationOverlay
 from windows.inventory import _load_config, calibrate_from_box
 
-ROOT_DIR = Path(__file__).resolve().parent
-SETTINGS_FILE = ROOT_DIR / "settings.json"
+from paths import SETTINGS
 
 DEFAULTS: dict = {
     "auto_minimize": True,
@@ -32,9 +31,9 @@ STRATEGY_LABELS = [
 
 
 def load_settings() -> dict:
-    if SETTINGS_FILE.exists():
+    if SETTINGS.exists():
         try:
-            data = json.loads(SETTINGS_FILE.read_text(encoding="utf-8"))
+            data = json.loads(SETTINGS.read_text(encoding="utf-8"))
             return {**DEFAULTS, **data}
         except Exception:
             pass
@@ -42,7 +41,7 @@ def load_settings() -> dict:
 
 
 def save_settings(settings: dict) -> None:
-    SETTINGS_FILE.write_text(json.dumps(settings, indent=2), encoding="utf-8")
+    SETTINGS.write_text(json.dumps(settings, indent=2), encoding="utf-8")
 
 
 class SettingsTab(QWidget):

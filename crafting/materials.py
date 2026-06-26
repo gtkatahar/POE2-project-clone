@@ -7,11 +7,11 @@ from pathlib import Path
 import click
 
 from item_parsing.parser import parse_item_text
+from paths import MATS
 from windows.inventory import scan_inventory
 
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
-DEFAULT_MATS_FILE = ROOT_DIR / "crafting_mats.json"
+DEFAULT_MATS_FILE = MATS
 
 
 def _normalize_name(value: str | None) -> str:
@@ -75,6 +75,35 @@ def extract_description(raw_text: str) -> str:
             if re.search(r"[a-z]", low):
                 desc_lines.append(line)
     return " ".join(desc_lines).strip()
+
+
+def scan_mat_catalog(
+    hover_delay: float = 0.05,
+    copy_delay: float = 0.06,
+    verbose: bool = False,
+) -> dict[str, dict]:
+    """Scan inventory and build a sorted material catalog (name → count/max_stack/desc)."""
+    catalog: dict[str, dict] = {}
+
+    def on_mat(col: int, row: int, text: str) -> None:
+        item = parse_item_text(text)
+        name = item.get("name") or item.get("base") or "Unknown"
+        count, max_stack = extract_stack_size(item["stat_lines"])
+        desc = extract_description(text)
+        if name in catalog:
+            catalog[name]["count"] += count
+        else:
+            catalog[name] = {"count": count, "max_stack": max_stack, "description": desc}
+        if verbose:
+            click.echo(f"  [{col:02d},{row:02d}] {name}  x{count}/{max_stack}")
+
+    scan_inventory(
+        on_item=on_mat,
+        hover_delay=hover_delay,
+        copy_delay=copy_delay,
+        verbose=verbose,
+    )
+    return dict(sorted(catalog.items(), key=lambda item: item[1]["count"], reverse=True))
 
 
 def scan_for_mats(

@@ -169,7 +169,6 @@ def _run_fishing(
 
         item = read_item()
         _log_item(f"Cycle #{cycle:>3}  {seed_label}", item)
-        print(needs_seed_roll(item))
         if needs_seed_roll(item):
             click.echo("  ~ No seed mod present -> rolling first mod...\n")
             if not apply_aug():

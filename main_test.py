@@ -16,25 +16,20 @@ from pathlib import Path
 
 import click
 
-from crafting.materials import extract_description, extract_stack_size
+from crafting.materials import scan_mat_catalog
+from crafting.targets import load_or_fetch_db
 from item_parsing.parser import parse_item_text
 from item_parsing.identifier import build_lookup, identify
 from item_parsing.display import print_results, print_simple, build_simple_result
-from scraping.poe2db import fetch_tiered_modifiers, save_json
 from windows.inventory import scan_inventory
-
-DATA_DIR = Path(__file__).parent / "data"
+from paths import MATS
 
 
 def _load_or_fetch_db(slug: str) -> dict:
-    db_path = DATA_DIR / f"{slug.lower()}_modifiers_tiered.json"
-    if db_path.exists():
-        return json.loads(db_path.read_text(encoding="utf-8"))
-    click.echo(f"Database for '{slug}' not found — scraping now …")
-    DATA_DIR.mkdir(exist_ok=True)
-    data = fetch_tiered_modifiers(slug)
-    save_json(data, db_path)
-    return data
+    from paths import db_path
+    if not db_path(slug).exists():
+        click.echo(f"Database for '{slug}' not found — scraping now …")
+    return load_or_fetch_db(slug)
 
 
 _BLUE   = "\033[94m"
@@ -84,47 +79,21 @@ def main(simple: bool, slug: str, countdown: int, verbose: bool, debug: bool, ma
 
     # ------------------------------------------------------------------ mats
     if mats:
-        mat_counts: dict[str, dict] = {}
-
-        def on_mat(col: int, row: int, text: str):
-            item  = parse_item_text(text)
-            name  = item.get("name") or item.get("base") or "Unknown"
-            count, max_stack = extract_stack_size(item["stat_lines"])
-            desc  = extract_description(text)
-            if name in mat_counts:
-                mat_counts[name]["count"] += count
-            else:
-                mat_counts[name] = {
-                    "count":     count,
-                    "max_stack": max_stack,
-                    "description": desc,
-                }
-            if verbose:
-                click.echo(f"  [{col:02d},{row:02d}] {name} x{count}/{max_stack}")
-
         click.echo("Switch to POE2 and OPEN YOUR INVENTORY.")
         for i in range(countdown, 0, -1):
             click.echo(f"  Starting in {i}…")
             time.sleep(1)
         click.echo("Scanning…\n")
 
-        stats = scan_inventory(on_item=on_mat, verbose=verbose, debug=debug)
-        _print_grid(stats["grid"])
-
-        # Sort by count descending
-        sorted_mats = dict(sorted(mat_counts.items(), key=lambda x: x[1]["count"], reverse=True))
+        sorted_mats = scan_mat_catalog(verbose=verbose)
 
         click.echo(f"\n{'='*45}")
         for name, info in sorted_mats.items():
             click.echo(f"  {info['count']:>4}/{info['max_stack']:<4}  {name}")
-        click.echo(f"{'='*45}")
-        click.echo(f"  Total stacks  : {stats['found']}")
-        click.echo(f"  Empty cells   : {stats['empty']}")
         click.echo(f"{'='*45}\n")
 
-        out = Path("crafting_mats.json")
-        out.write_text(json.dumps(sorted_mats, indent=2, ensure_ascii=False), encoding="utf-8")
-        click.echo(f"Saved → {out}")
+        MATS.write_text(json.dumps(sorted_mats, indent=2, ensure_ascii=False), encoding="utf-8")
+        click.echo(f"Saved → {MATS}")
         return
 
     # ----------------------------------------------------------- normal scan

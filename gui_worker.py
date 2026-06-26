@@ -37,6 +37,67 @@ class _StopCrafting(Exception):
     pass
 
 
+class ScrapeWorker(QThread):
+    """Re-fetches modifier data for every item category from poe2db.tw,
+    overwriting the cached JSON files in data/."""
+
+    log_line = pyqtSignal(str)
+    finished = pyqtSignal(dict)
+    error = pyqtSignal(str)
+
+    def __init__(self, delay: float = 1.0) -> None:
+        super().__init__()
+        self._delay = delay
+        self._stop_event = threading.Event()
+
+    def stop(self) -> None:
+        self._stop_event.set()
+
+    def run(self) -> None:
+        from scraping.poe2db import fetch_modifier_slugs, fetch_tiered_modifiers, save_json
+
+        router = StdoutRouter()
+        router.line_written.connect(self.log_line)
+        old_stdout = sys.stdout
+        sys.stdout = router
+        try:
+            self.log_line.emit("Fetching modifier slug list from poe2db.tw/us/Modifiers ...")
+            slugs = fetch_modifier_slugs()
+            self.log_line.emit(f"Found {len(slugs)} item categories.\n")
+
+            data_dir = ROOT_DIR / "data"
+            data_dir.mkdir(exist_ok=True)
+
+            done, failed = 0, 0
+            for i, entry in enumerate(slugs):
+                if self._stop_event.is_set():
+                    self.log_line.emit("\nStopped by user.")
+                    break
+
+                slug = entry["slug"]
+                name = entry["name"]
+                out = data_dir / f"{slug.lower()}_modifiers_tiered.json"
+
+                try:
+                    self.log_line.emit(f"[{i+1:3d}/{len(slugs)}] {name} ({slug}) ...")
+                    data = fetch_tiered_modifiers(slug)
+                    save_json(data, out)
+                    done += 1
+                except Exception as exc:
+                    self.log_line.emit(f"  ERROR: {exc}")
+                    failed += 1
+
+                if i < len(slugs) - 1 and not self._stop_event.is_set():
+                    time.sleep(self._delay)
+
+            self.log_line.emit(f"\nDone: {done} updated, {failed} failed.")
+            self.finished.emit({"done": done, "failed": failed, "total": len(slugs)})
+        except Exception as exc:
+            self.error.emit(str(exc))
+        finally:
+            sys.stdout = old_stdout
+
+
 class ScanWorker(QThread):
     """Scans the full inventory for crafting materials and saves crafting_mats.json."""
 

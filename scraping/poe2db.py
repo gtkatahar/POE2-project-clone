@@ -79,7 +79,7 @@ SECTION_LABELS: dict[str, str] = {
     "gen":                 "Generated Modifiers",
 }
 
-_SKIP_KEYS = {"baseitem", "config", "opt"}
+_SKIP_KEYS = {"baseitem", "config", "opt", "ids"}
 
 
 # ---------------------------------------------------------------------------
@@ -161,12 +161,22 @@ def extract_values(stat: str) -> list:
 # Core scraping
 # ---------------------------------------------------------------------------
 
-def _fetch_html(slug: str) -> tuple[str, str]:
-    """Return (url, html) for the given item slug."""
+def _fetch_html(slug: str, retries: int = 2) -> tuple[str, str]:
+    """Return (url, html) for the given item slug.
+
+    Retries on 5xx responses — poe2db.tw occasionally returns a transient
+    500 under load when scraping many slugs back-to-back.
+    """
+    import time as _time
+
     url = BASE_URL.format(slug=slug)
-    resp = requests.get(url, headers=HEADERS, timeout=20)
-    resp.raise_for_status()
-    return url, resp.text
+    for attempt in range(retries + 1):
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        if resp.status_code >= 500 and attempt < retries:
+            _time.sleep(2 * (attempt + 1))
+            continue
+        resp.raise_for_status()
+        return url, resp.text
 
 
 def _parse_flat_modifiers(raw_data: dict, source_url: str) -> list[dict]:

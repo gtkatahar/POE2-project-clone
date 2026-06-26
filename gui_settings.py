@@ -7,7 +7,12 @@ from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGroupBox,
     QCheckBox, QLabel, QSpinBox, QRadioButton, QButtonGroup,
+    QPushButton, QPlainTextEdit, QMessageBox, QDialog,
 )
+
+from gui_worker import ScrapeWorker
+from gui_calibration import CalibrationOverlay
+from windows.inventory import _load_config, calibrate_from_box
 
 ROOT_DIR = Path(__file__).resolve().parent
 SETTINGS_FILE = ROOT_DIR / "settings.json"
@@ -48,6 +53,7 @@ class SettingsTab(QWidget):
     def __init__(self, settings: dict, parent=None) -> None:
         super().__init__(parent)
         self._settings = settings
+        self._scrape_worker: ScrapeWorker | None = None
         self._build_ui()
 
     def _build_ui(self) -> None:
@@ -108,6 +114,60 @@ class SettingsTab(QWidget):
 
         self._strategy_bg.idToggled.connect(self._on_strategy_toggled)
         layout.addWidget(craft_group)
+
+        # --- Data Management ---
+        data_group = QGroupBox("Data Management")
+        data_layout = QVBoxLayout(data_group)
+
+        data_desc = QLabel(
+            "Re-download item modifier data from poe2db.tw, overwriting the\n"
+            "cached files in data/. Makes ~50+ requests and takes a minute or two."
+        )
+        data_desc.setStyleSheet("color: #aaa; font-size: 11px;")
+        data_layout.addWidget(data_desc)
+
+        scrape_row = QHBoxLayout()
+        self._btn_rescrape = QPushButton("Re-Scrape All Modifiers")
+        self._btn_rescrape.setFixedHeight(34)
+        self._btn_cancel_scrape = QPushButton("Cancel")
+        self._btn_cancel_scrape.setFixedHeight(34)
+        self._btn_cancel_scrape.setVisible(False)
+        scrape_row.addWidget(self._btn_rescrape)
+        scrape_row.addWidget(self._btn_cancel_scrape)
+        scrape_row.addStretch()
+        data_layout.addLayout(scrape_row)
+
+        self._scrape_log = QPlainTextEdit()
+        self._scrape_log.setReadOnly(True)
+        self._scrape_log.setMaximumHeight(140)
+        self._scrape_log.setPlaceholderText("Scrape output will appear here...")
+        self._scrape_log.setVisible(False)
+        data_layout.addWidget(self._scrape_log)
+
+        self._btn_rescrape.clicked.connect(self._on_rescrape)
+        self._btn_cancel_scrape.clicked.connect(self._on_cancel_scrape)
+
+        layout.addWidget(data_group)
+
+        # --- Inventory Calibration ---
+        calib_group = QGroupBox("Inventory Calibration")
+        calib_layout = QVBoxLayout(calib_group)
+
+        self._calib_status = QLabel()
+        self._calib_status.setStyleSheet("color: #aaa; font-size: 11px;")
+        self._refresh_calib_status()
+        calib_layout.addWidget(self._calib_status)
+
+        calib_row = QHBoxLayout()
+        self._btn_calibrate = QPushButton("Calibrate Inventory Grid")
+        self._btn_calibrate.setFixedHeight(34)
+        calib_row.addWidget(self._btn_calibrate)
+        calib_row.addStretch()
+        calib_layout.addLayout(calib_row)
+
+        self._btn_calibrate.clicked.connect(self._on_calibrate)
+
+        layout.addWidget(calib_group)
         layout.addStretch()
 
     def _on_auto_minimize(self, checked: bool) -> None:
@@ -132,3 +192,61 @@ class SettingsTab(QWidget):
             self._settings["default_strategy"] = key
             save_settings(self._settings)
             self.default_strategy_changed.emit(key)
+
+    def _on_rescrape(self) -> None:
+        if self._scrape_worker and self._scrape_worker.isRunning():
+            return
+
+        reply = QMessageBox.question(
+            self, "Re-Scrape All Modifiers",
+            "This will fetch fresh data for every item category from poe2db.tw "
+            "and overwrite the local JSON files in data/.\n\n"
+            "This makes 50+ requests to poe2db.tw and may take a minute or two. "
+            "Continue?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+
+        self._scrape_log.clear()
+        self._scrape_log.setVisible(True)
+        self._btn_rescrape.setEnabled(False)
+        self._btn_cancel_scrape.setVisible(True)
+
+        self._scrape_worker = ScrapeWorker()
+        self._scrape_worker.log_line.connect(self._scrape_log.appendPlainText)
+        self._scrape_worker.finished.connect(self._on_rescrape_finished)
+        self._scrape_worker.error.connect(self._on_rescrape_error)
+        self._scrape_worker.start()
+
+    def _on_cancel_scrape(self) -> None:
+        if self._scrape_worker:
+            self._scrape_worker.stop()
+            self._scrape_log.appendPlainText("\nCancelling... (finishing current item)")
+
+    def _on_rescrape_finished(self, result: dict) -> None:
+        self._btn_rescrape.setEnabled(True)
+        self._btn_cancel_scrape.setVisible(False)
+
+    def _on_rescrape_error(self, msg: str) -> None:
+        self._btn_rescrape.setEnabled(True)
+        self._btn_cancel_scrape.setVisible(False)
+        self._scrape_log.appendPlainText(f"\nERROR: {msg}")
+
+    def _refresh_calib_status(self) -> None:
+        cfg = _load_config()
+        self._calib_status.setText(
+            f"Current: {cfg['cell_w']}×{cfg['cell_h']}px cells, "
+            f"origin ({cfg['origin_x']}, {cfg['origin_y']}) "
+            f"@ {cfg['base_w']}×{cfg['base_h']}"
+        )
+
+    def _on_calibrate(self) -> None:
+        self.window().showMinimized()
+        dlg = CalibrationOverlay(self)
+        result = dlg.exec()
+        self.window().showNormal()
+
+        if result == QDialog.DialogCode.Accepted and dlg.result_box():
+            calibrate_from_box(*dlg.result_box())
+            self._refresh_calib_status()

@@ -11,7 +11,7 @@ from PyQt6.QtWidgets import (
     QLabel, QLineEdit, QPushButton, QComboBox, QRadioButton,
     QButtonGroup, QListWidget, QListWidgetItem, QSplitter,
     QWidget, QSpinBox, QFrame, QMessageBox, QToolButton,
-    QDialogButtonBox, QScrollArea, QGroupBox,
+    QDialogButtonBox, QScrollArea, QGroupBox, QSizePolicy,
 )
 
 
@@ -382,12 +382,24 @@ class ModBuilderDialog(QDialog):
 
         layout.addLayout(top)
 
-        # --- Main mods panel ---
+        # --- Collapsible sections, inside a scroll area so that having both
+        # expanded at once scrolls instead of growing the window forever ---
+        sections_widget = QWidget()
+        sections_layout = QVBoxLayout(sections_widget)
+        sections_layout.setContentsMargins(0, 0, 0, 0)
+
+        # --- Target Mods (collapsible) ---
+        self._target_toggle = QToolButton()
+        self._target_toggle.setText("▼  Target Mods")
+        self._target_toggle.setCheckable(True)
+        self._target_toggle.setChecked(True)
+        self._target_toggle.setStyleSheet("QToolButton { text-align: left; font-weight: bold; }")
+        self._target_toggle.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextOnly)
+        sections_layout.addWidget(self._target_toggle)
+
         self._main_panel = ModListPanel(parent=self)
-        main_group = QGroupBox("Target Mods")
-        main_group_layout = QVBoxLayout(main_group)
-        main_group_layout.addWidget(self._main_panel)
-        layout.addWidget(main_group, stretch=3)
+        self._main_panel.setMinimumHeight(280)
+        sections_layout.addWidget(self._main_panel, stretch=3)
 
         # --- 50-50 section (collapsible) ---
         self._fifty_toggle = QToolButton()
@@ -395,7 +407,7 @@ class ModBuilderDialog(QDialog):
         self._fifty_toggle.setCheckable(True)
         self._fifty_toggle.setStyleSheet("QToolButton { text-align: left; font-weight: bold; }")
         self._fifty_toggle.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextOnly)
-        layout.addWidget(self._fifty_toggle)
+        sections_layout.addWidget(self._fifty_toggle)
 
         self._fifty_widget = QWidget()
         fifty_inner = QVBoxLayout(self._fifty_widget)
@@ -404,9 +416,18 @@ class ModBuilderDialog(QDialog):
         lbl.setStyleSheet("color: #aaa; font-style: italic;")
         fifty_inner.addWidget(lbl)
         self._fifty_panel = ModListPanel(parent=self)
-        fifty_inner.addWidget(self._fifty_panel)
+        self._fifty_panel.setMinimumHeight(280)
+        fifty_inner.addWidget(self._fifty_panel, stretch=1)
         self._fifty_widget.setVisible(False)
-        layout.addWidget(self._fifty_widget, stretch=2)
+        sections_layout.addWidget(self._fifty_widget, stretch=2)
+
+        sections_layout.addStretch(0)
+
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.Shape.NoFrame)
+        scroll.setWidget(sections_widget)
+        layout.addWidget(scroll, stretch=1)
 
         # --- Save name + buttons ---
         bottom = QHBoxLayout()
@@ -427,6 +448,12 @@ class ModBuilderDialog(QDialog):
         # Connections
         self._slug_combo.currentIndexChanged.connect(self._on_slug_changed)
         self._mode_search.toggled.connect(self._on_mode_changed)
+        self._target_toggle.toggled.connect(self._main_panel.setVisible)
+        self._target_toggle.toggled.connect(
+            lambda checked: self._target_toggle.setText(
+                ("▼" if checked else "▶") + "  Target Mods"
+            )
+        )
         self._fifty_toggle.toggled.connect(self._fifty_widget.setVisible)
         self._fifty_toggle.toggled.connect(
             lambda checked: self._fifty_toggle.setText(

@@ -140,6 +140,7 @@ def _mode_search(groups: list[dict]) -> list[dict]:
                 "family":        group["family"],
                 "stat_template": group["stat_template"],
                 "min_tier":      min_tier,
+                "section_key":   group.get("section_key", "normal"),
                 "tags":          group["tags"],
             })
 
@@ -222,6 +223,7 @@ def _mode_target(groups: list[dict]) -> tuple[list, list]:
                 "family":        group["family"],
                 "stat_template": group["stat_template"],
                 "min_tier":      min_tier,
+                "section_key":   group.get("section_key", "normal"),
                 "tags":          group["tags"],
             }
             (chosen_prefixes if action == "prefix" else chosen_suffixes).append(entry)
@@ -282,6 +284,7 @@ def _pick_fifty_fifty_mods(groups: list[dict], already_chosen: set[str]) -> list
                 "family":        group["family"],
                 "stat_template": group["stat_template"],
                 "min_tier":      min_tier,
+                "section_key":   group.get("section_key", "normal"),
                 "tags":          group["tags"],
             })
 

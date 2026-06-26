@@ -16,6 +16,24 @@ class TargetConfigError(RuntimeError):
     """Raised when target configuration cannot be loaded."""
 
 
+def normalize_mod_entry(entry: dict) -> dict:
+    """Ensure legacy target entries have a section_key (defaults to base mods)."""
+    entry.setdefault("section_key", "normal")
+    return entry
+
+
+def mod_entry_matches(match: dict, entry: dict) -> bool:
+    """True when an identified mod matches a target or keeper entry."""
+    tier = match.get("matched_tier")
+    if not tier:
+        return False
+    return (
+        match["family"] == entry["family"]
+        and match["section_key"] == entry.get("section_key", "normal")
+        and tier["tier"] <= entry["min_tier"]
+    )
+
+
 def list_saves(saves_dir: Path = SAVES_DIR) -> list[Path]:
     """Return all saved target JSON files, newest first."""
     if not saves_dir.exists():
@@ -56,6 +74,9 @@ def load_target_mods(target_data: dict | None = None) -> tuple[list[dict], list[
         target_entries = target_data.get("prefixes", []) + target_data.get("suffixes", [])
 
     fifty_fifty_entries = target_data.get("fifty_fifty", [])
+
+    for entry in target_entries + fifty_fifty_entries:
+        normalize_mod_entry(entry)
 
     if not target_entries:
         raise TargetConfigError("target_mods.json has no mods defined.")

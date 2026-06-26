@@ -168,10 +168,18 @@ def _classify_current_magic_item(
             lt = candidate["type"].lower()
             lf = candidate["family"]
             for entry in target_entries:
-                if entry["type"].lower() == lt and entry["family"] == lf:
+                if (
+                    entry["type"].lower() == lt
+                    and entry["family"] == lf
+                    and candidate["section_key"] == entry.get("section_key", "normal")
+                ):
                     return "TP" if lt == "prefix" else "TS"
             for entry in keeper_entries:
-                if entry["type"].lower() == lt and entry["family"] == lf:
+                if (
+                    entry["type"].lower() == lt
+                    and entry["family"] == lf
+                    and candidate["section_key"] == entry.get("section_key", "normal")
+                ):
                     return "KP" if lt == "prefix" else "KS"
 
         # None of the interpretations matched a target or keeper entry.

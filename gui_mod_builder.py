@@ -315,6 +315,7 @@ class ModListPanel(QWidget):
             "family": family,
             "stat_template": group.get("stat_template", family),
             "min_tier": tier,
+            "section_key": group.get("section_key", "normal"),
             "tags": group.get("tags", []),
         }
         self._selected.append(entry)

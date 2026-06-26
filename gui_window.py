@@ -108,10 +108,15 @@ def _subcategory_display(attr_tokens: tuple[str, ...]) -> str:
     return " ".join(t.title() for t in attr_tokens)
 
 
-def _find_tier_options(slug: str, family: str) -> list[dict] | None:
+def _find_tier_options(slug: str, family: str, section_key: str | None = None) -> list[dict] | None:
     """Look up the real tier list for a mod family from its slug's DB file."""
     groups_by_section = _load_all_db_groups(slug)
-    for groups in groups_by_section.values():
+    sections = (
+        [groups_by_section[section_key]]
+        if section_key and section_key in groups_by_section
+        else groups_by_section.values()
+    )
+    for groups in sections:
         for g in groups:
             if g.get("family") == family:
                 tiers = g.get("tiers", [])
@@ -676,7 +681,7 @@ class TargetsTab(QWidget):
         family_item.setToolTip(family)
         table.setItem(row, 1, family_item)
 
-        tier_options = _find_tier_options(slug, family)
+        tier_options = _find_tier_options(slug, family, entry.get("section_key"))
         if tier_options:
             combo = QComboBox()
             current_tier = entry.get("min_tier")

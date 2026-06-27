@@ -6,6 +6,7 @@ from typing import Callable
 import click
 
 from crafting.io import apply_orb_to_target, pick_up_orb_stack, read_target
+from crafting.targets import mod_entry_matches
 from windows.inventory import cell_center
 
 
@@ -84,7 +85,7 @@ def _first_match(
     for result in identify_matches(stat_lines):
         for match in result["matched"]:
             for entry in entries:
-                if match["family"] == entry["family"] and match["matched_tier"]["tier"] <= entry["min_tier"]:
+                if mod_entry_matches(match, entry):
                     return entry, match["matched_tier"]
     return None, None
 
@@ -107,14 +108,14 @@ def _combo_win(
         for match in result["matched"]:
             is_target = False
             for target in targets:
-                if match["family"] == target["family"] and match["matched_tier"]["tier"] <= target["min_tier"]:
+                if mod_entry_matches(match, target):
                     target_hits.append((target, match["matched_tier"]))
                     acceptable_hits.append((target, match["matched_tier"]))
                     is_target = True
                     break
             if not is_target:
                 for entry in acceptable:
-                    if match["family"] == entry["family"] and match["matched_tier"]["tier"] <= entry["min_tier"]:
+                    if mod_entry_matches(match, entry):
                         acceptable_hits.append((entry, match["matched_tier"]))
                         break
 
@@ -168,7 +169,6 @@ def _run_fishing(
 
         item = read_item()
         _log_item(f"Cycle #{cycle:>3}  {seed_label}", item)
-        print(needs_seed_roll(item))
         if needs_seed_roll(item):
             click.echo("  ~ No seed mod present -> rolling first mod...\n")
             if not apply_aug():

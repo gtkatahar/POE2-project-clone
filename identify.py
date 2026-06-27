@@ -16,12 +16,10 @@ import json
 import sys
 from pathlib import Path
 
-from scraping.poe2db import fetch_tiered_modifiers, save_json
+from crafting.targets import load_or_fetch_db
 from item_parsing.parser import parse_item_text
 from item_parsing.identifier import build_lookup, identify
 from item_parsing.display import print_results, print_simple, build_simple_result
-
-DATA_DIR = Path(__file__).parent / "data"
 
 EXAMPLE_ITEM = """
 Item Class: Talismans
@@ -45,15 +43,10 @@ Fractured Item
 
 
 def _load_or_fetch_db(slug: str) -> dict:
-    db_path = DATA_DIR / f"{slug.lower()}_modifiers_tiered.json"
-    if db_path.exists():
-        with open(db_path, encoding="utf-8") as f:
-            return json.load(f)
-    print(f"Database for '{slug}' not found — scraping now …")
-    DATA_DIR.mkdir(exist_ok=True)
-    data = fetch_tiered_modifiers(slug)
-    save_json(data, db_path)
-    return data
+    from paths import db_path
+    if not db_path(slug).exists():
+        print(f"Database for '{slug}' not found — scraping now …")
+    return load_or_fetch_db(slug)
 
 
 def main() -> None:

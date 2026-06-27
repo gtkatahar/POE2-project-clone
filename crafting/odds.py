@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from crafting.targets import mod_entry_matches
+
 
 @dataclass(frozen=True)
 class CostVector:
@@ -52,8 +54,14 @@ def _annul_cost() -> CostVector:
 def _matches_entry(group: dict, tier: dict, entry: dict) -> bool:
     return (
         group["type"].lower() == entry["type"].lower()
-        and group["family"] == entry["family"]
-        and tier["tier"] <= entry["min_tier"]
+        and mod_entry_matches(
+            {
+                "family": group["family"],
+                "section_key": group.get("section_key", "normal"),
+                "matched_tier": tier,
+            },
+            entry,
+        )
     )
 
 
@@ -168,10 +176,18 @@ def _classify_current_magic_item(
             lt = candidate["type"].lower()
             lf = candidate["family"]
             for entry in target_entries:
-                if entry["type"].lower() == lt and entry["family"] == lf:
+                if (
+                    entry["type"].lower() == lt
+                    and entry["family"] == lf
+                    and candidate["section_key"] == entry.get("section_key", "normal")
+                ):
                     return "TP" if lt == "prefix" else "TS"
             for entry in keeper_entries:
-                if entry["type"].lower() == lt and entry["family"] == lf:
+                if (
+                    entry["type"].lower() == lt
+                    and entry["family"] == lf
+                    and candidate["section_key"] == entry.get("section_key", "normal")
+                ):
                     return "KP" if lt == "prefix" else "KS"
 
         # None of the interpretations matched a target or keeper entry.

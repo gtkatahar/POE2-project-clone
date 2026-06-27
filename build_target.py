@@ -12,8 +12,6 @@ Usage:
 """
 
 import json
-import re
-from datetime import datetime
 from pathlib import Path
 
 import click
@@ -21,10 +19,14 @@ from InquirerPy import inquirer
 from InquirerPy.base.control import Choice
 from InquirerPy.separator import Separator
 
-from scraping.poe2db import fetch_tiered_modifiers, save_json
-
-DATA_DIR   = Path(__file__).parent / "data"
-SAVES_DIR  = Path(__file__).parent / "saved_targets"
+from crafting.targets import (
+    build_mod_entry,
+    list_saves,
+    load_or_fetch_db,
+    save_named_target,
+    SAVES,
+)
+from paths import DATA
 
 MAX_PREFIXES = 3
 MAX_SUFFIXES = 3
@@ -35,14 +37,10 @@ MAX_SUFFIXES = 3
 # ---------------------------------------------------------------------------
 
 def _load_or_fetch_db(slug: str) -> dict:
-    db_path = DATA_DIR / f"{slug.lower()}_modifiers_tiered.json"
-    if db_path.exists():
-        return json.loads(db_path.read_text(encoding="utf-8"))
-    print(f"Database for '{slug}' not found — scraping now…")
-    DATA_DIR.mkdir(exist_ok=True)
-    data = fetch_tiered_modifiers(slug)
-    save_json(data, db_path)
-    return data
+    db_path = DATA / f"{slug.lower()}_modifiers_tiered.json"
+    if not db_path.exists():
+        print(f"Database for '{slug}' not found — scraping now…")
+    return load_or_fetch_db(slug)
 
 
 def _fmt_values(values: list) -> str:
@@ -135,13 +133,7 @@ def _mode_search(groups: list[dict]) -> list[dict]:
             if group is None:
                 continue
             min_tier = _pick_min_tier(group)
-            chosen.append({
-                "type":          group["type"],
-                "family":        group["family"],
-                "stat_template": group["stat_template"],
-                "min_tier":      min_tier,
-                "tags":          group["tags"],
-            })
+            chosen.append(build_mod_entry(group, min_tier))
 
         elif action == "remove":
             to_remove = inquirer.select(
@@ -217,13 +209,8 @@ def _mode_target(groups: list[dict]) -> tuple[list, list]:
             if group is None:
                 continue
             min_tier = _pick_min_tier(group)
-            entry = {
-                "type":          action,
-                "family":        group["family"],
-                "stat_template": group["stat_template"],
-                "min_tier":      min_tier,
-                "tags":          group["tags"],
-            }
+            entry = build_mod_entry(group, min_tier)
+            entry["type"] = action
             (chosen_prefixes if action == "prefix" else chosen_suffixes).append(entry)
 
         elif action == "remove":
@@ -277,13 +264,7 @@ def _pick_fifty_fifty_mods(groups: list[dict], already_chosen: set[str]) -> list
             if group is None:
                 continue
             min_tier = _pick_min_tier(group)
-            chosen.append({
-                "type":          group["type"],
-                "family":        group["family"],
-                "stat_template": group["stat_template"],
-                "min_tier":      min_tier,
-                "tags":          group["tags"],
-            })
+            chosen.append(build_mod_entry(group, min_tier))
 
         elif action == "remove":
             to_remove = inquirer.select(
@@ -304,7 +285,7 @@ def _pick_slug(default: str) -> str:
 
     # Build name→slug map from already-downloaded files
     available: dict[str, str] = {}
-    for p in sorted(DATA_DIR.glob("*_modifiers_tiered.json")):
+    for p in sorted(DATA.glob("*_modifiers_tiered.json")):
         slug = p.name.replace("_modifiers_tiered.json", "")
         available[slug] = slug
 
@@ -335,35 +316,6 @@ def _pick_slug(default: str) -> str:
 # ---------------------------------------------------------------------------
 # Save / Load helpers
 # ---------------------------------------------------------------------------
-
-def _sanitize_filename(name: str) -> str:
-    """Turn any user string into a safe filename (no special chars)."""
-    name = name.strip()
-    name = re.sub(r'[\\/:*?"<>|]', "", name)   # strip illegal chars
-    name = re.sub(r"\s+", "_", name)             # spaces → underscores
-    return name[:80] or "save"
-
-
-def _list_saves() -> list[Path]:
-    """Return all .json files in SAVES_DIR, newest first."""
-    if not SAVES_DIR.exists():
-        return []
-    return sorted(SAVES_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
-
-
-def _save_result(result: dict, name: str) -> Path:
-    """Persist result to SAVES_DIR/{safe_name}.json. Returns the path written."""
-    SAVES_DIR.mkdir(exist_ok=True)
-    safe = _sanitize_filename(name)
-    dest = SAVES_DIR / f"{safe}.json"
-    payload = {
-        "save_name":  name,
-        "created_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        **result,
-    }
-    dest.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-    return dest
-
 
 def _preview_save(data: dict, indent: str = "  ") -> str:
     """Return a multi-line human-readable preview of a saved target."""
@@ -411,7 +363,7 @@ def _pick_save_to_load() -> dict | None:
     Shows a full preview of the highlighted save, then returns the loaded dict
     (or None if the user cancels).
     """
-    saves = _list_saves()
+    saves = list_saves()
     if not saves:
         print("  No saved targets found.")
         return None
@@ -480,7 +432,7 @@ def _prompt_save(result: dict) -> None:
         return
 
     existing_names = {json.loads(p.read_text(encoding="utf-8")).get("save_name", p.stem)
-                      for p in _list_saves()}
+                      for p in list_saves()}
 
     while True:
         name = inquirer.text(
@@ -496,7 +448,7 @@ def _prompt_save(result: dict) -> None:
             if not overwrite:
                 continue
 
-        dest = _save_result(result, name)
+        dest = save_named_target(result, name)
         print(f"\n  Saved  '{name}'  →  {dest}\n")
         break
 
@@ -516,7 +468,7 @@ def main(slug: str | None, output: str):
     print()
 
     # ── Load an existing save? ──────────────────────────────────────────────
-    saves = _list_saves()
+    saves = list_saves()
     start_action = "new"
     if saves:
         start_action = inquirer.select(

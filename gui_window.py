@@ -9,22 +9,24 @@ from PyQt6.QtGui import QFont, QColor, QTextCursor
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QTabWidget, QVBoxLayout, QHBoxLayout,
     QFormLayout, QLabel, QPushButton, QSpinBox, QTableWidget,
-    QTableWidgetItem, QHeaderView, QListWidget, QListWidgetItem,
+    QTableWidgetItem, QHeaderView, QTreeWidget, QTreeWidgetItem,
     QGroupBox, QRadioButton, QButtonGroup, QPlainTextEdit,
     QSplitter, QFrame, QMessageBox, QScrollBar, QAbstractItemView,
-    QSizePolicy, QLineEdit, QComboBox,
+    QSizePolicy, QLineEdit, QComboBox, QToolButton,
 )
 
 from gui_mod_builder import ModBuilderDialog, _load_all_db_groups
 from gui_worker import ScanWorker, CraftWorker
 from gui_settings import SettingsTab, load_settings
-
-
-ROOT_DIR = Path(__file__).resolve().parent
-SAVES_DIR = ROOT_DIR / "saved_targets"
-TARGET_FILE = ROOT_DIR / "target_mods.json"
-MATS_FILE = ROOT_DIR / "crafting_mats.json"
-ACTIVE_SOURCE_FILE = ROOT_DIR / "active_target_source.txt"
+from crafting.targets import (
+    load_all_db_groups,
+    mods_from_data,
+    target_to_active,
+    ACTIVE_SOURCE_FILE,
+    MATS_FILE,
+    SAVES_DIR,
+    TARGET_FILE,
+)
 
 STRATEGY_LABELS = [
     ("scan_only",      "Scan Only  (no automation)"),
@@ -51,16 +53,65 @@ def _hr() -> QFrame:
     return line
 
 
-def _mods_from_data(data: dict) -> list[dict]:
-    if data.get("mode") == "search":
-        return data.get("mods", [])
-    return data.get("prefixes", []) + data.get("suffixes", [])
+def _read_active_source() -> str | None:
+    """Return the filename of the saved target that was last used to set the
+    active target, or None if unknown (e.g. never set since this feature shipped)."""
+    if ACTIVE_SOURCE_FILE.exists():
+        try:
+            name = ACTIVE_SOURCE_FILE.read_text(encoding="utf-8").strip()
+            return name or None
+        except Exception:
+            return None
+    return None
 
 
-def _target_to_active(data: dict) -> dict:
-    """Strip metadata fields to produce a target_mods.json-compatible dict."""
-    keys = ("slug", "mode", "mods", "prefixes", "suffixes", "fifty_fifty")
-    return {k: data[k] for k in keys if k in data}
+def _mode_display(mode: str) -> str:
+    if mode == "search":
+        return "search (matches any of the listed mods)"
+    if mode == "target":
+        return "target (strict — exactly 3 prefixes + 3 suffixes)"
+    return mode
+
+
+ATTR_TOKENS = {"str", "dex", "int"}
+
+
+def _split_slug(slug: str) -> tuple[str, tuple[str, ...]]:
+    """Split a slug into (category_key, attr_tokens).
+
+    Strips the longest trailing run of tokens drawn from {str, dex, int},
+    e.g. "boots_int" -> ("boots", ("int",)); "wands" -> ("wands", ())."""
+    tokens = slug.split("_")
+    cut = len(tokens)
+    while cut > 0 and tokens[cut - 1] in ATTR_TOKENS:
+        cut -= 1
+    if cut == 0:
+        cut = len(tokens)
+    return "_".join(tokens[:cut]), tuple(tokens[cut:])
+
+
+def _category_display(category_key: str) -> str:
+    return category_key.replace("_", " ").title()
+
+
+def _subcategory_display(attr_tokens: tuple[str, ...]) -> str:
+    return " ".join(t.title() for t in attr_tokens)
+
+
+def _find_tier_options(slug: str, family: str, section_key: str | None = None) -> list[dict] | None:
+    """Look up the real tier list for a mod family from its slug's DB file."""
+    groups_by_section = load_all_db_groups(slug)
+    sections = (
+        [groups_by_section[section_key]]
+        if section_key and section_key in groups_by_section
+        else groups_by_section.values()
+    )
+    for groups in sections:
+        for g in groups:
+            if g.get("family") == family:
+                tiers = g.get("tiers", [])
+                return sorted(tiers, key=lambda t: t.get("tier", 0))
+    return None
 
 
 def _read_active_source() -> str | None:
@@ -245,6 +296,9 @@ class MaterialsTab(QWidget):
 class TargetsTab(QWidget):
     active_target_changed = pyqtSignal(dict)
 
+    _ROLE_KIND = Qt.ItemDataRole.UserRole + 1  # "category" | "subcategory" | "leaf"
+    _ROLE_KEY = Qt.ItemDataRole.UserRole + 2   # category key or full slug
+
     def __init__(self, main_window: "MainWindow") -> None:
         super().__init__()
         self._main = main_window
@@ -314,9 +368,13 @@ class TargetsTab(QWidget):
 
         right.addWidget(_hr())
 
-        mods_label = QLabel("Mods:")
-        mods_label.setStyleSheet("font-weight: bold;")
-        right.addWidget(mods_label)
+        self._mod_toggle = QToolButton()
+        self._mod_toggle.setText("▼  Mods")
+        self._mod_toggle.setCheckable(True)
+        self._mod_toggle.setChecked(True)
+        self._mod_toggle.setStyleSheet("QToolButton { text-align: left; font-weight: bold; border: none; }")
+        self._mod_toggle.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextOnly)
+        right.addWidget(self._mod_toggle)
 
         self._mod_table = QTableWidget(0, 5)
         self._mod_table.setHorizontalHeaderLabels(["Type", "Family", "Min Tier", "Tags", ""])
@@ -327,9 +385,13 @@ class TargetsTab(QWidget):
         self._mod_table.setWordWrap(True)
         right.addWidget(self._mod_table, 3)
 
-        self._fifty_label = QLabel("50-50 Keeper Mods:")
-        self._fifty_label.setStyleSheet("font-weight: bold; margin-top: 8px;")
-        right.addWidget(self._fifty_label)
+        self._fifty_toggle = QToolButton()
+        self._fifty_toggle.setText("▼  50-50 Keeper Mods")
+        self._fifty_toggle.setCheckable(True)
+        self._fifty_toggle.setChecked(True)
+        self._fifty_toggle.setStyleSheet("QToolButton { text-align: left; font-weight: bold; border: none; margin-top: 8px; }")
+        self._fifty_toggle.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextOnly)
+        right.addWidget(self._fifty_toggle)
 
         self._fifty_table = QTableWidget(0, 5)
         self._fifty_table.setHorizontalHeaderLabels(["Type", "Family", "Min Tier", "Tags", ""])
@@ -339,6 +401,7 @@ class TargetsTab(QWidget):
         self._fifty_table.setAlternatingRowColors(True)
         self._fifty_table.setWordWrap(True)
         right.addWidget(self._fifty_table, 1)
+        right.addStretch(0)
 
         right_widget = QWidget()
         right_widget.setLayout(right)
@@ -357,6 +420,16 @@ class TargetsTab(QWidget):
         self._btn_dup.clicked.connect(self._on_duplicate)
         self._btn_set_active.clicked.connect(self._on_set_active)
         self._btn_delete.clicked.connect(self._on_delete)
+        self._mod_toggle.toggled.connect(self._mod_table.setVisible)
+        self._mod_toggle.toggled.connect(
+            lambda checked: self._mod_toggle.setText(("▼" if checked else "▶") + "  Mods")
+        )
+        self._fifty_toggle.toggled.connect(self._fifty_table.setVisible)
+        self._fifty_toggle.toggled.connect(
+            lambda checked: self._fifty_toggle.setText(
+                ("▼" if checked else "▶") + "  50-50 Keeper Mods"
+            )
+        )
 
         self._refresh_list()
         self._update_active_status(self._selected_path())
@@ -372,6 +445,8 @@ class TargetsTab(QWidget):
         self._save_list.clear()
         SAVES_DIR.mkdir(exist_ok=True)
         paths = sorted(SAVES_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+
+        groups: dict[str, dict[str | None, list[tuple[Path, dict]]]] = {}
         for path in paths:
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
@@ -391,6 +466,135 @@ class TargetsTab(QWidget):
                     self._save_list.setCurrentItem(item)
             except Exception:
                 continue
+            slug = data.get("slug", "?")
+            category_key, attr_tokens = _split_slug(slug)
+            subcat_key = slug if attr_tokens else None
+            groups.setdefault(category_key, {}).setdefault(subcat_key, []).append((path, data))
+
+        selected_item: QTreeWidgetItem | None = None
+        active_item: QTreeWidgetItem | None = None
+        first_leaf: QTreeWidgetItem | None = None
+
+        def add_leaf(parent: QTreeWidgetItem, path: Path, data: dict) -> QTreeWidgetItem:
+            nonlocal first_leaf, selected_item, active_item
+            mods = mods_from_data(data)
+            label = f"{data.get('save_name', path.stem)}  ({len(mods)} mods)"
+            leaf_item = QTreeWidgetItem([label])
+            leaf_item.setData(0, Qt.ItemDataRole.UserRole, path)
+            leaf_item.setData(0, self._ROLE_KIND, "leaf")
+            if active_source is not None and path.name == active_source:
+                font = leaf_item.font(0)
+                font.setBold(True)
+                leaf_item.setFont(0, font)
+                leaf_item.setForeground(0, QColor("#b8943f"))
+                active_item = leaf_item
+            parent.addChild(leaf_item)
+            if first_leaf is None:
+                first_leaf = leaf_item
+            if selected_key == ("leaf", path.name):
+                selected_item = leaf_item
+            return leaf_item
+
+        for category_key in sorted(groups):
+            subcats = groups[category_key]
+            total = sum(len(leaves) for leaves in subcats.values())
+            cat_item = QTreeWidgetItem([f"{_category_display(category_key)} ({total})"])
+            cat_item.setData(0, self._ROLE_KIND, "category")
+            cat_item.setData(0, self._ROLE_KEY, category_key)
+            self._save_tree.addTopLevelItem(cat_item)
+            cat_item.setExpanded(expanded_state.get(("category", category_key), True))
+            if selected_key == ("category", category_key):
+                selected_item = cat_item
+
+            for path, data in subcats.get(None, []):
+                add_leaf(cat_item, path, data)
+
+            subcat_keys = [k for k in subcats if k is not None]
+            subcat_keys.sort(key=lambda k: _subcategory_display(_split_slug(k)[1]))
+            for subcat_key in subcat_keys:
+                leaves = subcats[subcat_key]
+                _, attr_tokens = _split_slug(subcat_key)
+                sub_item = QTreeWidgetItem([f"{_subcategory_display(attr_tokens)} ({len(leaves)})"])
+                sub_item.setData(0, self._ROLE_KIND, "subcategory")
+                sub_item.setData(0, self._ROLE_KEY, subcat_key)
+                cat_item.addChild(sub_item)
+                sub_item.setExpanded(expanded_state.get(("subcategory", subcat_key), True))
+                if selected_key == ("subcategory", subcat_key):
+                    selected_item = sub_item
+                for path, data in leaves:
+                    add_leaf(sub_item, path, data)
+
+        if active_item is not None:
+            parent = active_item.parent()
+            while parent is not None:
+                parent.setExpanded(True)
+                parent = parent.parent()
+
+        if not self._tree_ever_populated:
+            self._save_tree.expandAll()
+            self._tree_ever_populated = True
+
+        if selected_item is None:
+            selected_item = first_leaf
+        if selected_item is not None:
+            self._save_tree.setCurrentItem(selected_item)
+
+        self._refresh_category_filter(sorted(groups))
+        self._apply_filter()
+
+    def _refresh_category_filter(self, category_keys: list[str]) -> None:
+        current = self._category_filter.currentData()
+        self._category_filter.blockSignals(True)
+        self._category_filter.clear()
+        self._category_filter.addItem("All Categories", userData=None)
+        select_index = 0
+        for i, key in enumerate(category_keys, start=1):
+            self._category_filter.addItem(_category_display(key), userData=key)
+            if key == current:
+                select_index = i
+        self._category_filter.setCurrentIndex(select_index)
+        self._category_filter.blockSignals(False)
+
+    def _apply_filter(self, _value=None) -> None:
+        text = self._filter_edit.text().strip().lower()
+        cat_key = self._category_filter.currentData()
+        for i in range(self._save_tree.topLevelItemCount()):
+            self._apply_filter_recursive(self._save_tree.topLevelItem(i), text, cat_key)
+
+    def _apply_filter_recursive(self, item: QTreeWidgetItem, text: str, cat_key: str | None) -> bool:
+        kind = item.data(0, self._ROLE_KIND)
+        if kind == "category" and cat_key is not None and item.data(0, self._ROLE_KEY) != cat_key:
+            item.setHidden(True)
+            return False
+        if kind == "leaf":
+            visible = (
+                not text
+                or text in item.text(0).lower()
+                or self._ancestor_text_matches(item, text)
+            )
+        else:
+            visible = any(
+                self._apply_filter_recursive(item.child(i), text, cat_key)
+                for i in range(item.childCount())
+            )
+        item.setHidden(not visible)
+        return visible
+
+    def _ancestor_text_matches(self, item: QTreeWidgetItem, text: str) -> bool:
+        parent = item.parent()
+        while parent is not None:
+            if text in parent.text(0).lower():
+                return True
+            parent = parent.parent()
+        return False
+
+    def _update_active_status(self, path: Path | None) -> None:
+        """Reflect whether the selected target is the active one, and toggle Set Active."""
+        if path is None:
+            self._lbl_active.setText("No target selected")
+            self._lbl_active.setStyleSheet("font-size: 13px; font-weight: bold; color: #999;")
+            self._btn_set_active.setEnabled(False)
+            return
 
         if self._save_list.currentRow() < 0 and self._save_list.count() > 0:
             self._save_list.setCurrentRow(0)
@@ -425,7 +629,7 @@ class TargetsTab(QWidget):
         if item is None:
             self._update_active_status(None)
             return
-        path: Path = item.data(Qt.ItemDataRole.UserRole)
+        path: Path = current.data(0, Qt.ItemDataRole.UserRole)
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
             self._populate_detail(data, path)
@@ -560,10 +764,10 @@ class TargetsTab(QWidget):
         self._refresh_list()
 
     def _selected_path(self) -> Path | None:
-        item = self._save_list.currentItem()
-        if item is None:
+        item = self._save_tree.currentItem()
+        if item is None or item.data(0, self._ROLE_KIND) != "leaf":
             return None
-        return item.data(Qt.ItemDataRole.UserRole)
+        return item.data(0, Qt.ItemDataRole.UserRole)
 
     def _selected_data(self) -> dict | None:
         path = self._selected_path()
@@ -611,7 +815,7 @@ class TargetsTab(QWidget):
 
     def _apply_active(self, data: dict, source_path: Path | None = None) -> None:
         """Write data as the active target and update all UI state."""
-        active = _target_to_active(data)
+        active = target_to_active(data)
         TARGET_FILE.write_text(json.dumps(active, indent=2, ensure_ascii=False), encoding="utf-8")
         self._main.active_target_data = active
 
@@ -757,7 +961,7 @@ class CraftTab(QWidget):
         self._active_data = data
         slug = data.get("slug", "?")
         mode = data.get("mode", "?")
-        mods = _mods_from_data(data)
+        mods = mods_from_data(data)
         fifty = data.get("fifty_fifty", [])
         mod_lines = [f"  [{e['type'][:3].upper()}] {e['family']}  (T{e['min_tier']}+)" for e in mods]
         summary = f"<b>{slug}</b>  ({mode}, {len(mods)} mod(s))"
